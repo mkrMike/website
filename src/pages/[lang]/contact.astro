@@ -1,0 +1,47 @@
+---
+import Icon from '../../components/Icon.astro'
+import SimplePage from '../../components/SimplePage.astro'
+import { site } from '../../config/site'
+import { type Locale, localePaths, useTranslations } from '../../i18n'
+
+export const getStaticPaths = localePaths
+
+const lang = Astro.params.lang as Locale
+const t = useTranslations(lang)
+---
+
+<SimplePage
+  lang={lang}
+  page="contact"
+  title={t.contact.title}
+  metaTitle={t.meta.contactTitle}
+  description={t.meta.contactDescription}
+  subtitle={t.contact.subtitle}
+>
+  <div class="card contact">
+    <span class="icon-tile"><Icon name="chat" /></span>
+    <div>
+      <strong>{t.contact.emailLabel}</strong>
+      <p><a href={`mailto:${site.contactEmail}`} dir="ltr">{site.contactEmail}</a></p>
+      <p class="muted">{t.contact.placeholder}</p>
+    </div>
+  </div>
+</SimplePage>
+
+<style>
+  .contact {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  strong {
+    color: var(--ink);
+  }
+
+  .muted {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+</style>

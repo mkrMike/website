@@ -1,0 +1,35 @@
+---
+/**
+ * "samatrica" as paths (never depends on a loaded font), with the horizon arc
+ * above it unless `arc` is false (e.g. next to the icon).
+ */
+import { type ArcColor, type LogoTone, stacked, teal, toneColor, wordmark } from './shapes'
+
+interface Props {
+  tone?: LogoTone
+  /** Teal accent (default) or the lettering's colour; false: no arc. */
+  arc?: ArcColor | false
+  /** Height of the letters' ink, in px. */
+  height?: number
+  class?: string
+}
+
+const { tone = 'navy', arc = 'teal', height = 28, class: className } = Astro.props
+const ink = toneColor[tone]
+const arcInk = arc === 'teal' && tone === 'navy' ? teal : ink
+const viewBox = arc ? stacked.viewBox : `0 0 ${wordmark.width} ${wordmark.height}`
+const boxHeight = arc ? stacked.height : wordmark.height
+const scale = height / wordmark.height
+---
+
+<svg
+  class={className}
+  width={Math.round(wordmark.width * scale)}
+  height={Math.round(boxHeight * scale)}
+  viewBox={viewBox}
+  role="img"
+  aria-label="Samatrica"
+>
+  {arc && <path d={stacked.arc} fill="none" stroke={arcInk} stroke-width={stacked.stroke} stroke-linecap="round" />}
+  <path d={wordmark.d} fill={ink}></path>
+</svg>

@@ -1,0 +1,18 @@
+---
+import Mark from '../components/brand/Mark.astro'
+import Base from '../layouts/Base.astro'
+import { href, useTranslations } from '../i18n'
+
+const t = useTranslations('en')
+---
+
+<Base lang="en" page="" title={`${t.notFound}: Samatrica`} noindex>
+  <section class="page-hero">
+    <div class="container">
+      <Mark size={72} />
+      <h1>404</h1>
+      <p>{t.notFound}</p>
+      <a class="btn btn-primary" href={href('en')}>{t.nav.home}</a>
+    </div>
+  </section>
+</Base>

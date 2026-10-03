@@ -1,0 +1,585 @@
+---
+import ChatMock from '../../components/ChatMock.astro'
+import CtaBand from '../../components/CtaBand.astro'
+import Icon from '../../components/Icon.astro'
+import Base from '../../layouts/Base.astro'
+import { href, type Locale, localePaths, useTranslations } from '../../i18n'
+
+export const getStaticPaths = localePaths
+
+const lang = Astro.params.lang as Locale
+const t = useTranslations(lang)
+const h = t.home
+
+const businesses = [
+  { icon: 'scissors', label: h.businesses.salon },
+  { icon: 'utensils', label: h.businesses.restaurant },
+  { icon: 'leaf', label: h.businesses.spa },
+  { icon: 'dumbbell', label: h.businesses.gym },
+  { icon: 'wrench', label: h.businesses.garage },
+  { icon: 'briefcase', label: h.businesses.consultant },
+] as const
+
+const stepIcons = ['code', 'chat', 'users'] as const
+const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] as const
+---
+
+<Base lang={lang} page="" title={t.meta.homeTitle} description={t.meta.homeDescription}>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">{h.eyebrow}</span>
+        <h1>
+          {h.heroTitle}
+          <span class="gradient-text">{h.heroTitleAccent}</span>
+        </h1>
+        <p class="lead">{h.heroSubtitle}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={href(lang, 'signup')}>
+            {t.common.startTrial} <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn-ghost" href="#how">{t.common.seeHowItWorks}</a>
+        </div>
+        <p class="proof">{h.heroProof}</p>
+      </div>
+
+      <div class="hero-visual">
+        <ChatMock lang={lang} scenario="clinic" />
+        <div class="float float-a" aria-hidden="true">
+          <Icon name="moon" size={18} />
+          <span>{h.features[0]!.title}</span>
+        </div>
+        <div class="float float-b" aria-hidden="true">
+          <Icon name="globe" size={18} />
+          <span>العربية · English · Русский</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="section" id="industries">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">{h.industriesEyebrow}</span>
+        <h2>{h.industriesTitle}</h2>
+        <p>{h.industriesSubtitle}</p>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="card industry" data-reveal>
+          <div class="industry-icon"><Icon name="stethoscope" size={28} /></div>
+          <h3>{h.clinicCard.title}</h3>
+          <p>{h.clinicCard.text}</p>
+          <ul class="check-list">{h.clinicCard.points.map((point) => <li>{point}</li>)}</ul>
+          <a class="more" href={href(lang, 'clinics')}>
+            {t.common.learnMore} <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+        <article class="card industry" data-reveal style="--reveal-delay: 0.1s">
+          <div class="industry-icon"><Icon name="building" size={28} /></div>
+          <h3>{h.realEstateCard.title}</h3>
+          <p>{h.realEstateCard.text}</p>
+          <ul class="check-list">{h.realEstateCard.points.map((point) => <li>{point}</li>)}</ul>
+          <a class="more" href={href(lang, 'real-estate')}>
+            {t.common.learnMore} <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+
+      <div class="every" data-reveal>
+        <h3>{h.everyBusinessTitle}</h3>
+        <ul>
+          {
+            businesses.map((business) => (
+              <li>
+                <span class="icon-tile">
+                  <Icon name={business.icon} />
+                </span>
+                {business.label}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section-soft" id="how">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">{h.howEyebrow}</span>
+        <h2>{h.howTitle}</h2>
+      </div>
+      <ol class="steps grid grid-3">
+        {
+          h.steps.map((step, index) => (
+            <li class="card step" data-reveal style={`--reveal-delay: ${index * 0.1}s`}>
+              <span class="step-number">{index + 1}</span>
+              <span class="icon-tile">
+                <Icon name={stepIcons[index] ?? 'chat'} />
+              </span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">{h.featuresEyebrow}</span>
+        <h2>{h.featuresTitle}</h2>
+      </div>
+      <div class="grid grid-3">
+        {
+          h.features.map((feature, index) => (
+            <article class="feature" data-reveal style={`--reveal-delay: ${(index % 3) * 0.08}s`}>
+              <span class="icon-tile">
+                <Icon name={featureIcons[index] ?? 'check'} />
+              </span>
+              <h3>{feature.title}</h3>
+              <p>{feature.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages (dark) -->
+  <section class="section section-dark" id="languages">
+    <div class="container languages">
+      <div data-reveal>
+        <span class="eyebrow"><Icon name="globe" size={16} />{h.languagesEyebrow}</span>
+        <h2>{h.languagesTitle}</h2>
+        <p class="languages-text">{h.languagesText}</p>
+        <dl class="stats">
+          {
+            h.stats.map((stat) => (
+              <div>
+                <dt>{stat.label}</dt>
+                <dd>{stat.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+      <ul class="bubbles" data-reveal style="--reveal-delay: 0.1s">
+        {
+          h.languagesSample.map((sample, index) => (
+            <li style={`--i: ${index}`}>
+              <span class="bubble-lang">{sample.lang}</span>
+              <span class="bubble-text" dir="auto">
+                {sample.text}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container faq-wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">{h.faqEyebrow}</span>
+        <h2>{h.faqTitle}</h2>
+      </div>
+      <div class="faq" data-reveal>
+        {
+          h.faq.map((item) => (
+            <details>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand lang={lang} title={h.ctaTitle} text={h.ctaText} />
+</Base>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3rem, 7vw, 6rem) clamp(4rem, 8vw, 7rem);
+    background: var(--surface-soft);
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  .gradient-text {
+    display: block;
+  }
+
+  .lead {
+    max-width: 580px;
+    font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+    color: var(--muted);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .proof {
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2.75rem 0;
+  }
+
+  .float {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--shadow);
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 650;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float :global(svg) {
+    color: var(--teal);
+  }
+
+  /* Just outside the chat card: never over its header or input. */
+  .float-a {
+    top: 0;
+    inset-inline-start: 0;
+  }
+
+  .float-b {
+    bottom: 0;
+    inset-inline-end: 0;
+    animation-delay: -3s;
+  }
+
+  @media (max-width: 520px) {
+    .float {
+      display: none;
+    }
+  }
+
+  @keyframes float {
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Industries */
+
+  .industry {
+    padding: 2.25rem;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .industry:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .industry::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: var(--brand);
+  }
+
+  .industry-icon {
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.25rem;
+    border-radius: 18px;
+    background: var(--brand);
+    color: #fff;
+  }
+
+  .industry h3 {
+    font-size: 1.5rem;
+  }
+
+  .more {
+    display: inline-flex;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  [dir='rtl'] .more .arrow {
+    transform: scaleX(-1);
+  }
+
+  .every {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    text-align: center;
+  }
+
+  .every h3 {
+    color: var(--muted);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .every ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .every li {
+    display: grid;
+    justify-items: center;
+    gap: 0.25rem;
+    padding: 1.25rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink);
+    font-weight: 600;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .every li:hover {
+    border-color: rgb(15 118 110 / 0.45);
+    transform: translateY(-2px);
+  }
+
+  .every .icon-tile {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Steps */
+
+  .steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .step {
+    padding-top: 2.25rem;
+  }
+
+  .step-number {
+    position: absolute;
+    top: 1.25rem;
+    inset-inline-end: 1.5rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgb(15 118 110 / 0.35);
+  }
+
+  /* Features */
+
+  .feature {
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+
+  .feature:hover {
+    background: var(--surface);
+  }
+
+  .feature p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* Languages */
+
+  .languages {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .languages {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .languages-text {
+    font-size: 1.12rem;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0 0;
+  }
+
+  .stats div {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1rem;
+    border: 1px solid rgb(255 255 255 / 0.08);
+    border-radius: 16px;
+    background: rgb(255 255 255 / 0.04);
+  }
+
+  .stats dd {
+    margin: 0;
+    font-size: 1.9rem;
+    font-weight: 750;
+    color: #fff;
+  }
+
+  .stats dt {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+
+  .bubbles {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bubbles li {
+    display: grid;
+    gap: 0.25rem;
+    max-width: 360px;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 20px;
+    background: rgb(255 255 255 / 0.06);
+    backdrop-filter: blur(6px);
+    animation: float 7s ease-in-out infinite;
+    animation-delay: calc(var(--i) * -1.6s);
+  }
+
+  .bubbles li:nth-child(even) {
+    justify-self: end;
+    background: rgb(15 118 110 / 0.45);
+  }
+
+  .bubble-lang {
+    font-size: 0.75rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    color: var(--teal-light);
+  }
+
+  .bubbles li:nth-child(even) .bubble-lang {
+    color: #ccfbf1;
+  }
+
+  .bubble-text {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  /* FAQ */
+
+  .faq-wrap {
+    max-width: 820px;
+  }
+
+  .faq {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .faq details {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .faq details[open] {
+    box-shadow: var(--shadow);
+  }
+
+  .faq summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 1.35rem;
+    color: var(--ink);
+    font-weight: 650;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq summary::after {
+    content: '+';
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--teal);
+    font-weight: 700;
+    transition: transform 0.2s ease;
+  }
+
+  .faq details[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  .faq details p {
+    margin: 0;
+    padding: 0 1.35rem 1.25rem;
+    color: var(--muted);
+  }
+</style>

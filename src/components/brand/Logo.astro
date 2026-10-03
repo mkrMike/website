@@ -1,0 +1,40 @@
+---
+/**
+ * The logo. `stacked` (default): the arc above the name, as in the header.
+ * `horizontal`: the icon next to the name (the icon carries the arc).
+ */
+import Mark from './Mark.astro'
+import type { ArcColor, LogoTone } from './shapes'
+import Wordmark from './Wordmark.astro'
+
+interface Props {
+  layout?: 'stacked' | 'horizontal'
+  tone?: LogoTone
+  arc?: ArcColor
+  /** Height of the letters, in px. */
+  height?: number
+}
+
+const { layout = 'stacked', tone = 'navy', arc = 'teal', height = 24 } = Astro.props
+const markTone = tone === 'white' ? 'white' : tone === 'black' ? 'black' : 'navy'
+---
+
+{
+  layout === 'stacked' ? (
+    <Wordmark tone={tone} arc={arc} height={height} />
+  ) : (
+    <span class="logo-horizontal" aria-label="Samatrica" role="img">
+      <Mark tone={markTone} size={Math.round(height * 1.75)} />
+      <Wordmark tone={tone} arc={false} height={height} />
+    </span>
+  )
+}
+
+<style>
+  .logo-horizontal {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    direction: ltr;
+  }
+</style>

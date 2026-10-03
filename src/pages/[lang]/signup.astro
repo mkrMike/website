@@ -1,0 +1,150 @@
+---
+import Mark from '../../components/brand/Mark.astro'
+import SignupForm from '../../components/SignupForm'
+import { currencies, plans } from '../../config/plans'
+import Base from '../../layouts/Base.astro'
+import { href, type Locale, localePaths, useTranslations } from '../../i18n'
+
+export const getStaticPaths = localePaths
+
+const lang = Astro.params.lang as Locale
+const t = useTranslations(lang)
+const s = t.signup
+
+const strings = {
+  ...s,
+  currency: t.pricing.currency,
+  billing: t.pricing.billing,
+  monthly: t.pricing.monthly,
+  yearly: t.pricing.yearly,
+}
+const planOptions = [...plans]
+  .sort((a, b) => a.sortOrder - b.sortOrder)
+  .map((plan) => ({ code: plan.code, name: plan.name }))
+---
+
+<Base lang={lang} page="signup" title={t.meta.signupTitle} description={t.meta.signupDescription}>
+  <section class="signup">
+    <div class="container signup-grid">
+      <aside class="intro">
+        <Mark tone="white" size={56} />
+        <h1>{s.title}</h1>
+        <p>{s.subtitle}</p>
+        <ul class="check-list">
+          {t.pricing.includedList.map((item) => <li>{item}</li>)}
+        </ul>
+      </aside>
+
+      <div class="form-card">
+        <SignupForm
+          client:load
+          strings={strings}
+          plans={planOptions}
+          currencies={currencies}
+          termsHref={href(lang, 'terms')}
+          privacyHref={href(lang, 'privacy')}
+        />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .signup {
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+    background: var(--surface-soft);
+  }
+
+  .signup-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 960px) {
+    .signup-grid {
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 3rem;
+    }
+  }
+
+  .intro {
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 28px;
+    background: var(--brand);
+    color: rgb(255 255 255 / 0.9);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .intro h1 {
+    margin-top: 1.5rem;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+
+  .intro .check-list li::before {
+    background-color: rgb(255 255 255 / 0.25);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.5 2.5L14 7.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .form-card {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .form-card :global(.signup-form) {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .form-card :global(.signup-row) {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 600px) {
+    .form-card :global(.signup-row) {
+      grid-template-columns: 1.2fr 1fr 1fr;
+    }
+  }
+
+  .form-card :global(.checkbox) {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .form-card :global(.checkbox input) {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.2rem;
+    accent-color: var(--teal);
+  }
+
+  .form-card :global(.signup-submit) {
+    justify-self: start;
+    min-width: 200px;
+  }
+
+  .form-card :global(.signup-done) {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .form-card :global(.signup-done-icon) {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.25rem;
+    border-radius: 22px;
+    background: var(--brand);
+    color: #fff;
+    font-size: 2rem;
+  }
+</style>

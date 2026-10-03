@@ -1,0 +1,85 @@
+---
+/** The closing call to action: gradient band, title, trial note, two buttons. */
+import { href, type Locale, useTranslations } from '../i18n'
+
+interface Props {
+  lang: Locale
+  title: string
+  text?: string
+}
+
+const { lang, title, text } = Astro.props
+const t = useTranslations(lang)
+---
+
+<section class="section cta-wrap">
+  <div class="container">
+    <div class="cta" data-reveal>
+      <!-- The logo's horizon arc, large and faint. -->
+      <svg class="cta-arc" viewBox="0 0 1000 260" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M40 250A1100 1100 0 0 1 960 250" fill="none" stroke="currentColor" stroke-width="2"></path>
+      </svg>
+      <h2>{title}</h2>
+      {text && <p>{text}</p>}
+      <div class="actions">
+        <a class="btn btn-primary" href={href(lang, 'signup')}>
+          {t.common.startTrial} <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-light" href={href(lang, 'pricing')}>{t.nav.pricing}</a>
+      </div>
+      <small>{t.common.trialNote}</small>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-wrap {
+    padding-top: 0;
+  }
+
+  .cta {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+    border-radius: 32px;
+    background: var(--brand);
+    color: rgb(255 255 255 / 0.9);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-arc {
+    position: absolute;
+    inset: 12% 5% auto;
+    width: 90%;
+    height: 45%;
+    color: rgb(255 255 255 / 0.14);
+  }
+
+  h2 {
+    position: relative;
+    color: #fff;
+  }
+
+  p {
+    position: relative;
+    max-width: 560px;
+    margin-inline: auto;
+    font-size: 1.15rem;
+  }
+
+  .actions {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.75rem 0 1rem;
+  }
+
+  small {
+    position: relative;
+    font-size: 0.88rem;
+    opacity: 0.85;
+  }
+</style>

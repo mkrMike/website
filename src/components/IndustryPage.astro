@@ -1,0 +1,178 @@
+---
+/** The dedicated landing page of a featured industry (clinics, real estate). */
+import Base from '../layouts/Base.astro'
+import { href, type Locale, useTranslations } from '../i18n'
+import ChatMock from './ChatMock.astro'
+import CtaBand from './CtaBand.astro'
+import Icon from './Icon.astro'
+
+interface Props {
+  lang: Locale
+  industry: 'clinics' | 'realEstate'
+}
+
+const { lang, industry } = Astro.props
+const t = useTranslations(lang)
+const copy = t[industry]
+const isClinic = industry === 'clinics'
+
+const painIcons = isClinic
+  ? (['moon', 'phone', 'calendar'] as const)
+  : (['clock', 'filter', 'chat'] as const)
+const benefitIcons = isClinic
+  ? (['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed'] as const)
+  : (['bolt', 'filter', 'key', 'hand', 'globe', 'layout'] as const)
+---
+
+<Base
+  lang={lang}
+  page={isClinic ? 'clinics' : 'real-estate'}
+  title={isClinic ? t.meta.clinicsTitle : t.meta.realEstateTitle}
+  description={isClinic ? t.meta.clinicsDescription : t.meta.realEstateDescription}
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">
+          <Icon name={isClinic ? 'stethoscope' : 'building'} size={16} />
+          {copy.eyebrow}
+        </span>
+        <h1>{copy.title}</h1>
+        <p class="lead">{copy.subtitle}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href={href(lang, 'signup')}>
+            {t.common.startTrial} <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn-ghost" href={href(lang, '', 'how')}>{t.common.seeHowItWorks}</a>
+        </div>
+        <p class="trial">{t.common.trialNote}</p>
+      </div>
+      <div class="visual">
+        <ChatMock lang={lang} scenario={isClinic ? 'clinic' : 'realEstate'} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <h2>{copy.painTitle}</h2>
+      </div>
+      <div class="grid grid-3">
+        {
+          copy.pains.map((pain, index) => (
+            <article class="pain" data-reveal style={`--reveal-delay: ${index * 0.1}s`}>
+              <span class="pain-icon">
+                <Icon name={painIcons[index] ?? 'alert'} />
+              </span>
+              <h3>{pain.title}</h3>
+              <p>{pain.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <h2>{copy.benefitsTitle}</h2>
+      </div>
+      <div class="grid grid-3">
+        {
+          copy.benefits.map((benefit, index) => (
+            <article class="card benefit" data-reveal style={`--reveal-delay: ${(index % 3) * 0.08}s`}>
+              <span class="icon-tile">
+                <Icon name={benefitIcons[index] ?? 'check'} />
+              </span>
+              <h3>{benefit.title}</h3>
+              <p>{benefit.text}</p>
+            </article>
+          ))
+        }
+      </div>
+      <p class="note" data-reveal>{copy.note}</p>
+    </div>
+  </section>
+
+  <CtaBand lang={lang} title={copy.ctaTitle} />
+</Base>
+
+<style>
+  .hero {
+    padding-block: clamp(3rem, 7vw, 5.5rem);
+    background: var(--surface-soft);
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  .lead {
+    max-width: 560px;
+    font-size: 1.2rem;
+    color: var(--muted);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .trial {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pain {
+    padding: 1.75rem;
+    border: 1px solid rgb(255 255 255 / 0.08);
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.04);
+  }
+
+  .pain-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 1rem;
+    border-radius: 14px;
+    background: rgb(249 115 22 / 0.15);
+    color: #fdba74;
+  }
+
+  .pain p {
+    margin: 0;
+  }
+
+  .benefit p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .note {
+    max-width: 680px;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+</style>

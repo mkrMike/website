@@ -1,0 +1,39 @@
+---
+/**
+ * "/": sends visitors to their language. The remembered choice first, then
+ * the browser's languages, else English. Without JS: English.
+ */
+import { defaultLocale, locales } from '../i18n/locales'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Samatrica</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {locales.map((locale) => <link rel="alternate" hreflang={locale} href={`/${locale}/`} />)}
+    <link rel="alternate" hreflang="x-default" href={`/${defaultLocale}/`} />
+    <script is:inline define:vars={{ locales, defaultLocale }}>
+      let lang = null
+      try {
+        lang = localStorage.getItem('samatrica-lang')
+      } catch {
+        // Private mode.
+      }
+      if (!locales.includes(lang)) {
+        lang =
+          (navigator.languages || [navigator.language])
+            .map((tag) => tag.slice(0, 2).toLowerCase())
+            .find((code) => locales.includes(code)) || defaultLocale
+      }
+      location.replace(`/${lang}/`)
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=/${defaultLocale}/`} /></noscript>
+  </head>
+  <body>
+    <a href={`/${defaultLocale}/`}>Samatrica</a>
+  </body>
+</html>

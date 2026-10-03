@@ -1,0 +1,42 @@
+---
+/**
+ * The icon: a bold "s" under a thin arc, in a rounded square.
+ * - navy: navy square, white letter and arc (default);
+ * - white: white square, navy letter, teal arc (on navy or photos);
+ * - black: black square, white letter (one-colour print).
+ * At 32 px and below the arc is dropped: it would blur.
+ */
+import { icon, letterS, navy, teal } from './shapes'
+
+interface Props {
+  tone?: 'navy' | 'white' | 'black'
+  size?: number
+  class?: string
+  /** Decorative by default (the name is next to it). */
+  title?: string
+}
+
+const { tone = 'navy', size = 40, class: className, title } = Astro.props
+const layout = size <= 32 ? icon.small : icon.large
+const background = tone === 'white' ? '#ffffff' : tone === 'black' ? '#000000' : navy
+const ink = tone === 'white' ? navy : '#ffffff'
+const arcInk = tone === 'white' ? teal : '#ffffff'
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 64 64"
+  role={title ? 'img' : undefined}
+  aria-hidden={title ? undefined : 'true'}
+  aria-label={title}
+>
+  <rect width="64" height="64" rx="15" fill={background}></rect>
+  {
+    layout.arc && (
+      <path d={layout.arc} fill="none" stroke={arcInk} stroke-width={layout.arcStroke} stroke-linecap="round" />
+    )
+  }
+  <path d={letterS.d} transform={layout.s} fill={ink}></path>
+</svg>

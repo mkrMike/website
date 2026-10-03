@@ -1,0 +1,38 @@
+---
+/** Contact, terms, privacy: a title, a subtitle and placeholder content. */
+import Base from '../layouts/Base.astro'
+import type { Locale, PagePath } from '../i18n'
+
+interface Props {
+  lang: Locale
+  page: PagePath
+  title: string
+  metaTitle: string
+  description?: string
+  subtitle?: string
+  /** Kept out of search engines (draft pages). */
+  noindex?: boolean
+}
+
+const { lang, page, title, metaTitle, description, subtitle, noindex = false } = Astro.props
+---
+
+<Base lang={lang} page={page} title={metaTitle} description={description} noindex={noindex}>
+  <section class="page-hero">
+    <div class="container">
+      <h1>{title}</h1>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
+  </section>
+  <section class="section">
+    <div class="container body">
+      <slot />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .body {
+    max-width: 720px;
+  }
+</style>

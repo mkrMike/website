@@ -1,0 +1,241 @@
+---
+import { site } from '../config/site'
+import { href, type Locale, type PagePath, useTranslations } from '../i18n'
+import Logo from './brand/Logo.astro'
+import LanguageSwitcher from './LanguageSwitcher.astro'
+
+interface Props {
+  lang: Locale
+  page: PagePath
+}
+
+const { lang, page } = Astro.props
+const t = useTranslations(lang)
+
+const links: { page: PagePath; label: string }[] = [
+  { page: 'clinics', label: t.nav.clinics },
+  { page: 'real-estate', label: t.nav.realEstate },
+  { page: 'pricing', label: t.nav.pricing },
+  { page: 'contact', label: t.nav.contact },
+]
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href={href(lang)} aria-label={t.nav.home}>
+      <Logo height={22} />
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={href(lang, link.page)} aria-current={link.page === page ? 'page' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="nav-actions">
+        <LanguageSwitcher lang={lang} page={page} />
+        <a class="login" href={site.dashboardUrl}>{t.nav.login}</a>
+        <a class="btn btn-primary btn-sm" href={href(lang, 'signup')}>{t.nav.startTrial}</a>
+      </div>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="visually-hidden" data-open>{t.nav.menu}</span>
+      <span class="visually-hidden" data-close hidden>{t.nav.close}</span>
+      <span class="burger" aria-hidden="true"><span></span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header')
+  const toggle = header?.querySelector<HTMLButtonElement>('.menu-toggle')
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true'
+    toggle.setAttribute('aria-expanded', String(open))
+    header?.classList.toggle('menu-open', open)
+    toggle.querySelector<HTMLElement>('[data-open]')!.hidden = open
+    toggle.querySelector<HTMLElement>('[data-close]')!.hidden = !open
+  })
+
+  // A soft shadow once the page scrolls under the header.
+  const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 8)
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgb(255 255 255 / 0.82);
+    backdrop-filter: saturate(1.6) blur(14px);
+    -webkit-backdrop-filter: saturate(1.6) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .site-header.scrolled {
+    border-bottom-color: var(--line);
+    box-shadow: 0 6px 24px rgb(15 23 42 / 0.05);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 72px;
+  }
+
+  .brand {
+    display: inline-flex;
+    text-decoration: none;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav ul a,
+  .login {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .nav ul a:hover,
+  .login:hover {
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .nav ul a[aria-current='page'] {
+    color: var(--teal);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .burger,
+  .burger span,
+  .burger::before,
+  .burger::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--ink);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .burger {
+    position: relative;
+    margin: auto;
+    background: transparent;
+  }
+
+  .burger::before,
+  .burger::after {
+    content: '';
+    position: absolute;
+  }
+
+  .burger::before {
+    top: -6px;
+  }
+
+  .burger::after {
+    top: 6px;
+  }
+
+  .menu-open .burger span {
+    opacity: 0;
+  }
+
+  .menu-open .burger::before {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-open .burger::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  @media (min-width: 961px) {
+    .nav {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      margin-inline-start: 2rem;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav {
+      display: none;
+      position: absolute;
+      inset-inline: 0;
+      top: 100%;
+      padding: 1rem 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 20px 40px rgb(15 23 42 / 0.08);
+    }
+
+    .menu-open .nav {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .nav ul {
+      flex-direction: column;
+    }
+
+    .nav ul a {
+      width: 100%;
+      font-size: 1.05rem;
+    }
+
+    .nav-actions {
+      flex-wrap: wrap;
+    }
+  }
+</style>

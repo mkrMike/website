@@ -1,0 +1,68 @@
+---
+import '../styles/global.css'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import { defaultLocale, href, isRtl, type Locale, locales, type PagePath, useTranslations } from '../i18n'
+
+interface Props {
+  lang: Locale
+  page: PagePath
+  title: string
+  description?: string
+  /** Kept out of search engines (e.g. the brand page). */
+  noindex?: boolean
+}
+
+const { lang, page, title, description, noindex = false } = Astro.props
+const t = useTranslations(lang)
+const site = Astro.site ?? new URL('https://samatrica.com')
+const url = (locale: Locale) => new URL(href(locale, page), site).href
+const ogImage = new URL('/og-image.png', site).href
+---
+
+<!doctype html>
+<html lang={lang} dir={isRtl(lang) ? 'rtl' : 'ltr'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={url(lang)} />
+    {
+      !noindex &&
+        locales.map((locale) => <link rel="alternate" hreflang={locale} href={url(locale)} />)
+    }
+    {!noindex && <link rel="alternate" hreflang="x-default" href={url(defaultLocale)} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Samatrica" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={url(lang)} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0B2545" />
+
+    <!-- Animations only once JS runs: without it, everything is simply visible. -->
+    <script is:inline>document.documentElement.classList.add('js')</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.nav.skipToContent}</a>
+    <Header lang={lang} page={page} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} page={page} />
+
+    <script>
+      import '../scripts/reveal'
+    </script>
+  </body>
+</html>

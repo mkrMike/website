@@ -1,0 +1,418 @@
+---
+import CtaBand from '../../components/CtaBand.astro'
+import Icon from '../../components/Icon.astro'
+import {
+  currencies,
+  type Currency,
+  type Interval,
+  plans,
+  priceOf,
+} from '../../config/plans'
+import Base from '../../layouts/Base.astro'
+import { href, type Locale, localePaths, useTranslations } from '../../i18n'
+
+export const getStaticPaths = localePaths
+
+const lang = Astro.params.lang as Locale
+const t = useTranslations(lang)
+const p = t.pricing
+
+const intervals: Interval[] = ['MONTH', 'YEAR']
+const sorted = [...plans].sort((a, b) => a.sortOrder - b.sortOrder)
+
+// Every price is formatted here, in the page's language; the script only
+// shows the chosen currency and interval. Without JS: AED, monthly.
+const money = (currency: Currency, amountMinor: number) =>
+  new Intl.NumberFormat(lang, {
+    style: 'currency',
+    currency,
+    minimumFractionDigits: amountMinor % 100 === 0 ? 0 : 2,
+    maximumFractionDigits: 2,
+  }).format(amountMinor / 100)
+
+const count = (value: number | null) =>
+  value === null ? p.unlimited : new Intl.NumberFormat(lang).format(value)
+
+/** Yearly saving compared with 12 monthly payments, in whole percent. */
+function saving(plan: (typeof plans)[number], currency: Currency) {
+  const month = priceOf(plan, currency, 'MONTH')
+  const year = priceOf(plan, currency, 'YEAR')
+  if (!month || !year) {
+    return null
+  }
+  const percent = Math.round((1 - year.amountMinor / (month.amountMinor * 12)) * 100)
+  return percent > 0 ? percent : null
+}
+
+const defaultCurrency: Currency = 'AED'
+const defaultInterval: Interval = 'MONTH'
+---
+
+<Base lang={lang} page="pricing" title={t.meta.pricingTitle} description={t.meta.pricingDescription}>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">{p.eyebrow}</span>
+      <h1>{p.title}</h1>
+      <p>{p.subtitle}</p>
+
+      <div class="controls" data-pricing-controls>
+        <div class="segmented" role="radiogroup" aria-label={p.billing}>
+          {
+            intervals.map((interval) => (
+              <button
+                type="button"
+                role="radio"
+                data-interval={interval}
+                aria-checked={interval === defaultInterval ? 'true' : 'false'}
+              >
+                {interval === 'MONTH' ? p.monthly : p.yearly}
+              </button>
+            ))
+          }
+        </div>
+        <div class="segmented" role="radiogroup" aria-label={p.currency}>
+          {
+            currencies.map((currency) => (
+              <button
+                type="button"
+                role="radio"
+                data-currency={currency}
+                aria-checked={currency === defaultCurrency ? 'true' : 'false'}
+              >
+                {currency}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section plans-section">
+    <div class="container">
+      <div class="plans">
+        {
+          sorted.map((plan, index) => {
+            const key = plan.code.toLowerCase() as keyof typeof p.plans
+            const featured = plan.featured
+            return (
+              <article
+                class:list={['plan', { featured }]}
+                data-reveal
+                style={`--reveal-delay: ${index * 0.1}s`}
+                data-plan={plan.code}
+              >
+                {featured && <span class="badge">{p.popular}</span>}
+                <h2>{plan.name}</h2>
+                <p class="tagline">{p.plans[key]?.tagline}</p>
+
+                <div class="price">
+                  {currencies.flatMap((currency) =>
+                    intervals.map((interval) => {
+                      const price = priceOf(plan, currency, interval)
+                      const save = interval === 'YEAR' ? saving(plan, currency) : null
+                      return (
+                        <div
+                          class="price-option"
+                          data-currency={currency}
+                          data-interval={interval}
+                          data-available={price ? 'true' : 'false'}
+                          hidden={currency !== defaultCurrency || interval !== defaultInterval}
+                        >
+                          {price ? (
+                            <>
+                              <span class="amount">{money(currency, price.amountMinor)}</span>
+                              <span class="per">{interval === 'MONTH' ? p.perMonth : p.perYear}</span>
+                              {save && <span class="save">{p.save(String(save))}</span>}
+                            </>
+                          ) : (
+                            <span class="unavailable">{p.notAvailable}</span>
+                          )}
+                        </div>
+                      )
+                    }),
+                  )}
+                </div>
+
+                <a
+                  class:list={['btn', featured ? 'btn-primary' : 'btn-ghost', 'choose']}
+                  href={`${href(lang, 'signup')}?plan=${plan.code}`}
+                  data-base-href={`${href(lang, 'signup')}?plan=${plan.code}`}
+                >
+                  {p.choose}
+                </a>
+
+                <dl class="limits">
+                  <div>
+                    <dt>{p.limits.conversations}</dt>
+                    <dd>{count(plan.limits.maxAiConversationsPerMonth)}</dd>
+                  </div>
+                  <div>
+                    <dt>{p.limits.employees}</dt>
+                    <dd>{count(plan.limits.maxEmployees)}</dd>
+                  </div>
+                  <div>
+                    <dt>{p.limits.resources}</dt>
+                    <dd>{count(plan.limits.maxResources)}</dd>
+                  </div>
+                  <div>
+                    <dt>{p.limits.widgets}</dt>
+                    <dd>{count(plan.limits.maxWidgets)}</dd>
+                  </div>
+                </dl>
+              </article>
+            )
+          })
+        }
+      </div>
+
+      <div class="included" data-reveal>
+        <h2>{p.included}</h2>
+        <ul>
+          {
+            p.includedList.map((item) => (
+              <li>
+                <Icon name="check" size={18} />
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p class="trial-note">
+        {t.common.trialNote}
+        <br />
+        <small>{p.placeholderNote}</small>
+      </p>
+    </div>
+  </section>
+
+  <CtaBand lang={lang} title={t.home.ctaTitle} text={t.home.ctaText} />
+</Base>
+
+<script>
+  import { initPricing } from '../../scripts/pricing'
+  initPricing()
+</script>
+
+<style>
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .segmented {
+    display: inline-flex;
+    padding: 4px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .segmented button {
+    min-height: 40px;
+    padding: 0.45rem 1.1rem;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .segmented button[aria-checked='true'] {
+    background: var(--brand);
+    color: #fff;
+  }
+
+  .plans-section {
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .plans {
+    display: grid;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 900px) {
+    .plans {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .plan.featured {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      var(--brand) border-box;
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (min-width: 900px) {
+    .plan.featured {
+      transform: translateY(-12px);
+    }
+
+    .plan.featured.is-visible {
+      transform: translateY(-12px);
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: -13px;
+    inset-inline-start: 2rem;
+    padding: 0.25rem 0.8rem;
+    border-radius: 999px;
+    background: var(--coral);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .plan h2 {
+    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .price {
+    min-height: 92px;
+    margin: 0.5rem 0 1.25rem;
+  }
+
+  .price-option {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.5rem;
+  }
+
+  .price-option[hidden] {
+    display: none;
+  }
+
+  .amount {
+    color: var(--ink);
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .per {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .save {
+    flex-basis: 100%;
+    color: #15803d;
+    font-size: 0.85rem;
+    font-weight: 650;
+  }
+
+  .unavailable {
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .choose {
+    width: 100%;
+  }
+
+  .choose[aria-disabled='true'] {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .limits {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.75rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .limits div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .limits dt {
+    color: var(--text);
+  }
+
+  .limits dd {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .included {
+    margin-top: 3.5rem;
+    padding: 2rem;
+    border-radius: 24px;
+    background: var(--surface);
+    text-align: center;
+  }
+
+  .included h2 {
+    font-size: 1.25rem;
+  }
+
+  .included ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .included li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ink);
+    font-weight: 550;
+  }
+
+  .included :global(svg) {
+    color: var(--teal);
+  }
+
+  .trial-note {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--muted);
+  }
+</style>

@@ -1,0 +1,141 @@
+---
+/** Links to the same page in every language; remembers the choice for "/". */
+import { href, type Locale, localeNames, locales, type PagePath, useTranslations } from '../i18n'
+
+interface Props {
+  lang: Locale
+  page: PagePath
+  /** Opens upwards (footer). */
+  up?: boolean
+  dark?: boolean
+}
+
+const { lang, page, up = false, dark = false } = Astro.props
+const t = useTranslations(lang)
+---
+
+<details class:list={['lang-switcher', { up, dark }]}>
+  <summary aria-label={`${t.common.language}: ${localeNames[lang]}`}>
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"></circle>
+      <path
+        d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"></path>
+    </svg>
+    <span>{localeNames[lang]}</span>
+  </summary>
+  <ul>
+    {
+      locales.map((locale) => (
+        <li>
+          <a
+            href={href(locale, page)}
+            hreflang={locale}
+            lang={locale}
+            data-locale={locale}
+            aria-current={locale === lang ? 'true' : undefined}
+          >
+            {localeNames[locale]}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</details>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('.lang-switcher a[data-locale]').forEach((link) => {
+    link.addEventListener('click', () => {
+      try {
+        localStorage.setItem('samatrica-lang', link.dataset.locale ?? '')
+      } catch {
+        // Private mode: the choice just isn't remembered.
+      }
+    })
+  })
+
+  // Close when clicking elsewhere.
+  document.addEventListener('click', (event) => {
+    document.querySelectorAll<HTMLDetailsElement>('.lang-switcher[open]').forEach((details) => {
+      if (!details.contains(event.target as Node)) {
+        details.open = false
+      }
+    })
+  })
+</script>
+
+<style>
+  .lang-switcher {
+    position: relative;
+  }
+
+  summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 40px;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover {
+    background: var(--surface);
+  }
+
+  .dark summary {
+    color: #cbd5e1;
+  }
+
+  .dark summary:hover {
+    background: rgb(255 255 255 / 0.08);
+  }
+
+  ul {
+    position: absolute;
+    inset-inline-end: 0;
+    top: calc(100% + 6px);
+    z-index: 60;
+    min-width: 180px;
+    margin: 0;
+    padding: 0.4rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+  }
+
+  .up ul {
+    top: auto;
+    bottom: calc(100% + 6px);
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 9px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  a:hover {
+    background: var(--surface);
+  }
+
+  a[aria-current='true'] {
+    color: var(--teal);
+    font-weight: 650;
+  }
+</style>
