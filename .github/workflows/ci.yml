@@ -1,0 +1,58 @@
+# Continuous integration: every push and pull request is linted, type-checked
+# and built. A red result means: do not merge.
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+# A newer push on the same branch cancels the run still going for the older one.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+# The workflow only reads the code.
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Lint and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          # Keeps downloaded npm packages between runs (faster installs).
+          cache: npm
+
+      # Exactly the versions in package-lock.json. The postinstall script
+      # (scripts/ensure-compiler.mjs) does nothing here: the native Astro
+      # compiler loads on Linux.
+      - name: Install the dependencies
+        run: npm ci
+
+      # Only oxlint: "npm run lint" also runs astro check, which the build
+      # below runs anyway.
+      - name: Lint
+        run: npx oxlint src
+
+      # astro check (type check), then astro build into dist/.
+      - name: Type-check and build
+        run: npm run build
+
+      # The static site, ready to deploy (deployment comes later).
+      - name: Upload the build
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-dist
+          path: dist/
+          retention-days: 14
