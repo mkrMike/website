@@ -10,7 +10,7 @@ export const en = {
     clinicsTitle: 'Samatrica for clinics: patients request appointments, day and night',
     clinicsDescription:
       'Let patients request appointments and get answers 24/7 in their own language. You confirm each request; your front desk takes over the chat when it matters.',
-    signupTitle: 'Start your free trial: Samatrica',
+    signupTitle: 'Get started: Samatrica',
     signupDescription: 'Create your Samatrica account and add the AI assistant to your website.',
     contactTitle: 'Contact: Samatrica',
     contactDescription: 'Talk to the Samatrica team.',
@@ -23,7 +23,7 @@ export const en = {
   nav: {
     clinics: 'Clinics',
     contact: 'Contact',
-    startTrial: 'Start free trial',
+    startTrial: 'Get started',
     menu: 'Menu',
     close: 'Close',
     skipToContent: 'Skip to content',
@@ -31,12 +31,12 @@ export const en = {
   },
 
   common: {
-    startTrial: 'Start free trial',
+    startTrial: 'Get started',
     seeHowItWorks: 'See how it works',
     learnMore: 'Learn more',
     backToHome: 'Back to home',
     whatsapp: 'Chat with us on WhatsApp',
-    trialNote: '7-day free trial · Card required · Cancel anytime',
+    trialNote: 'No commitment · Cancel anytime · Pay only the current period',
     language: 'Language',
     comingSoon: 'Coming soon',
   },
@@ -63,7 +63,7 @@ export const en = {
     heroTitleAccent: 'In every language.',
     heroSubtitle:
       'Samatrica answers your patients on your website chat, finds free slots and takes appointment requests, day and night. You confirm each one, and your front desk takes over whenever a human touch is needed.',
-    heroProof: 'Contact us · 7-day free trial',
+    heroProof: 'Contact us · Cancel anytime',
 
     industriesEyebrow: 'Built for health clinics',
     industriesTitle: 'Made for clinics of every specialty',
@@ -149,8 +149,8 @@ export const en = {
         a: 'The assistant replies in the customer’s language. The dashboard is available in English, French, Arabic, Spanish, Russian and Greek.',
       },
       {
-        q: 'How does the free trial work?',
-        a: 'You get 7 days free on any plan. A card is required to start, and you can cancel anytime before the trial ends.',
+        q: 'Is there a commitment?',
+        a: 'No. You pay per billing period and can cancel at any time: the subscription simply ends at the close of the period already paid, and nothing further is charged.',
       },
       {
         q: 'Is my patients’ data safe?',
@@ -159,7 +159,7 @@ export const en = {
     ],
 
     ctaTitle: 'Never miss an appointment again',
-    ctaText: 'Start your 7-day free trial and let Samatrica answer your next patient tonight.',
+    ctaText: 'Get started and let Samatrica answer your next patient tonight.',
   },
 
   clinics: {
@@ -191,7 +191,7 @@ export const en = {
     title: 'Simple plans that grow with you',
     subtitle: 'Every plan includes the AI assistant, the dashboard and live takeover.',
     popular: 'Most popular',
-    choose: 'Start free trial',
+    choose: 'Get started',
     billing: 'Billing period',
     monthly: 'Monthly',
     yearly: 'Yearly',
@@ -224,8 +224,8 @@ export const en = {
   },
 
   signup: {
-    title: 'Start your free trial',
-    subtitle: '7 days free. A card is required; cancel anytime before the trial ends.',
+    title: 'Get started',
+    subtitle: 'No commitment: cancel anytime and pay only the current billing period.',
     businessName: 'Business name',
     businessPhone: 'Business phone',
     phoneHint: 'Include the country code, e.g. +971 4 234 5678',
@@ -259,6 +259,182 @@ export const en = {
     refundTitle: 'Refund policy',
     draft: 'Draft',
     placeholder: 'This page will be published before launch. Its text is being prepared and reviewed.',
+    draftNote: 'This draft is under legal review and is not yet binding.',
+    updated: 'Draft of 8 October 2026',
+
+    /** Section headings and paragraphs, rendered in order. */
+    terms: [
+      {
+        title: '1. Who we are and what these terms cover',
+        paragraphs: [
+          'The Service is provided by Samatrica OÜ, a private limited company registered in Estonia, registry code 16285192, VAT number EE102401154, registered address Sepapaja tn 6, 15551 Tallinn, Estonia (“Samatrica”).',
+          'Samatrica provides an AI assistant that answers visitors on a business’s website, finds free slots and takes appointment requests, together with a dashboard for the business’s team (the “Service”). These terms are an agreement between Samatrica and the business that opens an account (the “Business”), typically a health clinic. They do not create a contract between Samatrica and the Business’s patients or customers.',
+        ],
+      },
+      {
+        title: '2. What the Service does, and does not do',
+        paragraphs: [
+          'The assistant answers questions and takes appointment requests using the resources, opening hours and information the Business configures. Every appointment request must be confirmed or declined by the Business: the assistant never confirms appointments on its own.',
+          'The Service does not provide medical advice, diagnosis or treatment, and is not an emergency service. The Business must not configure or use the assistant to give medical advice, and remains solely responsible for all healthcare it provides.',
+        ],
+      },
+      {
+        title: '3. The Business’s responsibilities',
+        paragraphs: [
+          'The Business keeps its account credentials confidential and is responsible for the actions of its employees in the dashboard. The information it configures (services, doctors, hours, descriptions) must be accurate and lawful.',
+          'Towards its patients, the Business is the data controller: it must have a lawful basis to process the personal data collected through the chat, inform patients about this processing in its own privacy notices, and answer their data-protection requests. The data processing agreement between the Business and Samatrica (Section 6) governs Samatrica’s processing on the Business’s behalf.',
+        ],
+      },
+      {
+        title: '4. Acceptable use',
+        paragraphs: [
+          'The Service may not be used for unlawful purposes, to send spam, to collect data of persons without a lawful basis, to probe or disrupt the Service’s security, or to build a competing product. The chat widget may only be installed on websites the Business controls.',
+        ],
+      },
+      {
+        title: '5. Fees and cancellation',
+        paragraphs: [
+          'Fees, billing periods and payment methods are stated when the subscription is agreed, and may be updated with reasonable advance notice; price changes never apply retroactively. There is no minimum term: the Business can cancel at any time, the subscription ends at the close of the billing period already paid, and nothing further is charged.',
+        ],
+      },
+      {
+        title: '6. Data protection',
+        paragraphs: [
+          'For personal data of patients and other chat users, the Business is the controller and Samatrica the processor under the GDPR. A data processing agreement, including Samatrica’s sub-processors and security measures, forms part of this agreement. Samatrica hosts the Service’s data in the European Union (AWS, Frankfurt region).',
+          'Appointment requests in a healthcare context can reveal health information, which the GDPR treats as a special category of personal data. The Business confirms it is entitled to collect such data from its patients, and Samatrica processes it only to provide the Service.',
+        ],
+      },
+      {
+        title: '7. Availability',
+        paragraphs: [
+          'Samatrica provides the Service with reasonable skill and care, but does not promise uninterrupted availability. Planned maintenance and outages can occur; the chat widget is designed to degrade quietly on the Business’s website when the Service is unreachable.',
+        ],
+      },
+      {
+        title: '8. Liability',
+        paragraphs: [
+          'To the extent permitted by law, Samatrica’s total liability under this agreement is limited to the fees the Business paid in the 12 months before the event giving rise to the claim, and Samatrica is not liable for indirect damages such as lost profits. Nothing in these terms limits liability that cannot be limited by law.',
+        ],
+      },
+      {
+        title: '9. Termination and data',
+        paragraphs: [
+          'Either party may terminate with effect at the end of the paid period; Samatrica may suspend or terminate immediately on a serious breach of these terms. After termination, the Business can request an export of its data for 30 days; afterwards Samatrica deletes the Business’s personal data, except where law requires longer retention.',
+        ],
+      },
+      {
+        title: '10. Changes, law and disputes',
+        paragraphs: [
+          'Samatrica may update these terms with reasonable advance notice; continued use after the notice period means acceptance. These terms are governed by Estonian law, and the Estonian courts (Harju County Court as the court of first instance) have exclusive jurisdiction.',
+          'These terms are provided in several languages for convenience; in case of discrepancy, the English version prevails.',
+        ],
+      },
+    ],
+
+    refund: [
+      {
+        title: '1. Who this policy applies to',
+        paragraphs: [
+          'Samatrica is a service for businesses (health clinics), not consumers. The statutory 14-day right of withdrawal of EU consumer law therefore does not apply; the refund rights in this policy are the ones Samatrica grants by contract.',
+        ],
+      },
+      {
+        title: '2. Cancel at any time',
+        paragraphs: [
+          'There is no minimum term. You can cancel at any time by writing to contact@samatrica.com: the subscription ends at the close of the billing period already paid — the running bill — nothing further is charged, and you keep access until then.',
+        ],
+      },
+      {
+        title: '3. 14-day money-back guarantee on the first payment',
+        paragraphs: [
+          'If Samatrica does not work out for your clinic, write to contact@samatrica.com within 14 days of your first payment and we refund that payment in full, no questions asked. The refund goes to the original payment method, normally within 10 business days.',
+        ],
+      },
+      {
+        title: '4. Renewals',
+        paragraphs: [
+          'Renewal payments (monthly or yearly) are not refundable, but you can cancel at any time: the subscription then simply ends at the close of the period already paid, and you keep access until then. We recommend monthly billing until you are sure of the service.',
+        ],
+      },
+      {
+        title: '5. Billing errors and service failures',
+        paragraphs: [
+          'Amounts charged in error (for example a double charge, or a charge after a confirmed cancellation) are always refunded in full. If a prolonged outage on our side materially prevented you from using the service, contact us: we will credit or refund the affected period fairly.',
+        ],
+      },
+      {
+        title: '6. How to request a refund',
+        paragraphs: [
+          'Write to contact@samatrica.com from the email address of your account, naming your business. We confirm reception within 2 business days and tell you when the refund was issued.',
+          'This policy is provided in several languages for convenience; in case of discrepancy, the English version prevails.',
+        ],
+      },
+    ],
+
+    privacy: [
+      {
+        title: '1. Who we are',
+        paragraphs: [
+          'Samatrica is operated by Samatrica OÜ, registry code 16285192, Sepapaja tn 6, 15551 Tallinn, Estonia. It provides an AI booking assistant for health clinics. This policy explains how personal data is handled on this website and in the Samatrica chat widget installed on clinics’ websites. For any privacy question or request, write to contact@samatrica.com.',
+        ],
+      },
+      {
+        title: '2. Visitors of this website',
+        paragraphs: [
+          'When you contact us by email or WhatsApp, we process the contact details and the content of your message in order to answer you (WhatsApp messages are also processed by WhatsApp under its own privacy policy). We keep this correspondence as long as needed to handle your request and our business relationship.',
+          'This website itself sets no tracking or advertising cookies.',
+        ],
+      },
+      {
+        title: '3. The chat widget on a clinic’s website',
+        paragraphs: [
+          'When you chat with the Samatrica assistant on a clinic’s website, the clinic is the data controller and Samatrica processes your data on its behalf. We process the conversation content and, if you request an appointment, your first and last name, email address and phone number, in order to answer you and pass your request to the clinic.',
+          'In a healthcare context, your messages and appointment requests can reveal health information. They are used only to handle your request; the clinic you are writing to is the one responsible for this data, and you can exercise your data-protection rights with the clinic or by writing to us.',
+        ],
+      },
+      {
+        title: '4. AI processing',
+        paragraphs: [
+          'The assistant’s replies are generated by an AI language model. Conversation content is sent to our AI provider for this sole purpose, under a data processing agreement; it is not used to train the provider’s models.',
+        ],
+      },
+      {
+        title: '5. Where data is stored',
+        paragraphs: [
+          'The Service’s data is hosted on Amazon Web Services in the European Union (Frankfurt, Germany). Where a sub-processor processes data outside the EU, we rely on the safeguards the GDPR provides for such transfers, such as the EU standard contractual clauses.',
+        ],
+      },
+      {
+        title: '6. Sub-processors',
+        paragraphs: [
+          'We use a small number of service providers to run the Service: Amazon Web Services (hosting, EU), our AI language-model provider (assistant replies), and our email and SMS delivery providers (verification codes and notifications). The current list is available on request and is provided to clinics with their data processing agreement.',
+        ],
+      },
+      {
+        title: '7. Retention',
+        paragraphs: [
+          'Conversations and appointment requests are kept as long as the clinic uses the Service and needs them; verification codes expire within minutes and are not reused. When a clinic leaves Samatrica, its data is deleted after a 30-day export window, except where law requires longer retention.',
+        ],
+      },
+      {
+        title: '8. Security',
+        paragraphs: [
+          'All connections are encrypted in transit (TLS). Each clinic’s data is isolated: a clinic can only see its own conversations, patients and appointments. Access by Samatrica staff is limited to what operating the Service requires.',
+        ],
+      },
+      {
+        title: '9. Your rights',
+        paragraphs: [
+          'Under the GDPR you can request access to your personal data, its correction or deletion, restriction of processing, portability, and you can object to certain processing. Write to contact@samatrica.com (or to your clinic, for data processed on its behalf); we answer within the legal time limits. You can also lodge a complaint with your data protection authority.',
+        ],
+      },
+      {
+        title: '10. Local storage and changes',
+        paragraphs: [
+          'The chat widget stores only what it needs to keep your conversation open (a conversation identifier) in your browser’s local storage: no advertising or cross-site tracking. We will update this policy as the Service evolves and show the date of the current version at the top.',
+        ],
+      },
+    ],
   },
 
   footer: {

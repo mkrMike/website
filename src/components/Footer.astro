@@ -1,4 +1,5 @@
 ---
+import { site } from '../config/site'
 import { href, type Locale, type PagePath, useTranslations } from '../i18n'
 import Logo from './brand/Logo.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
@@ -46,7 +47,10 @@ const year = new Date().getFullYear()
     </div>
 
     <div class="bottom">
-      <p>© {year} Samatrica. {t.footer.rights}</p>
+      <div>
+        <p>© {year} Samatrica. {t.footer.rights}</p>
+        <p class="legal-line">{site.legalLine}</p>
+      </div>
       <LanguageSwitcher lang={lang} page={page} up dark />
     </div>
   </div>
@@ -119,5 +123,11 @@ const year = new Date().getFullYear()
 
   .bottom p {
     margin: 0;
+  }
+
+  .legal-line {
+    margin-top: 0.35rem;
+    font-size: 0.82rem;
+    color: #64748b;
   }
 </style>

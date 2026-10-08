@@ -8,9 +8,20 @@ const lang = Astro.params.lang as Locale
 const t = useTranslations(lang)
 ---
 
-<!-- Draft until a lawyer writes the real text before launch: no legal promises here, and noindex. -->
+<!-- Draft until a lawyer approves the text: marked as such, and noindex. -->
 <SimplePage lang={lang} page="terms" title={t.legal.termsTitle} metaTitle={t.meta.termsTitle} noindex>
-  <p class="draft"><span>{t.legal.draft}</span>{t.legal.placeholder}</p>
+  <p class="draft"><span>{t.legal.draft}</span>{t.legal.draftNote}</p>
+  <p class="updated">{t.legal.updated}</p>
+  {
+    t.legal.terms.map((section) => (
+      <section class="legal-section">
+        <h2>{section.title}</h2>
+        {section.paragraphs.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </section>
+    ))
+  }
 </SimplePage>
 
 <style>
@@ -32,5 +43,19 @@ const t = useTranslations(lang)
     color: #8a6100;
     font-size: 0.8rem;
     font-weight: 700;
+  }
+
+  .updated {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .legal-section h2 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .legal-section p {
+    color: var(--text);
   }
 </style>
