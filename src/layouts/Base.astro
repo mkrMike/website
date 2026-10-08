@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
 import { defaultLocale, href, isRtl, type Locale, locales, type PagePath, useTranslations } from '../i18n'
 
 interface Props {
@@ -60,6 +61,7 @@ const ogImage = new URL('/og-image.png', site).href
       <slot />
     </main>
     <Footer lang={lang} page={page} />
+    <WhatsAppButton lang={lang} />
 
     <script>
       import '../scripts/reveal'

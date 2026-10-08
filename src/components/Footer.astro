@@ -1,5 +1,4 @@
 ---
-import { site } from '../config/site'
 import { href, type Locale, type PagePath, useTranslations } from '../i18n'
 import Logo from './brand/Logo.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
@@ -26,17 +25,13 @@ const year = new Date().getFullYear()
         <div>
           <h2>{t.footer.product}</h2>
           <ul>
-            <li><a href={href(lang, 'clinics')}>{t.nav.clinics}</a></li>
-            <li><a href={href(lang, 'real-estate')}>{t.nav.realEstate}</a></li>
-            <li><a href={href(lang, 'pricing')}>{t.nav.pricing}</a></li>
-            <li><a href={href(lang, 'signup')}>{t.nav.startTrial}</a></li>
+            <li><a href={href(lang, 'contact')}>{t.nav.startTrial}</a></li>
           </ul>
         </div>
         <div>
           <h2>{t.footer.company}</h2>
           <ul>
             <li><a href={href(lang, 'contact')}>{t.nav.contact}</a></li>
-            <li><a href={site.dashboardUrl}>{t.nav.login}</a></li>
           </ul>
         </div>
         <div>

@@ -1,18 +1,13 @@
-import type { Dictionary } from './en'
+﻿import type { Dictionary } from './en'
 
 export const fr: Dictionary = {
   meta: {
-    homeTitle: 'Samatrica : l’assistant IA qui reçoit vos demandes de rendez-vous 24h/24',
+    homeTitle: 'Samatrica : l’assistant IA qui reçoit les demandes de rendez-vous de votre clinique 24h/24',
     homeDescription:
-      'Un assistant IA dans le chat de votre site répond à vos clients 24h/24 et 7j/7 dans leur langue, trouve les créneaux libres et recueille les demandes de rendez-vous, que vous confirmez. Votre équipe prend le relais si besoin.',
+      'Un assistant IA dans le chat du site de votre clinique répond à vos patients 24h/24 et 7j/7 dans leur langue, trouve les créneaux libres et recueille les demandes de rendez-vous, que vous confirmez. Votre accueil prend le relais si besoin.',
     clinicsTitle: 'Samatrica pour les cliniques : vos patients demandent un rendez-vous, jour et nuit',
     clinicsDescription:
       'Vos patients demandent un rendez-vous et obtiennent des réponses 24h/24 dans leur langue. Vous confirmez chaque demande ; votre accueil reprend la conversation quand c’est important.',
-    realEstateTitle: 'Samatrica pour l’immobilier : qualifiez vos prospects et recevez des demandes de visite',
-    realEstateDescription:
-      'Répondez instantanément aux demandes sur vos biens, qualifiez acheteurs et locataires, et recevez des demandes de visite que vos agents n’ont plus qu’à confirmer.',
-    pricingTitle: 'Tarifs : Samatrica',
-    pricingDescription: 'Des formules simples pour chaque entreprise. Essai gratuit de 14 jours, sans engagement.',
     signupTitle: 'Commencez votre essai gratuit : Samatrica',
     signupDescription: 'Créez votre compte Samatrica et ajoutez l’assistant IA à votre site web.',
     contactTitle: 'Contact : Samatrica',
@@ -25,10 +20,7 @@ export const fr: Dictionary = {
 
   nav: {
     clinics: 'Cliniques',
-    realEstate: 'Immobilier',
-    pricing: 'Tarifs',
     contact: 'Contact',
-    login: 'Se connecter',
     startTrial: 'Essai gratuit',
     menu: 'Menu',
     close: 'Fermer',
@@ -40,7 +32,9 @@ export const fr: Dictionary = {
     startTrial: 'Commencer l’essai gratuit',
     seeHowItWorks: 'Voir comment ça marche',
     learnMore: 'En savoir plus',
-    trialNote: 'Essai gratuit de 14 jours · Carte bancaire requise · Sans engagement',
+    backToHome: 'Retour à l’accueil',
+    whatsapp: 'Discutez avec nous sur WhatsApp',
+    trialNote: 'Essai gratuit de 7 jours · Carte bancaire requise · Sans engagement',
     language: 'Langue',
     comingSoon: 'Bientôt disponible',
   },
@@ -56,82 +50,68 @@ export const fr: Dictionary = {
       booked: 'Jeudi 16:00 · Dermatologie · Demande envoyée',
       confirmed: 'Confirmé par la clinique',
     },
-    realEstate: {
-      customer1: 'L’appartement de deux chambres dans la marina est-il toujours disponible ?',
-      assistant1: 'Oui ! Vous souhaitez louer ou acheter, et pour quand prévoyez-vous d’emménager ?',
-      customer2: 'Louer, à partir du mois prochain. Je peux le visiter samedi ?',
-      assistant2: 'Samedi à 11:00, **, notre agente, est disponible. Je lui transmets votre demande de visite ?',
-      booked: 'Samedi 11:00 · Visite · Demande envoyée',
-      confirmed: 'Confirmé par l’agence',
-    },
     typing: 'L’assistant écrit',
     placeholder: 'Écrivez un message…',
   },
 
   home: {
-    eyebrow: 'Assistant de réservation IA pour votre site web',
-    heroTitle: 'Votre accueil, ouvert 24h/24.',
+    eyebrow: 'Assistant de rendez-vous IA pour les cliniques',
+    heroTitle: 'L’accueil de votre clinique, éveillé 24h/24.',
     heroTitleAccent: 'Dans toutes les langues.',
     heroSubtitle:
-      'Samatrica répond à vos clients dans le chat de votre site, trouve les créneaux libres et recueille les demandes de rendez-vous, de jour comme de nuit. Vous confirmez chacune d’elles, et votre équipe prend le relais dès qu’une touche humaine s’impose.',
-    heroProof: 'Opérationnel en quelques minutes · Essai gratuit de 14 jours',
+      'Samatrica répond à vos patients dans le chat de votre site, trouve les créneaux libres et recueille les demandes de rendez-vous, de jour comme de nuit. Vous confirmez chacune d’elles, et votre accueil prend le relais dès qu’une touche humaine s’impose.',
+    heroProof: 'Contactez-nous · Essai gratuit de 7 jours',
 
-    industriesEyebrow: 'Conçu pour les rendez-vous',
-    industriesTitle: 'Pensé pour les cliniques et les agences immobilières',
-    industriesSubtitle: 'Deux métiers où chaque message sans réponse, c’est un patient ou une vente en moins.',
-    clinicCard: {
-      title: 'Cliniques et cabinets médicaux',
-      text: 'Vos patients demandent un rendez-vous avec un médecin à minuit et obtiennent des réponses sur vos services, sans appeler votre accueil.',
-      points: ['Demandes par médecin et par spécialité', 'Des réponses la nuit et le week-end', 'Vérification par e-mail et SMS'],
-    },
-    realEstateCard: {
-      title: 'Agences immobilières',
-      text: 'Chaque demande reçoit une réponse immédiate. L’assistant qualifie le prospect et transmet la demande de visite au bon agent.',
-      points: ['Demandes de visite, confirmées par vous', 'Qualification des acheteurs et locataires', 'Prospects chauds transmis à un agent'],
-    },
-
-    everyBusinessTitle: 'Et pour toute entreprise qui fonctionne sur rendez-vous',
-    businesses: {
-      salon: 'Salons de coiffure',
-      restaurant: 'Restaurants',
-      spa: 'Spas',
-      gym: 'Salles de sport',
-      garage: 'Garages',
-      consultant: 'Consultants',
-    },
+    industriesEyebrow: 'Conçu pour les cliniques',
+    industriesTitle: 'Pensé pour les cliniques de toutes spécialités',
+    industriesSubtitle: 'Du cabinet individuel à la clinique multisite : chaque message sans réponse, c’est un patient en moins.',
+    clinicCards: [
+      {
+        title: 'Des rendez-vous à toute heure',
+        text: 'Vos patients demandent un rendez-vous avec un médecin à minuit et obtiennent des réponses sur vos services, sans appeler votre accueil.',
+      },
+      {
+        title: 'Demandes par médecin et par spécialité',
+        text: 'Chaque médecin ou salle a ses propres horaires et sa durée de créneau : l’assistant ne propose que des créneaux réellement libres.',
+      },
+      {
+        title: 'Patients vérifiés',
+        text: 'Les patients confirment leur e-mail et leur téléphone avec un code avant que leur demande ne vous parvienne : fini les fausses réservations.',
+      },
+    ],
 
     howEyebrow: 'Comment ça marche',
     howTitle: 'En ligne en trois étapes',
     steps: [
       {
         title: 'Ajoutez le widget',
-        text: 'Collez une seule ligne de code sur votre site. Configurez vos ressources, vos horaires d’ouverture et vos heures de service dans le tableau de bord.',
+        text: 'Collez une seule ligne de code sur le site de votre clinique. Configurez vos médecins, vos horaires d’ouverture et vos heures de service dans le tableau de bord.',
       },
       {
         title: 'L’IA répond et recueille la demande',
-        text: 'L’assistant répond aux questions, trouve les créneaux libres et recueille la demande de rendez-vous. Le client la vérifie par e-mail et par SMS, puis vous la confirmez.',
+        text: 'L’assistant répond aux questions, trouve les créneaux libres et recueille la demande de rendez-vous. Le patient la vérifie par e-mail et par SMS, puis vous la confirmez.',
       },
       {
-        title: 'Votre équipe prend le relais',
-        text: 'Quand un client demande à parler à quelqu’un, un collaborateur reprend la conversation en direct, pendant vos heures de service.',
+        title: 'Votre accueil prend le relais',
+        text: 'Quand un patient demande à parler à quelqu’un, une secrétaire reprend la conversation en direct, pendant vos heures de service.',
       },
     ],
 
     featuresEyebrow: 'Fonctionnalités',
     featuresTitle: 'Tout ce dont votre accueil a besoin',
     features: [
-      { title: 'Disponible 24h/24', text: 'Nuits, week-ends et jours fériés : aucune demande n’attend le lendemain matin.' },
-      { title: 'Disponibilités réelles', text: 'L’assistant ne propose que des créneaux compatibles avec les horaires, les fermetures et les rendez-vous existants de chaque ressource.' },
-      { title: 'Clients vérifiés', text: 'Les clients se vérifient avec un code reçu par e-mail et SMS : fini les fausses demandes.' },
-      { title: 'Reprise en direct', text: 'Votre équipe suit chaque conversation en temps réel et peut intervenir en un clic.' },
-      { title: 'Heures de service', text: 'En dehors de vos heures, l’assistant indique aux clients quand votre équipe sera de retour.' },
-      { title: 'Un seul tableau de bord', text: 'Conversations, réservations, ressources, collaborateurs et horaires, réunis au même endroit.' },
+      { title: 'Disponible 24h/24', text: 'Nuits, week-ends et jours fériés : aucun patient n’attend le lendemain matin.' },
+      { title: 'Disponibilités réelles', text: 'L’assistant ne propose que des créneaux compatibles avec les horaires, les fermetures et les rendez-vous existants de chaque médecin.' },
+      { title: 'Patients vérifiés', text: 'Les patients se vérifient avec un code reçu par e-mail et SMS : fini les fausses demandes.' },
+      { title: 'Reprise en direct', text: 'Votre accueil suit chaque conversation en temps réel et peut intervenir en un clic.' },
+      { title: 'Heures de service', text: 'En dehors de vos heures, l’assistant indique aux patients quand votre équipe sera de retour.' },
+      { title: 'Un seul tableau de bord', text: 'Conversations, rendez-vous, médecins, collaborateurs et horaires, réunis au même endroit.' },
     ],
 
     languagesEyebrow: 'Multilingue',
-    languagesTitle: 'Parle la langue de vos clients',
+    languagesTitle: 'Parle la langue de vos patients',
     languagesText:
-      'Vos clients écrivent en arabe, en anglais, en français, en russe ou dans n’importe quelle autre langue : l’assistant leur répond naturellement dans la même langue. Votre tableau de bord est disponible en six langues, dont l’arabe entièrement de droite à gauche.',
+      'Vos patients écrivent en arabe, en anglais, en français, en russe ou dans n’importe quelle autre langue : l’assistant leur répond naturellement dans la même langue. Votre tableau de bord est disponible en six langues, dont l’arabe entièrement de droite à gauche.',
     languagesSample: [
       { lang: 'العربية', text: 'هل يوجد موعد يوم الخميس؟' },
       { lang: 'English', text: 'Is there a slot on Thursday?' },
@@ -139,7 +119,7 @@ export const fr: Dictionary = {
       { lang: 'Русский', text: 'Есть ли время в четверг?' },
     ],
 
-    statsTitle: 'Pourquoi les entreprises choisissent Samatrica',
+    statsTitle: 'Pourquoi les cliniques choisissent Samatrica',
     stats: [
       { value: '24/7', label: 'Toujours disponible' },
       { value: '1', label: 'Ligne de code à installer' },
@@ -155,28 +135,28 @@ export const fr: Dictionary = {
       },
       {
         q: 'L’assistant confirme-t-il les rendez-vous tout seul ?',
-        a: 'Non. L’assistant recueille des demandes de rendez-vous sur des créneaux libres, en fonction des ressources et des horaires d’ouverture que vous avez définis. Vous confirmez ou refusez chacune d’elles depuis le tableau de bord, et le client en est informé.',
+        a: 'Non. L’assistant recueille des demandes de rendez-vous sur des créneaux libres, en fonction des médecins et des horaires d’ouverture que vous avez définis. Vous confirmez ou refusez chacune d’elles depuis le tableau de bord, et le patient en est informé.',
       },
       {
-        q: 'Que se passe-t-il quand un client veut parler à quelqu’un ?',
-        a: 'Pendant vos heures de service, un collaborateur reprend la conversation en direct depuis le tableau de bord. En dehors de ces heures, l’assistant indique au client quand revenir.',
+        q: 'Que se passe-t-il quand un patient veut parler à quelqu’un ?',
+        a: 'Pendant vos heures de service, une secrétaire reprend la conversation en direct depuis le tableau de bord. En dehors de ces heures, l’assistant indique au patient quand revenir.',
       },
       {
         q: 'Quelles langues parle-t-il ?',
-        a: 'L’assistant répond dans la langue du client. Le tableau de bord est disponible en anglais, français, arabe, espagnol, russe et grec.',
+        a: 'L’assistant répond dans la langue du patient. Le tableau de bord est disponible en anglais, français, arabe, espagnol, russe et grec.',
       },
       {
         q: 'Comment fonctionne l’essai gratuit ?',
-        a: 'Vous profitez de 14 jours gratuits sur la formule de votre choix. Une carte bancaire est requise pour commencer, et vous pouvez résilier à tout moment avant la fin de l’essai.',
+        a: 'Vous profitez de 7 jours gratuits sur la formule de votre choix. Une carte bancaire est requise pour commencer, et vous pouvez résilier à tout moment avant la fin de l’essai.',
       },
       {
-        q: 'Les données de mes clients sont-elles en sécurité ?',
-        a: 'Chaque entreprise ne voit que ses propres clients, conversations et réservations. Les clients confirment leur adresse e-mail et leur numéro de téléphone avec un code avant qu’une demande de rendez-vous ne vous parvienne.',
+        q: 'Les données de mes patients sont-elles en sécurité ?',
+        a: 'Chaque clinique ne voit que ses propres patients, conversations et rendez-vous. Les patients confirment leur adresse e-mail et leur numéro de téléphone avec un code avant qu’une demande de rendez-vous ne vous parvienne.',
       },
     ],
 
-    ctaTitle: 'Ne manquez plus jamais une réservation',
-    ctaText: 'Commencez votre essai gratuit de 14 jours et laissez Samatrica répondre à votre prochain client dès ce soir.',
+    ctaTitle: 'Ne manquez plus jamais un rendez-vous',
+    ctaText: 'Commencez votre essai gratuit de 7 jours et laissez Samatrica répondre à votre prochain patient dès ce soir.',
   },
 
   clinics: {
@@ -201,30 +181,6 @@ export const fr: Dictionary = {
     ],
     note: 'Samatrica gère les demandes de rendez-vous et les questions générales. Il ne donne aucun conseil médical.',
     ctaTitle: 'Offrez à vos patients un accueil qui ne dort jamais',
-  },
-
-  realEstate: {
-    eyebrow: 'Pour les agences immobilières',
-    title: 'Chaque demande traitée. Chaque demande de visite recueillie.',
-    subtitle:
-      'Samatrica répond aux demandes sur vos biens en quelques secondes, qualifie le prospect et transmet la demande de visite au bon agent.',
-    painTitle: 'Un prospect refroidit en quelques minutes',
-    pains: [
-      { title: 'Réponses trop lentes', text: 'Un acheteur qui attend des heures une réponse a déjà appelé une autre agence.' },
-      { title: 'Prospects non qualifiés', text: 'Vos agents perdent du temps sur des appels qui n’aboutiront jamais.' },
-      { title: 'Le casse-tête des visites', text: 'Les allers-retours de messages pour trouver un créneau font perdre du temps à tout le monde.' },
-    ],
-    benefitsTitle: 'Ce que Samatrica apporte à votre agence',
-    benefits: [
-      { title: 'Réponses instantanées', text: 'Chaque demande reçoit une réponse en quelques secondes, à toute heure.' },
-      { title: 'Qualification des prospects', text: 'Location ou achat, budget, date d’emménagement : l’assistant pose les questions avant de transmettre la demande.' },
-      { title: 'Visites dans l’agenda', text: 'Chaque agent ou bien est une ressource avec ses disponibilités réelles.' },
-      { title: 'Prospects chauds transmis', text: 'Un agent reprend la conversation en direct dès que le prospect est prêt.' },
-      { title: 'Toutes les langues', text: 'Acheteurs et locataires internationaux obtiennent des réponses dans leur propre langue.' },
-      { title: 'Un seul tableau de bord', text: 'Retrouvez toutes vos conversations et visites au même endroit.' },
-    ],
-    note: 'Connectez vos annonces plus tard : pour l’instant, l’assistant recueille les demandes de visite et répond à partir des informations que vous lui donnez.',
-    ctaTitle: 'Transformez chaque demande en visite',
   },
 
   pricing: {
@@ -258,22 +214,21 @@ export const fr: Dictionary = {
     ],
     placeholderNote: 'Les prix et limites sont indicatifs et peuvent évoluer avant le lancement.',
     plans: {
-      starter: { name: 'Starter', tagline: 'Pour un cabinet ou une boutique' },
-      pro: { name: 'Pro', tagline: 'Pour les équipes en croissance' },
-      business: { name: 'Business', tagline: 'Pour les cliniques et agences multisites' },
+      starter: { name: 'Starter', tagline: 'Pour un cabinet individuel' },
+      pro: { name: 'Pro', tagline: 'Pour les cliniques en croissance' },
+      business: { name: 'Business', tagline: 'Pour les cliniques multisites' },
     },
   },
 
   signup: {
     title: 'Commencez votre essai gratuit',
-    subtitle: '14 jours gratuits. Carte bancaire requise ; résiliable à tout moment avant la fin de l’essai.',
+    subtitle: '7 jours gratuits. Carte bancaire requise ; résiliable à tout moment avant la fin de l’essai.',
     businessName: 'Nom de l’entreprise',
     businessPhone: 'Téléphone de l’entreprise',
     phoneHint: 'Indiquez l’indicatif du pays, par ex. +971 4 234 5678',
     timezone: 'Fuseau horaire',
     adminEmail: 'Votre e-mail',
     adminEmailHint: 'Vous serez le premier administrateur du tableau de bord.',
-    plan: 'Formule',
     acceptTerms: 'J’accepte les {terms} et la {privacy}',
     termsLink: 'conditions d’utilisation',
     privacyLink: 'politique de confidentialité',
@@ -282,15 +237,14 @@ export const fr: Dictionary = {
     invalidEmail: 'Saisissez une adresse e-mail valide.',
     invalidPhone: 'Saisissez un numéro de téléphone valide avec l’indicatif du pays.',
     mustAccept: 'Veuillez accepter les conditions pour continuer.',
-    comingSoonTitle: 'Vous y êtes presque !',
-    comingSoonText:
-      'L’inscription en ligne ouvre très bientôt. Merci de votre intérêt : vos informations ont été vérifiées, mais n’ont encore été envoyées nulle part.',
+    thanksTitle: 'Merci !',
+    thanksText: 'Nous avons bien reçu vos informations et nous vous contacterons très bientôt.',
     back: 'Modifier mes informations',
   },
 
   contact: {
     title: 'Contactez-nous',
-    subtitle: 'Une question sur Samatrica, une démo pour votre clinique ou votre agence, ou une formule sur mesure ? Nous serions ravis d’échanger avec vous.',
+    subtitle: 'Une question sur Samatrica, une démo pour votre clinique ou une formule sur mesure ? Nous serions ravis d’échanger avec vous.',
     emailLabel: 'E-mail',
     placeholder: 'Nos coordonnées seront bientôt disponibles.',
   },
@@ -304,7 +258,7 @@ export const fr: Dictionary = {
   },
 
   footer: {
-    tagline: 'L’assistant IA qui répond à vos clients et recueille leurs demandes de rendez-vous, 24h/24 et 7j/7.',
+    tagline: 'L’assistant IA qui répond à vos patients et recueille leurs demandes de rendez-vous, 24h/24 et 7j/7.',
     product: 'Produit',
     company: 'Entreprise',
     legal: 'Mentions légales',

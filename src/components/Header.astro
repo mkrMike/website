@@ -1,5 +1,4 @@
 ---
-import { site } from '../config/site'
 import { href, type Locale, type PagePath, useTranslations } from '../i18n'
 import Logo from './brand/Logo.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
@@ -12,12 +11,7 @@ interface Props {
 const { lang, page } = Astro.props
 const t = useTranslations(lang)
 
-const links: { page: PagePath; label: string }[] = [
-  { page: 'clinics', label: t.nav.clinics },
-  { page: 'real-estate', label: t.nav.realEstate },
-  { page: 'pricing', label: t.nav.pricing },
-  { page: 'contact', label: t.nav.contact },
-]
+const links: { page: PagePath; label: string }[] = [{ page: 'contact', label: t.nav.contact }]
 ---
 
 <header class="site-header">
@@ -40,8 +34,7 @@ const links: { page: PagePath; label: string }[] = [
       </ul>
       <div class="nav-actions">
         <LanguageSwitcher lang={lang} page={page} />
-        <a class="login" href={site.dashboardUrl}>{t.nav.login}</a>
-        <a class="btn btn-primary btn-sm" href={href(lang, 'signup')}>{t.nav.startTrial}</a>
+        <a class="btn btn-primary btn-sm" href={href(lang, 'contact')}>{t.nav.startTrial}</a>
       </div>
     </nav>
 
@@ -111,8 +104,7 @@ const links: { page: PagePath; label: string }[] = [
     list-style: none;
   }
 
-  .nav ul a,
-  .login {
+  .nav ul a {
     display: inline-flex;
     align-items: center;
     min-height: 40px;
@@ -124,8 +116,7 @@ const links: { page: PagePath; label: string }[] = [
     text-decoration: none;
   }
 
-  .nav ul a:hover,
-  .login:hover {
+  .nav ul a:hover {
     background: var(--surface);
     color: var(--ink);
   }

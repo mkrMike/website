@@ -1,5 +1,5 @@
 ---
-/** The dedicated landing page of a featured industry (clinics, real estate). */
+/** The dedicated landing page for health clinics. */
 import Base from '../layouts/Base.astro'
 import { href, type Locale, useTranslations } from '../i18n'
 import ChatMock from './ChatMock.astro'
@@ -8,39 +8,33 @@ import Icon from './Icon.astro'
 
 interface Props {
   lang: Locale
-  industry: 'clinics' | 'realEstate'
 }
 
-const { lang, industry } = Astro.props
+const { lang } = Astro.props
 const t = useTranslations(lang)
-const copy = t[industry]
-const isClinic = industry === 'clinics'
+const copy = t.clinics
 
-const painIcons = isClinic
-  ? (['moon', 'phone', 'calendar'] as const)
-  : (['clock', 'filter', 'chat'] as const)
-const benefitIcons = isClinic
-  ? (['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed'] as const)
-  : (['bolt', 'filter', 'key', 'hand', 'globe', 'layout'] as const)
+const painIcons = ['moon', 'phone', 'calendar'] as const
+const benefitIcons = ['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed'] as const
 ---
 
 <Base
   lang={lang}
-  page={isClinic ? 'clinics' : 'real-estate'}
-  title={isClinic ? t.meta.clinicsTitle : t.meta.realEstateTitle}
-  description={isClinic ? t.meta.clinicsDescription : t.meta.realEstateDescription}
+  page="clinics"
+  title={t.meta.clinicsTitle}
+  description={t.meta.clinicsDescription}
 >
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">
-          <Icon name={isClinic ? 'stethoscope' : 'building'} size={16} />
+          <Icon name="stethoscope" size={16} />
           {copy.eyebrow}
         </span>
         <h1>{copy.title}</h1>
         <p class="lead">{copy.subtitle}</p>
         <div class="actions">
-          <a class="btn btn-primary" href={href(lang, 'signup')}>
+          <a class="btn btn-primary" href={href(lang, 'contact')}>
             {t.common.startTrial} <span class="arrow" aria-hidden="true">→</span>
           </a>
           <a class="btn btn-ghost" href={href(lang, '', 'how')}>{t.common.seeHowItWorks}</a>
@@ -48,7 +42,7 @@ const benefitIcons = isClinic
         <p class="trial">{t.common.trialNote}</p>
       </div>
       <div class="visual">
-        <ChatMock lang={lang} scenario={isClinic ? 'clinic' : 'realEstate'} />
+        <ChatMock lang={lang} />
       </div>
     </div>
   </section>
@@ -97,6 +91,11 @@ const benefitIcons = isClinic
   </section>
 
   <CtaBand lang={lang} title={copy.ctaTitle} />
+
+  <!-- Switch back to the principal screen. -->
+  <a class="screen-arrow prev" href={href(lang)} title={t.common.backToHome} aria-label={t.common.backToHome}>
+    ←
+  </a>
 </Base>
 
 <style>

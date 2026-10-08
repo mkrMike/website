@@ -11,15 +11,7 @@ const lang = Astro.params.lang as Locale
 const t = useTranslations(lang)
 const h = t.home
 
-const businesses = [
-  { icon: 'scissors', label: h.businesses.salon },
-  { icon: 'utensils', label: h.businesses.restaurant },
-  { icon: 'leaf', label: h.businesses.spa },
-  { icon: 'dumbbell', label: h.businesses.gym },
-  { icon: 'wrench', label: h.businesses.garage },
-  { icon: 'briefcase', label: h.businesses.consultant },
-] as const
-
+const clinicIcons = ['moon', 'stethoscope', 'shield'] as const
 const stepIcons = ['code', 'chat', 'users'] as const
 const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] as const
 ---
@@ -36,7 +28,7 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
         </h1>
         <p class="lead">{h.heroSubtitle}</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href={href(lang, 'signup')}>
+          <a class="btn btn-primary" href={href(lang, 'contact')}>
             {t.common.startTrial} <span class="arrow" aria-hidden="true">→</span>
           </a>
           <a class="btn btn-ghost" href="#how">{t.common.seeHowItWorks}</a>
@@ -45,7 +37,7 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
       </div>
 
       <div class="hero-visual">
-        <ChatMock lang={lang} scenario="clinic" />
+        <ChatMock lang={lang} />
         <div class="float float-a" aria-hidden="true">
           <Icon name="moon" size={18} />
           <span>{h.features[0]!.title}</span>
@@ -67,42 +59,20 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
         <p>{h.industriesSubtitle}</p>
       </div>
 
-      <div class="grid grid-2">
-        <article class="card industry" data-reveal>
-          <div class="industry-icon"><Icon name="stethoscope" size={28} /></div>
-          <h3>{h.clinicCard.title}</h3>
-          <p>{h.clinicCard.text}</p>
-          <ul class="check-list">{h.clinicCard.points.map((point) => <li>{point}</li>)}</ul>
-          <a class="more" href={href(lang, 'clinics')}>
-            {t.common.learnMore} <span class="arrow" aria-hidden="true">→</span>
-          </a>
-        </article>
-        <article class="card industry" data-reveal style="--reveal-delay: 0.1s">
-          <div class="industry-icon"><Icon name="building" size={28} /></div>
-          <h3>{h.realEstateCard.title}</h3>
-          <p>{h.realEstateCard.text}</p>
-          <ul class="check-list">{h.realEstateCard.points.map((point) => <li>{point}</li>)}</ul>
-          <a class="more" href={href(lang, 'real-estate')}>
-            {t.common.learnMore} <span class="arrow" aria-hidden="true">→</span>
-          </a>
-        </article>
+      <div class="grid grid-3">
+        {
+          h.clinicCards.map((card, index) => (
+            <article class="card industry" data-reveal style={`--reveal-delay: ${index * 0.1}s`}>
+              <div class="industry-icon">
+                <Icon name={clinicIcons[index] ?? 'check'} size={28} />
+              </div>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))
+        }
       </div>
 
-      <div class="every" data-reveal>
-        <h3>{h.everyBusinessTitle}</h3>
-        <ul>
-          {
-            businesses.map((business) => (
-              <li>
-                <span class="icon-tile">
-                  <Icon name={business.icon} />
-                </span>
-                {business.label}
-              </li>
-            ))
-          }
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -207,6 +177,11 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
   </section>
 
   <CtaBand lang={lang} title={h.ctaTitle} text={h.ctaText} />
+
+  <!-- Switch to the clinics screen. -->
+  <a class="screen-arrow" href={href(lang, 'clinics')} title={t.nav.clinics} aria-label={t.nav.clinics}>
+    →
+  </a>
 </Base>
 
 <style>
@@ -339,59 +314,6 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
 
   .industry h3 {
     font-size: 1.5rem;
-  }
-
-  .more {
-    display: inline-flex;
-    gap: 0.4rem;
-    margin-top: 1.5rem;
-    font-weight: 650;
-    text-decoration: none;
-  }
-
-  [dir='rtl'] .more .arrow {
-    transform: scaleX(-1);
-  }
-
-  .every {
-    margin-top: clamp(3rem, 6vw, 4.5rem);
-    text-align: center;
-  }
-
-  .every h3 {
-    color: var(--muted);
-    font-size: 1.05rem;
-    font-weight: 600;
-  }
-
-  .every ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .every li {
-    display: grid;
-    justify-items: center;
-    gap: 0.25rem;
-    padding: 1.25rem 0.75rem;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    color: var(--ink);
-    font-weight: 600;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-
-  .every li:hover {
-    border-color: rgb(15 118 110 / 0.45);
-    transform: translateY(-2px);
-  }
-
-  .every .icon-tile {
-    margin-bottom: 0.5rem;
   }
 
   /* Steps */

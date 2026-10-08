@@ -1,6 +1,4 @@
 import { type SubmitEvent, useEffect, useMemo, useState } from 'react'
-import type { Currency, Interval, PlanCode } from '../config/plans'
-import { preferredCurrency, preferredInterval, rememberCurrency, rememberInterval } from '../scripts/billing'
 
 /**
  * Signup: checked in the browser only. Not wired yet: the backend endpoint
@@ -14,11 +12,6 @@ export interface SignupStrings {
   timezone: string
   adminEmail: string
   adminEmailHint: string
-  plan: string
-  currency: string
-  billing: string
-  monthly: string
-  yearly: string
   /** With "{terms}" and "{privacy}" where the two links go. */
   acceptTerms: string
   termsLink: string
@@ -28,15 +21,13 @@ export interface SignupStrings {
   invalidEmail: string
   invalidPhone: string
   mustAccept: string
-  comingSoonTitle: string
-  comingSoonText: string
+  thanksTitle: string
+  thanksText: string
   back: string
 }
 
 interface Props {
   strings: SignupStrings
-  plans: { code: PlanCode; name: string }[]
-  currencies: Currency[]
   termsHref: string
   privacyHref: string
 }
@@ -76,14 +67,11 @@ const browserZone = () => {
   }
 }
 
-export default function SignupForm({ strings: s, plans, currencies, termsHref, privacyHref }: Props) {
+export default function SignupForm({ strings: s, termsHref, privacyHref }: Props) {
   const [businessName, setBusinessName] = useState('')
   const [phone, setPhone] = useState('')
   const [timezone, setTimezone] = useState('Asia/Dubai')
   const [adminEmail, setAdminEmail] = useState('')
-  const [plan, setPlan] = useState<PlanCode>('PRO')
-  const [currency, setCurrency] = useState<Currency>('AED')
-  const [interval, setInterval] = useState<Interval>('MONTH')
   const [terms, setTerms] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<Partial<Record<Field, string>>>({})
@@ -97,20 +85,10 @@ export default function SignupForm({ strings: s, plans, currencies, termsHref, p
     }
   }, [])
 
-  // Browser-only defaults: the visitor's zone, remembered billing, and the plan
-  // chosen on the pricing page (?plan=PRO&currency=EUR&interval=YEAR).
+  // Browser-only default: the visitor's time zone.
   useEffect(() => {
-    const params = new URLSearchParams(location.search)
     setTimezone(browserZone())
-    const fromPlan = params.get('plan')
-    if (plans.some((p) => p.code === fromPlan)) {
-      setPlan(fromPlan as PlanCode)
-    }
-    const fromCurrency = params.get('currency')
-    setCurrency(currencies.includes(fromCurrency as Currency) ? (fromCurrency as Currency) : preferredCurrency())
-    const fromInterval = params.get('interval')
-    setInterval(fromInterval === 'YEAR' || fromInterval === 'MONTH' ? fromInterval : preferredInterval())
-  }, [plans, currencies])
+  }, [])
 
   function validate() {
     const found: Partial<Record<Field, string>> = {}
@@ -142,8 +120,6 @@ export default function SignupForm({ strings: s, plans, currencies, termsHref, p
       document.getElementById(`signup-${first}`)?.focus()
       return
     }
-    rememberCurrency(currency)
-    rememberInterval(interval)
     // TODO: POST to the signup endpoint, then redirect to Stripe Checkout.
     setDone(true)
   }
@@ -154,8 +130,8 @@ export default function SignupForm({ strings: s, plans, currencies, termsHref, p
         <div className="signup-done-icon" aria-hidden="true">
           ✓
         </div>
-        <h2>{s.comingSoonTitle}</h2>
-        <p>{s.comingSoonText}</p>
+        <h2>{s.thanksTitle}</h2>
+        <p>{s.thanksText}</p>
         <button type="button" className="btn btn-ghost" onClick={() => setDone(false)}>
           {s.back}
         </button>
@@ -249,46 +225,6 @@ export default function SignupForm({ strings: s, plans, currencies, termsHref, p
           {s.adminEmailHint}
         </span>
         {error('adminEmail')}
-      </div>
-
-      <div className="signup-row">
-        <div className="field">
-          <label htmlFor="signup-plan">{s.plan}</label>
-          <select id="signup-plan" className="input" value={plan} onChange={(event) => setPlan(event.target.value as PlanCode)}>
-            {plans.map((option) => (
-              <option key={option.code} value={option.code}>
-                {option.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="field">
-          <label htmlFor="signup-currency">{s.currency}</label>
-          <select
-            id="signup-currency"
-            className="input"
-            value={currency}
-            onChange={(event) => setCurrency(event.target.value as Currency)}
-          >
-            {currencies.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="field">
-          <label htmlFor="signup-interval">{s.billing}</label>
-          <select
-            id="signup-interval"
-            className="input"
-            value={interval}
-            onChange={(event) => setInterval(event.target.value as Interval)}
-          >
-            <option value="MONTH">{s.monthly}</option>
-            <option value="YEAR">{s.yearly}</option>
-          </select>
-        </div>
       </div>
 
       <div className="field">

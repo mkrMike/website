@@ -22,10 +22,9 @@ const t = useTranslations(lang)
       <h2>{title}</h2>
       {text && <p>{text}</p>}
       <div class="actions">
-        <a class="btn btn-primary" href={href(lang, 'signup')}>
+        <a class="btn btn-primary" href={href(lang, 'contact')}>
           {t.common.startTrial} <span class="arrow" aria-hidden="true">→</span>
         </a>
-        <a class="btn btn-light" href={href(lang, 'pricing')}>{t.nav.pricing}</a>
       </div>
       <small>{t.common.trialNote}</small>
     </div>

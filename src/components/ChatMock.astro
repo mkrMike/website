@@ -9,12 +9,11 @@ import Icon from './Icon.astro'
 
 interface Props {
   lang: Locale
-  scenario?: 'clinic' | 'realEstate'
 }
 
-const { lang, scenario = 'clinic' } = Astro.props
+const { lang } = Astro.props
 const t = useTranslations(lang)
-const c = t.chat[scenario]
+const c = t.chat.clinic
 
 const messages = [
   { from: 'customer', text: c.customer1 },
