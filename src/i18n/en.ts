@@ -23,6 +23,7 @@ export const en = {
   nav: {
     clinics: 'Clinics',
     contact: 'Contact',
+    login: 'Log in',
     startTrial: 'Get started',
     menu: 'Menu',
     close: 'Close',

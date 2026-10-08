@@ -21,6 +21,7 @@ export const ar: Dictionary = {
   nav: {
     clinics: 'العيادات',
     contact: 'تواصل معنا',
+    login: 'تسجيل الدخول',
     startTrial: 'ابدأ الآن',
     menu: 'القائمة',
     close: 'إغلاق',

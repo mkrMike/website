@@ -21,6 +21,7 @@ export const fr: Dictionary = {
   nav: {
     clinics: 'Cliniques',
     contact: 'Contact',
+    login: 'Se connecter',
     startTrial: 'Lancez-vous',
     menu: 'Menu',
     close: 'Fermer',

@@ -21,6 +21,7 @@ export const ru: Dictionary = {
   nav: {
     clinics: 'Клиники',
     contact: 'Контакты',
+    login: 'Войти',
     startTrial: 'Начать',
     menu: 'Меню',
     close: 'Закрыть',

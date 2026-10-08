@@ -2,7 +2,7 @@
 export const site = {
   name: 'Samatrica',
   /** Where "Log in" goes: the business dashboard. */
-  dashboardUrl: 'https://app.samatrica.com/',
+  dashboardUrl: 'https://dashboard.samatrica.com/',
   contactEmail: 'contact@samatrica.com',
   /** The legal entity, shown in the footer and legal pages (language-neutral). */
   legalName: 'Samatrica OÜ',
