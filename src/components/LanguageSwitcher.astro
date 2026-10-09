@@ -121,6 +121,17 @@ const t = useTranslations(lang)
     bottom: calc(100% + 6px);
   }
 
+  /*
+   * On small screens the button sits at the start of the menu (or footer), not
+   * at the right edge: opening from its start keeps the list inside the screen,
+   * in both reading directions.
+   */
+  @media (max-width: 960px) {
+    ul {
+      inset-inline: 0 auto;
+    }
+  }
+
   a {
     display: block;
     padding: 0.5rem 0.75rem;
