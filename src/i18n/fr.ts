@@ -1,10 +1,10 @@
-﻿import type { Dictionary } from './en'
+import type { Dictionary } from './en'
 
 export const fr: Dictionary = {
   meta: {
-    homeTitle: 'Samatrica : l’assistant IA qui reçoit les demandes de rendez-vous de votre clinique 24h/24',
+    homeTitle: 'Samatrica : l’assistant IA qui reçoit vos demandes de réservation 24h/24',
     homeDescription:
-      'Un assistant IA dans le chat du site de votre clinique répond à vos patients 24h/24 et 7j/7 dans leur langue, trouve les créneaux libres et recueille les demandes de rendez-vous, que vous confirmez. Votre accueil prend le relais si besoin.',
+      'Un assistant IA dans le chat de votre site répond à vos clients 24h/24 et 7j/7 dans leur langue, trouve les créneaux libres et recueille les demandes de réservation, que vous confirmez. Votre équipe prend le relais si besoin.',
     clinicsTitle: 'Samatrica pour les cliniques : vos patients demandent un rendez-vous, jour et nuit',
     clinicsDescription:
       'Vos patients demandent un rendez-vous et obtiennent des réponses 24h/24 dans leur langue. Vous confirmez chaque demande ; votre accueil reprend la conversation quand c’est important.',
@@ -56,28 +56,29 @@ export const fr: Dictionary = {
   },
 
   home: {
-    eyebrow: 'Assistant de rendez-vous IA pour les cliniques',
-    heroTitle: 'L’accueil de votre clinique, éveillé 24h/24.',
+    eyebrow: 'Assistant de réservation IA pour votre site web',
+    heroTitle: 'Votre accueil, éveillé 24h/24.',
     heroTitleAccent: 'Dans toutes les langues.',
     heroSubtitle:
-      'Samatrica répond à vos patients dans le chat de votre site, trouve les créneaux libres et recueille les demandes de rendez-vous, de jour comme de nuit. Vous confirmez chacune d’elles, et votre accueil prend le relais dès qu’une touche humaine s’impose.',
+      'Samatrica répond à vos clients dans le chat de votre site, trouve les créneaux libres et recueille les demandes de réservation, de jour comme de nuit. Vous confirmez chacune d’elles, et votre équipe prend le relais dès qu’une touche humaine s’impose.',
     heroProof: 'Contactez-nous · Résiliable à tout moment',
 
-    industriesEyebrow: 'Conçu pour les cliniques',
-    industriesTitle: 'Pensé pour les cliniques de toutes spécialités',
-    industriesSubtitle: 'Du cabinet individuel à la clinique multisite : chaque message sans réponse, c’est un patient en moins.',
+    industriesEyebrow: 'Conçu pour les rendez-vous',
+    industriesTitle: 'Pensé pour toutes les entreprises qui prennent des réservations',
+    industriesSubtitle:
+      'Cliniques, salons, spas, salles de sport, garages, consultants : partout où chaque message sans réponse est un client en moins.',
     clinicCards: [
       {
-        title: 'Des rendez-vous à toute heure',
-        text: 'Vos patients demandent un rendez-vous avec un médecin à minuit et obtiennent des réponses sur vos services, sans appeler votre accueil.',
+        title: 'Des réservations à toute heure',
+        text: 'Vos clients demandent un rendez-vous à minuit et obtiennent des réponses sur vos services, sans appeler votre accueil.',
       },
       {
-        title: 'Demandes par médecin et par spécialité',
-        text: 'Chaque médecin ou salle a ses propres horaires et sa durée de créneau : l’assistant ne propose que des créneaux réellement libres.',
+        title: 'Demandes par collaborateur et par prestation',
+        text: 'Chaque collaborateur, salle ou ressource a ses propres horaires et sa durée de créneau : l’assistant ne propose que des créneaux réellement libres.',
       },
       {
-        title: 'Patients vérifiés',
-        text: 'Les patients confirment leur e-mail et leur téléphone avec un code avant que leur demande ne vous parvienne : fini les fausses réservations.',
+        title: 'Clients vérifiés',
+        text: 'Les clients confirment leur e-mail et leur téléphone avec un code avant que leur demande ne vous parvienne : fini les fausses réservations.',
       },
     ],
 
@@ -86,33 +87,33 @@ export const fr: Dictionary = {
     steps: [
       {
         title: 'Ajoutez le widget',
-        text: 'Collez une seule ligne de code sur le site de votre clinique. Configurez vos médecins, vos horaires d’ouverture et vos heures de service dans le tableau de bord.',
+        text: 'Collez une seule ligne de code sur votre site web. Configurez vos ressources, vos horaires d’ouverture et vos heures de service dans le tableau de bord.',
       },
       {
         title: 'L’IA répond et recueille la demande',
-        text: 'L’assistant répond aux questions, trouve les créneaux libres et recueille la demande de rendez-vous. Le patient la vérifie par e-mail et par SMS, puis vous la confirmez.',
+        text: 'L’assistant répond aux questions, trouve les créneaux libres et recueille la demande de réservation. Le client la vérifie par e-mail et par SMS, puis vous la confirmez.',
       },
       {
-        title: 'Votre accueil prend le relais',
-        text: 'Quand un patient demande à parler à quelqu’un, une secrétaire reprend la conversation en direct, pendant vos heures de service.',
+        title: 'Votre équipe prend le relais',
+        text: 'Quand un client demande à parler à quelqu’un, un collaborateur reprend la conversation en direct, pendant vos heures de service.',
       },
     ],
 
     featuresEyebrow: 'Fonctionnalités',
     featuresTitle: 'Tout ce dont votre accueil a besoin',
     features: [
-      { title: 'Disponible 24h/24', text: 'Nuits, week-ends et jours fériés : aucun patient n’attend le lendemain matin.' },
-      { title: 'Disponibilités réelles', text: 'L’assistant ne propose que des créneaux compatibles avec les horaires, les fermetures et les rendez-vous existants de chaque médecin.' },
-      { title: 'Patients vérifiés', text: 'Les patients se vérifient avec un code reçu par e-mail et SMS : fini les fausses demandes.' },
-      { title: 'Reprise en direct', text: 'Votre accueil suit chaque conversation en temps réel et peut intervenir en un clic.' },
-      { title: 'Heures de service', text: 'En dehors de vos heures, l’assistant indique aux patients quand votre équipe sera de retour.' },
-      { title: 'Un seul tableau de bord', text: 'Conversations, rendez-vous, médecins, collaborateurs et horaires, réunis au même endroit.' },
+      { title: 'Disponible 24h/24', text: 'Nuits, week-ends et jours fériés : aucune demande n’attend le lendemain matin.' },
+      { title: 'Disponibilités réelles', text: 'L’assistant ne propose que des créneaux compatibles avec les horaires, les fermetures et les réservations existantes de chaque ressource.' },
+      { title: 'Clients vérifiés', text: 'Les clients se vérifient avec un code reçu par e-mail et SMS : fini les fausses demandes.' },
+      { title: 'Reprise en direct', text: 'Votre équipe suit chaque conversation en temps réel et peut intervenir en un clic.' },
+      { title: 'Heures de service', text: 'En dehors de vos heures, l’assistant indique aux clients quand votre équipe sera de retour.' },
+      { title: 'Un seul tableau de bord', text: 'Conversations, réservations, ressources, collaborateurs et horaires, réunis au même endroit.' },
     ],
 
     languagesEyebrow: 'Multilingue',
-    languagesTitle: 'Parle la langue de vos patients',
+    languagesTitle: 'Parle la langue de vos clients',
     languagesText:
-      'Vos patients écrivent en arabe, en anglais, en français, en russe ou dans n’importe quelle autre langue : l’assistant leur répond naturellement dans la même langue. Votre tableau de bord est disponible en six langues, dont l’arabe entièrement de droite à gauche.',
+      'Vos clients écrivent en arabe, en anglais, en français, en russe ou dans n’importe quelle autre langue : l’assistant leur répond naturellement dans la même langue. Votre tableau de bord est disponible en six langues, dont l’arabe entièrement de droite à gauche.',
     languagesSample: [
       { lang: 'العربية', text: 'هل يوجد موعد يوم الخميس؟' },
       { lang: 'English', text: 'Is there a slot on Thursday?' },
@@ -120,7 +121,7 @@ export const fr: Dictionary = {
       { lang: 'Русский', text: 'Есть ли время в четверг?' },
     ],
 
-    statsTitle: 'Pourquoi les cliniques choisissent Samatrica',
+    statsTitle: 'Pourquoi les entreprises choisissent Samatrica',
     stats: [
       { value: '24/7', label: 'Toujours disponible' },
       { value: '1', label: 'Ligne de code à installer' },
@@ -135,29 +136,29 @@ export const fr: Dictionary = {
         a: 'Non. Il suffit de coller une ligne de code sur votre site, comme pour un chat ou un outil de statistiques. Nous pouvons vous aider si besoin.',
       },
       {
-        q: 'L’assistant confirme-t-il les rendez-vous tout seul ?',
-        a: 'Non. L’assistant recueille des demandes de rendez-vous sur des créneaux libres, en fonction des médecins et des horaires d’ouverture que vous avez définis. Vous confirmez ou refusez chacune d’elles depuis le tableau de bord, et le patient en est informé.',
+        q: 'L’assistant confirme-t-il les réservations tout seul ?',
+        a: 'Non. L’assistant recueille des demandes de réservation sur des créneaux libres, en fonction des ressources et des horaires d’ouverture que vous avez définis. Vous confirmez ou refusez chacune d’elles depuis le tableau de bord, et le client en est informé.',
       },
       {
-        q: 'Que se passe-t-il quand un patient veut parler à quelqu’un ?',
-        a: 'Pendant vos heures de service, une secrétaire reprend la conversation en direct depuis le tableau de bord. En dehors de ces heures, l’assistant indique au patient quand revenir.',
+        q: 'Que se passe-t-il quand un client veut parler à quelqu’un ?',
+        a: 'Pendant vos heures de service, un collaborateur reprend la conversation en direct depuis le tableau de bord. En dehors de ces heures, l’assistant indique au client quand revenir.',
       },
       {
         q: 'Quelles langues parle-t-il ?',
-        a: 'L’assistant répond dans la langue du patient. Le tableau de bord est disponible en anglais, français, arabe, espagnol, russe et grec.',
+        a: 'L’assistant répond dans la langue du client. Le tableau de bord est disponible en anglais, français, arabe, espagnol, russe et grec.',
       },
       {
         q: 'Y a-t-il un engagement ?',
         a: 'Non. Vous payez par période de facturation et pouvez résilier à tout moment : l’abonnement prend simplement fin au terme de la période déjà payée, et plus rien n’est prélevé.',
       },
       {
-        q: 'Les données de mes patients sont-elles en sécurité ?',
-        a: 'Chaque clinique ne voit que ses propres patients, conversations et rendez-vous. Les patients confirment leur adresse e-mail et leur numéro de téléphone avec un code avant qu’une demande de rendez-vous ne vous parvienne.',
+        q: 'Les données de mes clients sont-elles en sécurité ?',
+        a: 'Chaque entreprise ne voit que ses propres clients, conversations et réservations. Les clients confirment leur adresse e-mail et leur numéro de téléphone avec un code avant qu’une demande de réservation ne vous parvienne.',
       },
     ],
 
-    ctaTitle: 'Ne manquez plus jamais un rendez-vous',
-    ctaText: 'Lancez-vous et laissez Samatrica répondre à votre prochain patient dès ce soir.',
+    ctaTitle: 'Ne manquez plus jamais une réservation',
+    ctaText: 'Lancez-vous et laissez Samatrica répondre à votre prochain client dès ce soir.',
   },
 
   clinics: {
@@ -216,8 +217,8 @@ export const fr: Dictionary = {
     placeholderNote: 'Les prix et limites sont indicatifs et peuvent évoluer avant le lancement.',
     plans: {
       starter: { name: 'Starter', tagline: 'Pour un cabinet individuel' },
-      pro: { name: 'Pro', tagline: 'Pour les cliniques en croissance' },
-      business: { name: 'Business', tagline: 'Pour les cliniques multisites' },
+      pro: { name: 'Pro', tagline: 'Pour les équipes en croissance' },
+      business: { name: 'Business', tagline: 'Pour les entreprises multisites' },
     },
   },
 
@@ -245,7 +246,7 @@ export const fr: Dictionary = {
 
   contact: {
     title: 'Contactez-nous',
-    subtitle: 'Une question sur Samatrica, une démo pour votre clinique ou une formule sur mesure ? Nous serions ravis d’échanger avec vous.',
+    subtitle: 'Une question sur Samatrica, une démo pour votre entreprise ou une formule sur mesure ? Nous serions ravis d’échanger avec vous.',
     emailLabel: 'E-mail',
     placeholder: 'Nos coordonnées seront bientôt disponibles.',
   },
@@ -265,58 +266,58 @@ export const fr: Dictionary = {
         title: '1. Qui nous sommes et objet des présentes conditions',
         paragraphs: [
           'Le Service est fourni par Samatrica OÜ, société à responsabilité limitée de droit estonien, immatriculée en Estonie sous le code de registre 16285192, numéro de TVA EE102401154, dont le siège social est situé Sepapaja tn 6, 15551 Tallinn, Estonie (« Samatrica »).',
-          'Samatrica fournit un assistant IA qui répond aux visiteurs sur le site web d’un établissement, identifie les créneaux disponibles et recueille les demandes de rendez-vous, ainsi qu’un tableau de bord destiné à l’équipe de l’établissement (le « Service »). Les présentes conditions constituent un contrat entre Samatrica et l’établissement qui ouvre un compte (l’« Établissement »), généralement une clinique de santé. Elles ne créent aucun contrat entre Samatrica et les patients ou clients de l’Établissement.',
+          'Samatrica fournit un assistant IA qui répond aux visiteurs sur le site web d’une entreprise, identifie les créneaux disponibles et recueille les demandes de réservation, ainsi qu’un tableau de bord destiné à l’équipe de l’entreprise (le « Service »). Les présentes conditions constituent un contrat entre Samatrica et l’entreprise qui ouvre un compte (l’« Entreprise »), par exemple une clinique de santé, un salon ou toute autre entreprise qui prend des réservations. Elles ne créent aucun contrat entre Samatrica et les clients ou patients de l’Entreprise.',
         ],
       },
       {
         title: '2. Ce que le Service fait, et ne fait pas',
         paragraphs: [
-          'L’assistant répond aux questions et recueille les demandes de rendez-vous à partir des ressources, horaires d’ouverture et informations configurés par l’Établissement. Chaque demande de rendez-vous doit être confirmée ou refusée par l’Établissement : l’assistant ne confirme jamais de rendez-vous de sa propre initiative.',
-          'Le Service ne fournit ni conseil médical, ni diagnostic, ni traitement, et ne constitue pas un service d’urgence. L’Établissement ne doit pas configurer ni utiliser l’assistant pour dispenser des conseils médicaux, et demeure seul responsable des soins qu’il prodigue.',
+          'L’assistant répond aux questions et recueille les demandes de rendez-vous à partir des ressources, horaires d’ouverture et informations configurés par l’Entreprise. Chaque demande de rendez-vous doit être confirmée ou refusée par l’Entreprise : l’assistant ne confirme jamais de rendez-vous de sa propre initiative.',
+          'Le Service ne fournit ni conseil médical, ni diagnostic, ni traitement, et ne constitue pas un service d’urgence. L’Entreprise ne doit pas configurer ni utiliser l’assistant pour dispenser des conseils médicaux, et demeure seule responsable des soins qu’elle prodigue.',
         ],
       },
       {
-        title: '3. Obligations de l’Établissement',
+        title: '3. Obligations de l’Entreprise',
         paragraphs: [
-          'L’Établissement préserve la confidentialité de ses identifiants de connexion et répond des actions de ses salariés dans le tableau de bord. Les informations qu’il configure (prestations, praticiens, horaires, descriptions) doivent être exactes et licites.',
-          'À l’égard de ses patients, l’Établissement est le responsable du traitement : il doit disposer d’une base légale pour traiter les données personnelles collectées via le chat, informer les patients de ce traitement dans ses propres politiques de confidentialité et répondre à leurs demandes d’exercice de droits. L’accord de traitement des données conclu entre l’Établissement et Samatrica (article 6) régit les traitements effectués par Samatrica pour le compte de l’Établissement.',
+          'L’Entreprise préserve la confidentialité de ses identifiants de connexion et répond des actions de ses salariés dans le tableau de bord. Les informations qu’elle configure (prestations, praticiens, horaires, descriptions) doivent être exactes et licites.',
+          'À l’égard de ses clients, l’Entreprise est le responsable du traitement : elle doit disposer d’une base légale pour traiter les données personnelles collectées via le chat, informer les clients de ce traitement dans ses propres politiques de confidentialité et répondre à leurs demandes d’exercice de droits. L’accord de traitement des données conclu entre l’Entreprise et Samatrica (article 6) régit les traitements effectués par Samatrica pour le compte de l’Entreprise.',
         ],
       },
       {
         title: '4. Utilisation acceptable',
         paragraphs: [
-          'Le Service ne peut être utilisé à des fins illicites, pour envoyer des messages non sollicités, pour collecter des données de personnes sans base légale, pour sonder ou perturber la sécurité du Service, ni pour développer un produit concurrent. Le widget de chat ne peut être installé que sur des sites web contrôlés par l’Établissement.',
+          'Le Service ne peut être utilisé à des fins illicites, pour envoyer des messages non sollicités, pour collecter des données de personnes sans base légale, pour sonder ou perturber la sécurité du Service, ni pour développer un produit concurrent. Le widget de chat ne peut être installé que sur des sites web contrôlés par l’Entreprise.',
         ],
       },
       {
         title: '5. Redevances et résiliation',
         paragraphs: [
-          'Les redevances, périodes de facturation et moyens de paiement sont précisés lors de la souscription et peuvent être modifiés moyennant un préavis raisonnable ; les changements de prix ne s’appliquent jamais rétroactivement. Aucune durée minimale d’engagement n’est exigée : l’Établissement peut résilier à tout moment, l’abonnement prend fin au terme de la période de facturation déjà payée, et plus rien n’est prélevé.',
+          'Les redevances, périodes de facturation et moyens de paiement sont précisés lors de la souscription et peuvent être modifiés moyennant un préavis raisonnable ; les changements de prix ne s’appliquent jamais rétroactivement. Aucune durée minimale d’engagement n’est exigée : l’Entreprise peut résilier à tout moment, l’abonnement prend fin au terme de la période de facturation déjà payée, et plus rien n’est prélevé.',
         ],
       },
       {
         title: '6. Protection des données',
         paragraphs: [
-          'Pour les données personnelles des patients et des autres utilisateurs du chat, l’Établissement est le responsable du traitement et Samatrica le sous-traitant au sens du RGPD. Un accord de traitement des données, incluant les sous-traitants ultérieurs de Samatrica et ses mesures de sécurité, fait partie intégrante du présent contrat. Samatrica héberge les données du Service au sein de l’Union européenne (AWS, région de Francfort).',
-          'Dans un contexte de santé, les demandes de rendez-vous peuvent révéler des informations relatives à la santé, que le RGPD qualifie de catégorie particulière de données personnelles. L’Établissement confirme être en droit de collecter de telles données auprès de ses patients, et Samatrica ne les traite que pour fournir le Service.',
+          'Pour les données personnelles des clients et des autres utilisateurs du chat, l’Entreprise est le responsable du traitement et Samatrica le sous-traitant au sens du RGPD. Un accord de traitement des données, incluant les sous-traitants ultérieurs de Samatrica et ses mesures de sécurité, fait partie intégrante du présent contrat. Samatrica héberge les données du Service au sein de l’Union européenne (AWS, région de Francfort).',
+          'Lorsque l’Entreprise fournit des soins de santé, les demandes de rendez-vous peuvent révéler des informations relatives à la santé, que le RGPD qualifie de catégorie particulière de données personnelles. L’Entreprise confirme être en droit de collecter de telles données auprès de ses patients, et Samatrica ne les traite que pour fournir le Service.',
         ],
       },
       {
         title: '7. Disponibilité',
         paragraphs: [
-          'Samatrica fournit le Service avec le soin et la diligence raisonnables, sans toutefois garantir une disponibilité ininterrompue. Des maintenances planifiées et des interruptions peuvent survenir ; le widget de chat est conçu pour s’effacer discrètement du site de l’Établissement lorsque le Service est injoignable.',
+          'Samatrica fournit le Service avec le soin et la diligence raisonnables, sans toutefois garantir une disponibilité ininterrompue. Des maintenances planifiées et des interruptions peuvent survenir ; le widget de chat est conçu pour s’effacer discrètement du site de l’Entreprise lorsque le Service est injoignable.',
         ],
       },
       {
         title: '8. Responsabilité',
         paragraphs: [
-          'Dans la mesure permise par la loi, la responsabilité totale de Samatrica au titre du présent contrat est limitée aux redevances versées par l’Établissement au cours des 12 mois précédant le fait générateur de la réclamation, et Samatrica n’est pas responsable des dommages indirects tels que le manque à gagner. Aucune stipulation des présentes ne limite une responsabilité qui ne peut être limitée en vertu de la loi.',
+          'Dans la mesure permise par la loi, la responsabilité totale de Samatrica au titre du présent contrat est limitée aux redevances versées par l’Entreprise au cours des 12 mois précédant le fait générateur de la réclamation, et Samatrica n’est pas responsable des dommages indirects tels que le manque à gagner. Aucune stipulation des présentes ne limite une responsabilité qui ne peut être limitée en vertu de la loi.',
         ],
       },
       {
         title: '9. Résiliation et données',
         paragraphs: [
-          'Chaque partie peut résilier avec effet à la fin de la période payée ; Samatrica peut suspendre ou résilier immédiatement en cas de manquement grave aux présentes conditions. Après la résiliation, l’Établissement peut demander un export de ses données pendant 30 jours ; passé ce délai, Samatrica supprime les données personnelles de l’Établissement, sauf lorsque la loi impose une conservation plus longue.',
+          'Chaque partie peut résilier avec effet à la fin de la période payée ; Samatrica peut suspendre ou résilier immédiatement en cas de manquement grave aux présentes conditions. Après la résiliation, l’Entreprise peut demander un export de ses données pendant 30 jours ; passé ce délai, Samatrica supprime les données personnelles de l’Entreprise, sauf lorsque la loi impose une conservation plus longue.',
         ],
       },
       {
@@ -332,7 +333,7 @@ export const fr: Dictionary = {
       {
         title: '1. Champ d’application de la présente politique',
         paragraphs: [
-          'Samatrica est un service destiné aux professionnels (cliniques de santé), et non aux consommateurs. Le droit de rétractation légal de 14 jours prévu par le droit européen de la consommation ne s’applique donc pas ; les droits à remboursement énoncés dans la présente politique sont ceux que Samatrica accorde contractuellement.',
+          'Samatrica est un service destiné aux entreprises, et non aux consommateurs. Le droit de rétractation légal de 14 jours prévu par le droit européen de la consommation ne s’applique donc pas ; les droits à remboursement énoncés dans la présente politique sont ceux que Samatrica accorde contractuellement.',
         ],
       },
       {
@@ -344,7 +345,7 @@ export const fr: Dictionary = {
       {
         title: '3. Garantie « satisfait ou remboursé » de 14 jours sur le premier paiement',
         paragraphs: [
-          'Si Samatrica ne convient pas à votre clinique, écrivez à contact@samatrica.com dans les 14 jours suivant votre premier paiement et nous vous rembourserons ce paiement intégralement, sans justification à fournir. Le remboursement est effectué sur le moyen de paiement d’origine, en principe sous 10 jours ouvrés.',
+          'Si Samatrica ne convient pas à votre entreprise, écrivez à contact@samatrica.com dans les 14 jours suivant votre premier paiement et nous vous rembourserons ce paiement intégralement, sans justification à fournir. Le remboursement est effectué sur le moyen de paiement d’origine, en principe sous 10 jours ouvrés.',
         ],
       },
       {
@@ -372,7 +373,7 @@ export const fr: Dictionary = {
       {
         title: '1. Qui nous sommes',
         paragraphs: [
-          'Samatrica est exploité par Samatrica OÜ, code de registre 16285192, Sepapaja tn 6, 15551 Tallinn, Estonie. Samatrica fournit un assistant IA de prise de rendez-vous destiné aux cliniques de santé. La présente politique explique comment les données personnelles sont traitées sur ce site web et dans le widget de chat Samatrica installé sur les sites des cliniques. Pour toute question ou demande relative à vos données, écrivez à contact@samatrica.com.',
+          'Samatrica est exploité par Samatrica OÜ, code de registre 16285192, Sepapaja tn 6, 15551 Tallinn, Estonie. Samatrica fournit un assistant IA de prise de rendez-vous destiné aux entreprises qui prennent des rendez-vous. La présente politique explique comment les données personnelles sont traitées sur ce site web et dans le widget de chat Samatrica installé sur les sites de ces entreprises. Pour toute question ou demande relative à vos données, écrivez à contact@samatrica.com.',
         ],
       },
       {
@@ -383,10 +384,10 @@ export const fr: Dictionary = {
         ],
       },
       {
-        title: '3. Le widget de chat sur le site d’une clinique',
+        title: '3. Le widget de chat sur le site d’une entreprise',
         paragraphs: [
-          'Lorsque vous échangez avec l’assistant Samatrica sur le site d’une clinique, la clinique est le responsable du traitement et Samatrica traite vos données pour son compte. Nous traitons le contenu de la conversation et, si vous demandez un rendez-vous, vos nom et prénom, adresse e-mail et numéro de téléphone, afin de vous répondre et de transmettre votre demande à la clinique.',
-          'Dans un contexte de santé, vos messages et demandes de rendez-vous peuvent révéler des informations relatives à votre santé. Ils ne sont utilisés que pour traiter votre demande ; la clinique à laquelle vous écrivez est responsable de ces données, et vous pouvez exercer vos droits auprès d’elle ou en nous écrivant.',
+          'Lorsque vous échangez avec l’assistant Samatrica sur le site d’une entreprise, cette entreprise est le responsable du traitement et Samatrica traite vos données pour son compte. Nous traitons le contenu de la conversation et, si vous demandez une réservation, vos nom et prénom, adresse e-mail et numéro de téléphone, afin de vous répondre et de transmettre votre demande à l’entreprise.',
+          'Lorsque l’entreprise est un prestataire de soins de santé, vos messages et demandes de rendez-vous peuvent révéler des informations relatives à votre santé. Ils ne sont utilisés que pour traiter votre demande ; l’entreprise à laquelle vous écrivez est responsable de ces données, et vous pouvez exercer vos droits auprès d’elle ou en nous écrivant.',
         ],
       },
       {
@@ -404,25 +405,25 @@ export const fr: Dictionary = {
       {
         title: '6. Sous-traitants ultérieurs',
         paragraphs: [
-          'Nous faisons appel à un petit nombre de prestataires pour exploiter le Service : Amazon Web Services (hébergement, UE), notre fournisseur de modèle de langage IA (réponses de l’assistant) et nos prestataires d’envoi d’e-mails et de SMS (codes de vérification et notifications). La liste à jour est disponible sur demande et est remise aux cliniques avec leur accord de traitement des données.',
+          'Nous faisons appel à un petit nombre de prestataires pour exploiter le Service : Amazon Web Services (hébergement, UE), notre fournisseur de modèle de langage IA (réponses de l’assistant) et nos prestataires d’envoi d’e-mails et de SMS (codes de vérification et notifications). La liste à jour est disponible sur demande et est remise aux entreprises avec leur accord de traitement des données.',
         ],
       },
       {
         title: '7. Durées de conservation',
         paragraphs: [
-          'Les conversations et demandes de rendez-vous sont conservées tant que la clinique utilise le Service et en a besoin ; les codes de vérification expirent en quelques minutes et ne sont pas réutilisés. Lorsqu’une clinique quitte Samatrica, ses données sont supprimées à l’issue d’un délai d’export de 30 jours, sauf lorsque la loi impose une conservation plus longue.',
+          'Les conversations et demandes de réservation sont conservées tant que l’entreprise utilise le Service et en a besoin ; les codes de vérification expirent en quelques minutes et ne sont pas réutilisés. Lorsqu’une entreprise quitte Samatrica, ses données sont supprimées à l’issue d’un délai d’export de 30 jours, sauf lorsque la loi impose une conservation plus longue.',
         ],
       },
       {
         title: '8. Sécurité',
         paragraphs: [
-          'Toutes les connexions sont chiffrées en transit (TLS). Les données de chaque clinique sont cloisonnées : une clinique ne peut consulter que ses propres conversations, patients et rendez-vous. L’accès du personnel de Samatrica est limité à ce qu’exige l’exploitation du Service.',
+          'Toutes les connexions sont chiffrées en transit (TLS). Les données de chaque entreprise sont cloisonnées : une entreprise ne peut consulter que ses propres conversations, clients et réservations. L’accès du personnel de Samatrica est limité à ce qu’exige l’exploitation du Service.',
         ],
       },
       {
         title: '9. Vos droits',
         paragraphs: [
-          'En vertu du RGPD, vous pouvez demander l’accès à vos données personnelles, leur rectification ou leur effacement, la limitation du traitement, leur portabilité, et vous opposer à certains traitements. Écrivez à contact@samatrica.com (ou à votre clinique, pour les données traitées pour son compte) ; nous répondons dans les délais légaux. Vous pouvez également introduire une réclamation auprès de votre autorité de protection des données.',
+          'En vertu du RGPD, vous pouvez demander l’accès à vos données personnelles, leur rectification ou leur effacement, la limitation du traitement, leur portabilité, et vous opposer à certains traitements. Écrivez à contact@samatrica.com (ou à l’entreprise avec laquelle vous avez échangé, pour les données traitées pour son compte) ; nous répondons dans les délais légaux. Vous pouvez également introduire une réclamation auprès de votre autorité de protection des données.',
         ],
       },
       {
@@ -435,7 +436,7 @@ export const fr: Dictionary = {
   },
 
   footer: {
-    tagline: 'L’assistant IA qui répond à vos patients et recueille leurs demandes de rendez-vous, 24h/24 et 7j/7.',
+    tagline: 'L’assistant IA qui répond à vos clients et recueille les demandes de réservation, 24h/24 et 7j/7.',
     product: 'Produit',
     company: 'Entreprise',
     legal: 'Mentions légales',

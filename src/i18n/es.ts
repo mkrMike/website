@@ -1,10 +1,10 @@
-﻿import type { Dictionary } from './en'
+import type { Dictionary } from './en'
 
 export const es: Dictionary = {
   meta: {
-    homeTitle: 'Samatrica: el asistente con IA que recibe las solicitudes de cita de su clínica 24/7',
+    homeTitle: 'Samatrica: el asistente con IA que recibe sus solicitudes de reserva 24/7',
     homeDescription:
-      'Un asistente con IA en el chat del sitio web de su clínica atiende a los pacientes 24/7 en su propio idioma, encuentra horarios libres y recoge solicitudes de cita que usted confirma. Su recepción toma el control cuando hace falta.',
+      'Un asistente con IA en el chat de su sitio web atiende a sus clientes 24/7 en su propio idioma, encuentra horarios libres y recoge solicitudes de reserva que usted confirma. Su equipo toma el control cuando hace falta.',
     clinicsTitle: 'Samatrica para clínicas: sus pacientes solicitan cita, de día y de noche',
     clinicsDescription:
       'Permita que sus pacientes soliciten cita y obtengan respuestas 24/7 en su propio idioma. Usted confirma cada solicitud; su recepción toma el control del chat cuando realmente importa.',
@@ -56,28 +56,29 @@ export const es: Dictionary = {
   },
 
   home: {
-    eyebrow: 'Asistente de citas con IA para clínicas de salud',
-    heroTitle: 'La recepción de su clínica, despierta 24/7.',
+    eyebrow: 'Asistente de reservas con IA para su sitio web',
+    heroTitle: 'Su recepción, despierta 24/7.',
     heroTitleAccent: 'En todos los idiomas.',
     heroSubtitle:
-      'Samatrica atiende a sus pacientes en el chat de su sitio web, encuentra horarios libres y recoge solicitudes de cita, de día y de noche. Usted confirma cada una, y su recepción toma el control siempre que haga falta un trato humano.',
+      'Samatrica atiende a sus clientes en el chat de su sitio web, encuentra horarios libres y recoge solicitudes de reserva, de día y de noche. Usted confirma cada una, y su equipo toma el control siempre que haga falta un trato humano.',
     heroProof: 'Contáctenos · Cancele cuando quiera',
 
-    industriesEyebrow: 'Diseñado para clínicas de salud',
-    industriesTitle: 'Pensado para clínicas de cualquier especialidad',
-    industriesSubtitle: 'De la consulta individual a la clínica con varias sedes: cada mensaje sin respuesta es un paciente perdido.',
+    industriesEyebrow: 'Diseñado para las citas',
+    industriesTitle: 'Pensado para todo negocio que trabaja con reservas',
+    industriesSubtitle:
+      'Clínicas, salones, spas, gimnasios, talleres, consultores: allí donde cada mensaje sin respuesta es un cliente perdido.',
     clinicCards: [
       {
-        title: 'Citas a cualquier hora',
-        text: 'Sus pacientes solicitan cita con el médico a medianoche y obtienen respuestas sobre sus servicios, sin llamar a la recepción.',
+        title: 'Reservas a cualquier hora',
+        text: 'Sus clientes solicitan una cita a medianoche y obtienen respuestas sobre sus servicios, sin llamar a su recepción.',
       },
       {
-        title: 'Solicitudes por médico y especialidad',
-        text: 'Cada médico o consulta tiene su propio horario y duración de cita, de modo que el asistente solo ofrece horarios realmente libres.',
+        title: 'Solicitudes por empleado y servicio',
+        text: 'Cada empleado, sala o recurso tiene su propio horario y duración de cita, de modo que el asistente solo ofrece horarios realmente libres.',
       },
       {
-        title: 'Pacientes verificados',
-        text: 'Los pacientes confirman su correo y su teléfono con un código antes de que la solicitud le llegue a usted: se acabaron las reservas falsas.',
+        title: 'Clientes verificados',
+        text: 'Los clientes confirman su correo y su teléfono con un código antes de que la solicitud le llegue a usted: se acabaron las reservas falsas.',
       },
     ],
 
@@ -86,33 +87,33 @@ export const es: Dictionary = {
     steps: [
       {
         title: 'Añada el widget',
-        text: 'Pegue una sola línea de código en el sitio web de su clínica. Configure sus médicos, horarios de apertura y horario de atención en el panel.',
+        text: 'Pegue una sola línea de código en su sitio web. Configure sus recursos, horarios de apertura y horario de atención en el panel.',
       },
       {
         title: 'La IA responde y recoge la solicitud',
-        text: 'El asistente responde preguntas, encuentra horarios libres y recoge la solicitud de cita. El paciente la verifica por correo y SMS, y usted la confirma.',
+        text: 'El asistente responde preguntas, encuentra horarios libres y recoge la solicitud de reserva. El cliente la verifica por correo y SMS, y usted la confirma.',
       },
       {
-        title: 'Su recepción toma el control',
-        text: 'Cuando un paciente pide hablar con una persona, un recepcionista toma el chat en directo, dentro de su horario de atención.',
+        title: 'Su equipo toma el control',
+        text: 'Cuando un cliente pide hablar con una persona, un empleado toma el chat en directo, dentro de su horario de atención.',
       },
     ],
 
     featuresEyebrow: 'Funciones',
     featuresTitle: 'Todo lo que su recepción necesita',
     features: [
-      { title: 'Atención 24/7', text: 'Noches, fines de semana y festivos: ningún paciente espera a la mañana siguiente.' },
-      { title: 'Disponibilidad real', text: 'El asistente solo ofrece horarios que encajan con los horarios de apertura, los cierres y las citas existentes de cada médico.' },
-      { title: 'Pacientes verificados', text: 'Los pacientes se verifican con un código por correo y SMS: se acabaron las solicitudes falsas.' },
-      { title: 'Intervención en directo', text: 'Su recepción ve cada conversación en tiempo real y puede intervenir con un solo clic.' },
-      { title: 'Horario de atención', text: 'Fuera de su horario, el asistente indica a los pacientes cuándo vuelve a estar disponible su equipo.' },
-      { title: 'Un solo panel', text: 'Conversaciones, citas, médicos, empleados y horarios, todo en un mismo lugar.' },
+      { title: 'Atención 24/7', text: 'Noches, fines de semana y festivos: ninguna consulta espera a la mañana siguiente.' },
+      { title: 'Disponibilidad real', text: 'El asistente solo ofrece horarios que encajan con los horarios de apertura, los cierres y las reservas existentes de cada recurso.' },
+      { title: 'Clientes verificados', text: 'Los clientes se verifican con un código por correo y SMS: se acabaron las solicitudes falsas.' },
+      { title: 'Intervención en directo', text: 'Su equipo ve cada conversación en tiempo real y puede intervenir con un solo clic.' },
+      { title: 'Horario de atención', text: 'Fuera de su horario, el asistente indica a los clientes cuándo vuelve a estar disponible su equipo.' },
+      { title: 'Un solo panel', text: 'Conversaciones, reservas, recursos, empleados y horarios, todo en un mismo lugar.' },
     ],
 
     languagesEyebrow: 'Multilingüe',
-    languagesTitle: 'Habla el idioma de sus pacientes',
+    languagesTitle: 'Habla el idioma de sus clientes',
     languagesText:
-      'Sus pacientes escriben en árabe, inglés, francés, ruso o cualquier otro idioma: el asistente responde en ese mismo idioma, con naturalidad. Su panel está disponible en seis idiomas, incluido el árabe con escritura completa de derecha a izquierda.',
+      'Sus clientes escriben en árabe, inglés, francés, ruso o cualquier otro idioma: el asistente responde en ese mismo idioma, con naturalidad. Su panel está disponible en seis idiomas, incluido el árabe con escritura completa de derecha a izquierda.',
     languagesSample: [
       { lang: 'العربية', text: 'هل يوجد موعد يوم الخميس؟' },
       { lang: 'English', text: 'Is there a slot on Thursday?' },
@@ -120,7 +121,7 @@ export const es: Dictionary = {
       { lang: 'Русский', text: 'Есть ли время в четверг?' },
     ],
 
-    statsTitle: 'Por qué las clínicas eligen Samatrica',
+    statsTitle: 'Por qué los negocios eligen Samatrica',
     stats: [
       { value: '24/7', label: 'Siempre disponible' },
       { value: '1', label: 'Línea de código para instalarlo' },
@@ -135,12 +136,12 @@ export const es: Dictionary = {
         a: 'No. Basta con pegar una línea de código en su sitio web, como una etiqueta de chat o de analítica. Si lo necesita, le ayudamos.',
       },
       {
-        q: '¿El asistente confirma las citas por su cuenta?',
-        a: 'No. El asistente recoge solicitudes de cita para horarios libres, según los médicos y horarios de apertura que usted defina. Usted confirma o rechaza cada una desde el panel, y el paciente recibe un aviso.',
+        q: '¿El asistente confirma las reservas por su cuenta?',
+        a: 'No. El asistente recoge solicitudes de reserva para horarios libres, según los recursos y horarios de apertura que usted defina. Usted confirma o rechaza cada una desde el panel, y el cliente recibe un aviso.',
       },
       {
-        q: '¿Qué ocurre cuando un paciente quiere hablar con una persona?',
-        a: 'Dentro de su horario de atención, un recepcionista toma la conversación en directo desde el panel. Fuera de ese horario, el asistente le indica al paciente cuándo volver a escribir.',
+        q: '¿Qué ocurre cuando un cliente quiere hablar con una persona?',
+        a: 'Dentro de su horario de atención, un empleado toma la conversación en directo desde el panel. Fuera de ese horario, el asistente le indica al cliente cuándo volver a escribir.',
       },
       {
         q: '¿Qué idiomas habla?',
@@ -151,13 +152,13 @@ export const es: Dictionary = {
         a: 'No. Paga por periodo de facturación y puede cancelar en cualquier momento: la suscripción simplemente finaliza al término del periodo ya abonado, y no se le cobra nada más.',
       },
       {
-        q: '¿Están seguros los datos de mis pacientes?',
-        a: 'Cada clínica solo puede ver sus propios pacientes, conversaciones y citas. Los pacientes confirman su correo electrónico y su número de teléfono con un código antes de que una solicitud de cita le llegue a usted.',
+        q: '¿Están seguros los datos de mis clientes?',
+        a: 'Cada negocio solo puede ver sus propios clientes, conversaciones y reservas. Los clientes confirman su correo electrónico y su número de teléfono con un código antes de que una solicitud de reserva le llegue a usted.',
       },
     ],
 
-    ctaTitle: 'No vuelva a perder una cita',
-    ctaText: 'Empiece ahora y deje que Samatrica atienda a su próximo paciente esta misma noche.',
+    ctaTitle: 'No vuelva a perder una reserva',
+    ctaText: 'Empiece ahora y deje que Samatrica atienda a su próximo cliente esta misma noche.',
   },
 
   clinics: {
@@ -216,8 +217,8 @@ export const es: Dictionary = {
     placeholderNote: 'Los precios y límites son orientativos y pueden cambiar antes del lanzamiento.',
     plans: {
       starter: { name: 'Starter', tagline: 'Para una consulta individual' },
-      pro: { name: 'Pro', tagline: 'Para clínicas en crecimiento' },
-      business: { name: 'Business', tagline: 'Para clínicas con varias sedes' },
+      pro: { name: 'Pro', tagline: 'Para equipos en crecimiento' },
+      business: { name: 'Business', tagline: 'Para negocios con varias sedes' },
     },
   },
 
@@ -246,7 +247,7 @@ export const es: Dictionary = {
 
   contact: {
     title: 'Contáctenos',
-    subtitle: '¿Tiene preguntas sobre Samatrica, desea una demostración para su clínica o necesita un plan a medida? Nos encantará atenderle.',
+    subtitle: '¿Tiene preguntas sobre Samatrica, desea una demostración para su negocio o necesita un plan a medida? Nos encantará atenderle.',
     emailLabel: 'Correo electrónico',
     placeholder: 'Los datos de contacto estarán disponibles próximamente.',
   },
@@ -266,7 +267,7 @@ export const es: Dictionary = {
         title: '1. Quiénes somos y qué cubren estos términos',
         paragraphs: [
           'El Servicio es prestado por Samatrica OÜ, una sociedad de responsabilidad limitada registrada en Estonia, con código de registro 16285192, número de IVA EE102401154 y domicilio social en Sepapaja tn 6, 15551 Tallinn, Estonia («Samatrica»).',
-          'Samatrica ofrece un asistente de IA que atiende a los visitantes en el sitio web de un negocio, encuentra horarios libres y recoge solicitudes de cita, junto con un panel de control para el equipo del negocio (el «Servicio»). Estos términos constituyen un acuerdo entre Samatrica y el negocio que abre una cuenta (el «Negocio»), normalmente una clínica de salud. No crean ningún contrato entre Samatrica y los pacientes o clientes del Negocio.',
+          'Samatrica ofrece un asistente de IA que atiende a los visitantes en el sitio web de un negocio, encuentra horarios libres y recoge solicitudes de reserva, junto con un panel de control para el equipo del negocio (el «Servicio»). Estos términos constituyen un acuerdo entre Samatrica y el negocio que abre una cuenta (el «Negocio»), por ejemplo una clínica de salud, un salón o cualquier otro negocio que trabaje con reservas. No crean ningún contrato entre Samatrica y los clientes o pacientes del Negocio.',
         ],
       },
       {
@@ -280,7 +281,7 @@ export const es: Dictionary = {
         title: '3. Responsabilidades del Negocio',
         paragraphs: [
           'El Negocio mantiene la confidencialidad de sus credenciales de acceso y responde de las acciones de sus empleados en el panel de control. La información que configura (servicios, médicos, horarios, descripciones) debe ser veraz y lícita.',
-          'Frente a sus pacientes, el Negocio es el responsable del tratamiento: debe contar con una base jurídica para tratar los datos personales recogidos a través del chat, informar a los pacientes de este tratamiento en sus propias políticas de privacidad y atender sus solicitudes en materia de protección de datos. El contrato de encargo de tratamiento entre el Negocio y Samatrica (sección 6) regula el tratamiento que Samatrica realiza por cuenta del Negocio.',
+          'Frente a sus clientes, el Negocio es el responsable del tratamiento: debe contar con una base jurídica para tratar los datos personales recogidos a través del chat, informar a los clientes de este tratamiento en sus propias políticas de privacidad y atender sus solicitudes en materia de protección de datos. El contrato de encargo de tratamiento entre el Negocio y Samatrica (sección 6) regula el tratamiento que Samatrica realiza por cuenta del Negocio.',
         ],
       },
       {
@@ -298,8 +299,8 @@ export const es: Dictionary = {
       {
         title: '6. Protección de datos',
         paragraphs: [
-          'Respecto de los datos personales de los pacientes y demás usuarios del chat, el Negocio es el responsable del tratamiento y Samatrica el encargado del tratamiento conforme al RGPD. Un contrato de encargo de tratamiento, que incluye los subencargados de Samatrica y sus medidas de seguridad, forma parte de este acuerdo. Samatrica aloja los datos del Servicio en la Unión Europea (AWS, región de Fráncfort).',
-          'Las solicitudes de cita en un contexto sanitario pueden revelar información sobre la salud, que el RGPD considera una categoría especial de datos personales. El Negocio confirma que está legitimado para recoger tales datos de sus pacientes, y Samatrica los trata únicamente para prestar el Servicio.',
+          'Respecto de los datos personales de los clientes y demás usuarios del chat, el Negocio es el responsable del tratamiento y Samatrica el encargado del tratamiento conforme al RGPD. Un contrato de encargo de tratamiento, que incluye los subencargados de Samatrica y sus medidas de seguridad, forma parte de este acuerdo. Samatrica aloja los datos del Servicio en la Unión Europea (AWS, región de Fráncfort).',
+          'Cuando el Negocio presta asistencia sanitaria, las solicitudes de cita pueden revelar información sobre la salud, que el RGPD considera una categoría especial de datos personales. El Negocio confirma que está legitimado para recoger tales datos de sus pacientes, y Samatrica los trata únicamente para prestar el Servicio.',
         ],
       },
       {
@@ -333,7 +334,7 @@ export const es: Dictionary = {
       {
         title: '1. A quién se aplica esta política',
         paragraphs: [
-          'Samatrica es un servicio para empresas (clínicas de salud), no para consumidores. Por tanto, no resulta de aplicación el derecho legal de desistimiento de 14 días previsto por la normativa europea de consumo; los derechos de reembolso recogidos en esta política son los que Samatrica concede por contrato.',
+          'Samatrica es un servicio para empresas, no para consumidores. Por tanto, no resulta de aplicación el derecho legal de desistimiento de 14 días previsto por la normativa europea de consumo; los derechos de reembolso recogidos en esta política son los que Samatrica concede por contrato.',
         ],
       },
       {
@@ -345,7 +346,7 @@ export const es: Dictionary = {
       {
         title: '3. Garantía de devolución de 14 días sobre el primer pago',
         paragraphs: [
-          'Si Samatrica no convence a su clínica, escriba a contact@samatrica.com dentro de los 14 días siguientes a su primer pago y le reembolsaremos ese pago íntegramente, sin preguntas. El reembolso se abona al medio de pago original, normalmente en un plazo de 10 días hábiles.',
+          'Si Samatrica no convence a su negocio, escriba a contact@samatrica.com dentro de los 14 días siguientes a su primer pago y le reembolsaremos ese pago íntegramente, sin preguntas. El reembolso se abona al medio de pago original, normalmente en un plazo de 10 días hábiles.',
         ],
       },
       {
@@ -373,7 +374,7 @@ export const es: Dictionary = {
       {
         title: '1. Quiénes somos',
         paragraphs: [
-          'Samatrica es operado por Samatrica OÜ, código de registro 16285192, Sepapaja tn 6, 15551 Tallinn, Estonia. Samatrica ofrece un asistente de reservas con IA para clínicas de salud. Esta política explica cómo se tratan los datos personales en este sitio web y en el widget de chat de Samatrica instalado en los sitios web de las clínicas. Para cualquier pregunta o solicitud sobre privacidad, escriba a contact@samatrica.com.',
+          'Samatrica es operado por Samatrica OÜ, código de registro 16285192, Sepapaja tn 6, 15551 Tallinn, Estonia. Samatrica ofrece un asistente de reservas con IA para negocios que trabajan con citas. Esta política explica cómo se tratan los datos personales en este sitio web y en el widget de chat de Samatrica instalado en los sitios web de esos negocios. Para cualquier pregunta o solicitud sobre privacidad, escriba a contact@samatrica.com.',
         ],
       },
       {
@@ -384,10 +385,10 @@ export const es: Dictionary = {
         ],
       },
       {
-        title: '3. El widget de chat en el sitio web de una clínica',
+        title: '3. El widget de chat en el sitio web de un negocio',
         paragraphs: [
-          'Cuando conversa con el asistente de Samatrica en el sitio web de una clínica, la clínica es la responsable del tratamiento y Samatrica trata sus datos por cuenta de ella. Tratamos el contenido de la conversación y, si solicita una cita, su nombre y apellidos, dirección de correo electrónico y número de teléfono, con el fin de responderle y trasladar su solicitud a la clínica.',
-          'En un contexto sanitario, sus mensajes y solicitudes de cita pueden revelar información sobre su salud. Se utilizan únicamente para gestionar su solicitud; la clínica a la que escribe es la responsable de estos datos, y usted puede ejercer sus derechos de protección de datos ante la clínica o escribiéndonos a nosotros.',
+          'Cuando conversa con el asistente de Samatrica en el sitio web de un negocio, ese negocio es el responsable del tratamiento y Samatrica trata sus datos por cuenta de él. Tratamos el contenido de la conversación y, si solicita una reserva, su nombre y apellidos, dirección de correo electrónico y número de teléfono, con el fin de responderle y trasladar su solicitud al negocio.',
+          'Cuando el negocio es un proveedor sanitario, sus mensajes y solicitudes de cita pueden revelar información sobre su salud. Se utilizan únicamente para gestionar su solicitud; el negocio al que escribe es el responsable de estos datos, y usted puede ejercer sus derechos de protección de datos ante él o escribiéndonos a nosotros.',
         ],
       },
       {
@@ -405,25 +406,25 @@ export const es: Dictionary = {
       {
         title: '6. Subencargados del tratamiento',
         paragraphs: [
-          'Utilizamos un número reducido de proveedores para operar el Servicio: Amazon Web Services (alojamiento, UE), nuestro proveedor del modelo de lenguaje de IA (respuestas del asistente) y nuestros proveedores de envío de correo electrónico y SMS (códigos de verificación y notificaciones). La lista actualizada está disponible previa solicitud y se facilita a las clínicas junto con su contrato de encargo de tratamiento.',
+          'Utilizamos un número reducido de proveedores para operar el Servicio: Amazon Web Services (alojamiento, UE), nuestro proveedor del modelo de lenguaje de IA (respuestas del asistente) y nuestros proveedores de envío de correo electrónico y SMS (códigos de verificación y notificaciones). La lista actualizada está disponible previa solicitud y se facilita a los negocios junto con su contrato de encargo de tratamiento.',
         ],
       },
       {
         title: '7. Conservación',
         paragraphs: [
-          'Las conversaciones y las solicitudes de cita se conservan mientras la clínica utilice el Servicio y las necesite; los códigos de verificación caducan en cuestión de minutos y no se reutilizan. Cuando una clínica deja Samatrica, sus datos se eliminan tras un plazo de exportación de 30 días, salvo que la ley exija una conservación más prolongada.',
+          'Las conversaciones y las solicitudes de reserva se conservan mientras el negocio utilice el Servicio y las necesite; los códigos de verificación caducan en cuestión de minutos y no se reutilizan. Cuando un negocio deja Samatrica, sus datos se eliminan tras un plazo de exportación de 30 días, salvo que la ley exija una conservación más prolongada.',
         ],
       },
       {
         title: '8. Seguridad',
         paragraphs: [
-          'Todas las conexiones están cifradas en tránsito (TLS). Los datos de cada clínica están aislados: una clínica solo puede ver sus propias conversaciones, pacientes y citas. El acceso del personal de Samatrica se limita a lo que exige la operación del Servicio.',
+          'Todas las conexiones están cifradas en tránsito (TLS). Los datos de cada negocio están aislados: un negocio solo puede ver sus propias conversaciones, clientes y reservas. El acceso del personal de Samatrica se limita a lo que exige la operación del Servicio.',
         ],
       },
       {
         title: '9. Sus derechos',
         paragraphs: [
-          'En virtud del RGPD, usted puede solicitar el acceso a sus datos personales, su rectificación o supresión, la limitación del tratamiento y la portabilidad, así como oponerse a determinados tratamientos. Escriba a contact@samatrica.com (o a su clínica, para los datos tratados por cuenta de ella); respondemos dentro de los plazos legales. También puede presentar una reclamación ante su autoridad de protección de datos.',
+          'En virtud del RGPD, usted puede solicitar el acceso a sus datos personales, su rectificación o supresión, la limitación del tratamiento y la portabilidad, así como oponerse a determinados tratamientos. Escriba a contact@samatrica.com (o al negocio con el que conversó, para los datos tratados por cuenta de él); respondemos dentro de los plazos legales. También puede presentar una reclamación ante su autoridad de protección de datos.',
         ],
       },
       {
@@ -436,7 +437,7 @@ export const es: Dictionary = {
   },
 
   footer: {
-    tagline: 'El asistente con IA que atiende a sus pacientes y recoge solicitudes de cita, 24/7.',
+    tagline: 'El asistente con IA que atiende a sus clientes y recoge solicitudes de reserva, 24/7.',
     product: 'Producto',
     company: 'Empresa',
     legal: 'Legal',

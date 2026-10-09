@@ -4,9 +4,9 @@
  */
 export const en = {
   meta: {
-    homeTitle: 'Samatrica: the AI assistant that takes your clinic’s appointment requests 24/7',
+    homeTitle: 'Samatrica: the AI assistant that takes your booking requests 24/7',
     homeDescription:
-      'An AI assistant on your clinic’s website chat answers patients 24/7 in their own language, finds free slots and takes appointment requests that you confirm. Your front desk takes over when needed.',
+      'An AI assistant on your website chat answers customers 24/7 in their own language, finds free slots and takes booking requests that you confirm. Your team takes over when needed.',
     clinicsTitle: 'Samatrica for clinics: patients request appointments, day and night',
     clinicsDescription:
       'Let patients request appointments and get answers 24/7 in their own language. You confirm each request; your front desk takes over the chat when it matters.',
@@ -59,28 +59,29 @@ export const en = {
   },
 
   home: {
-    eyebrow: 'AI booking assistant for health clinics',
-    heroTitle: 'Your clinic’s front desk, awake 24/7.',
+    eyebrow: 'AI booking assistant for your website',
+    heroTitle: 'Your front desk, awake 24/7.',
     heroTitleAccent: 'In every language.',
     heroSubtitle:
-      'Samatrica answers your patients on your website chat, finds free slots and takes appointment requests, day and night. You confirm each one, and your front desk takes over whenever a human touch is needed.',
+      'Samatrica answers your customers on your website chat, finds free slots and takes booking requests, day and night. You confirm each one, and your team takes over whenever a human touch is needed.',
     heroProof: 'Contact us · Cancel anytime',
 
-    industriesEyebrow: 'Built for health clinics',
-    industriesTitle: 'Made for clinics of every specialty',
-    industriesSubtitle: 'From a single practice to a multi-site clinic: every missed message is a missed patient.',
+    industriesEyebrow: 'Built for appointments',
+    industriesTitle: 'Made for every business that takes bookings',
+    industriesSubtitle:
+      'Clinics, salons, spas, gyms, garages, consultants: wherever every missed message is a missed customer.',
     clinicCards: [
       {
-        title: 'Appointments at any hour',
-        text: 'Patients request an appointment with a doctor at midnight and get answers about your services, without calling your front desk.',
+        title: 'Bookings at any hour',
+        text: 'Customers request an appointment at midnight and get answers about your services, without calling your front desk.',
       },
       {
-        title: 'Requests by doctor and specialty',
-        text: 'Each doctor or room has its own hours and slot length, so the assistant only offers slots that are really free.',
+        title: 'Requests by staff member and service',
+        text: 'Each employee, room or resource has its own hours and slot length, so the assistant only offers slots that are really free.',
       },
       {
-        title: 'Verified patients',
-        text: 'Patients confirm their email and phone with a code before their request reaches you, so no fake bookings.',
+        title: 'Verified customers',
+        text: 'Customers confirm their email and phone with a code before their request reaches you, so no fake bookings.',
       },
     ],
 
@@ -89,33 +90,33 @@ export const en = {
     steps: [
       {
         title: 'Add the widget',
-        text: 'Paste one line of code on your clinic’s website. Set your doctors, opening hours and business hours in the dashboard.',
+        text: 'Paste one line of code on your website. Set your resources, opening hours and business hours in the dashboard.',
       },
       {
         title: 'The AI answers and takes the request',
-        text: 'The assistant answers questions, finds free slots and takes the appointment request. The patient verifies by email and SMS, and you confirm it.',
+        text: 'The assistant answers questions, finds free slots and takes the booking request. The customer verifies by email and SMS, and you confirm it.',
       },
       {
-        title: 'Your front desk takes over',
-        text: 'When a patient asks for a person, a receptionist takes over the chat live, during your business hours.',
+        title: 'Your team takes over',
+        text: 'When a customer asks for a person, an employee takes over the chat live, during your business hours.',
       },
     ],
 
     featuresEyebrow: 'Features',
     featuresTitle: 'Everything your front desk needs',
     features: [
-      { title: 'Answers 24/7', text: 'Nights, weekends and holidays: no patient waits until morning.' },
-      { title: 'Real availability', text: 'The assistant only offers slots that fit each doctor’s opening hours, closures and existing appointments.' },
-      { title: 'Verified patients', text: 'Patients verify with a code by email and SMS, so no fake requests.' },
-      { title: 'Live takeover', text: 'Your front desk sees every conversation live and can step in with one click.' },
-      { title: 'Business hours', text: 'Outside your hours, the assistant tells patients when your team is back.' },
-      { title: 'One dashboard', text: 'Conversations, appointments, doctors, employees and hours, all in one place.' },
+      { title: 'Answers 24/7', text: 'Nights, weekends and holidays: no enquiry waits until morning.' },
+      { title: 'Real availability', text: 'The assistant only offers slots that fit each resource’s opening hours, closures and existing bookings.' },
+      { title: 'Verified customers', text: 'Customers verify with a code by email and SMS, so no fake requests.' },
+      { title: 'Live takeover', text: 'Your team sees every conversation live and can step in with one click.' },
+      { title: 'Business hours', text: 'Outside your hours, the assistant tells customers when your team is back.' },
+      { title: 'One dashboard', text: 'Conversations, bookings, resources, employees and hours, all in one place.' },
     ],
 
     languagesEyebrow: 'Multilingual',
-    languagesTitle: 'Speaks your patients’ language',
+    languagesTitle: 'Speaks your customers’ language',
     languagesText:
-      'Patients write in Arabic, English, French, Russian or any other language: the assistant answers in the same language, naturally. Your dashboard is available in six languages, including full right-to-left Arabic.',
+      'Customers write in Arabic, English, French, Russian or any other language: the assistant answers in the same language, naturally. Your dashboard is available in six languages, including full right-to-left Arabic.',
     languagesSample: [
       { lang: 'العربية', text: 'هل يوجد موعد يوم الخميس؟' },
       { lang: 'English', text: 'Is there a slot on Thursday?' },
@@ -123,7 +124,7 @@ export const en = {
       { lang: 'Русский', text: 'Есть ли время в четверг?' },
     ],
 
-    statsTitle: 'Why clinics choose Samatrica',
+    statsTitle: 'Why businesses choose Samatrica',
     stats: [
       { value: '24/7', label: 'Always answering' },
       { value: '1', label: 'Line of code to install' },
@@ -138,12 +139,12 @@ export const en = {
         a: 'No. You paste one line of code on your website, like a chat or analytics tag. We can help you if needed.',
       },
       {
-        q: 'Does the assistant confirm appointments on its own?',
-        a: 'No. The assistant takes appointment requests for free slots, using the doctors and opening hours you set. You confirm or decline each one in the dashboard, and the patient is notified.',
+        q: 'Does the assistant confirm bookings on its own?',
+        a: 'No. The assistant takes booking requests for free slots, using the resources and opening hours you set. You confirm or decline each one in the dashboard, and the customer is notified.',
       },
       {
-        q: 'What happens when a patient wants to talk to a person?',
-        a: 'During your business hours, a receptionist takes over the conversation live from the dashboard. Outside them, the assistant tells the patient when to come back.',
+        q: 'What happens when a customer wants to talk to a person?',
+        a: 'During your business hours, an employee takes over the conversation live from the dashboard. Outside them, the assistant tells the customer when to come back.',
       },
       {
         q: 'Which languages does it speak?',
@@ -154,13 +155,13 @@ export const en = {
         a: 'No. You pay per billing period and can cancel at any time: the subscription simply ends at the close of the period already paid, and nothing further is charged.',
       },
       {
-        q: 'Is my patients’ data safe?',
-        a: 'Each clinic can only see its own patients, conversations and appointments. Patients confirm their email and phone number with a code before an appointment request reaches you.',
+        q: 'Is my customers’ data safe?',
+        a: 'Each business can only see its own customers, conversations and bookings. Customers confirm their email and phone number with a code before a booking request reaches you.',
       },
     ],
 
-    ctaTitle: 'Never miss an appointment again',
-    ctaText: 'Get started and let Samatrica answer your next patient tonight.',
+    ctaTitle: 'Never miss a booking again',
+    ctaText: 'Get started and let Samatrica answer your next customer tonight.',
   },
 
   clinics: {
@@ -219,8 +220,8 @@ export const en = {
     placeholderNote: 'Prices and limits are indicative and may change before launch.',
     plans: {
       starter: { name: 'Starter', tagline: 'For a single practice' },
-      pro: { name: 'Pro', tagline: 'For growing clinics' },
-      business: { name: 'Business', tagline: 'For clinics with several sites' },
+      pro: { name: 'Pro', tagline: 'For growing teams' },
+      business: { name: 'Business', tagline: 'For businesses with several sites' },
     },
   },
 
@@ -249,7 +250,7 @@ export const en = {
 
   contact: {
     title: 'Contact us',
-    subtitle: 'Questions about Samatrica, a demo for your clinic, or a custom plan? We’d love to hear from you.',
+    subtitle: 'Questions about Samatrica, a demo for your business, or a custom plan? We’d love to hear from you.',
     emailLabel: 'Email',
     placeholder: 'Contact details are coming soon.',
   },
@@ -269,7 +270,7 @@ export const en = {
         title: '1. Who we are and what these terms cover',
         paragraphs: [
           'The Service is provided by Samatrica OÜ, a private limited company registered in Estonia, registry code 16285192, VAT number EE102401154, registered address Sepapaja tn 6, 15551 Tallinn, Estonia (“Samatrica”).',
-          'Samatrica provides an AI assistant that answers visitors on a business’s website, finds free slots and takes appointment requests, together with a dashboard for the business’s team (the “Service”). These terms are an agreement between Samatrica and the business that opens an account (the “Business”), typically a health clinic. They do not create a contract between Samatrica and the Business’s patients or customers.',
+          'Samatrica provides an AI assistant that answers visitors on a business’s website, finds free slots and takes booking requests, together with a dashboard for the business’s team (the “Service”). These terms are an agreement between Samatrica and the business that opens an account (the “Business”), for example a health clinic, a salon or any other business that takes bookings. They do not create a contract between Samatrica and the Business’s customers or patients.',
         ],
       },
       {
@@ -283,7 +284,7 @@ export const en = {
         title: '3. The Business’s responsibilities',
         paragraphs: [
           'The Business keeps its account credentials confidential and is responsible for the actions of its employees in the dashboard. The information it configures (services, doctors, hours, descriptions) must be accurate and lawful.',
-          'Towards its patients, the Business is the data controller: it must have a lawful basis to process the personal data collected through the chat, inform patients about this processing in its own privacy notices, and answer their data-protection requests. The data processing agreement between the Business and Samatrica (Section 6) governs Samatrica’s processing on the Business’s behalf.',
+          'Towards its customers, the Business is the data controller: it must have a lawful basis to process the personal data collected through the chat, inform customers about this processing in its own privacy notices, and answer their data-protection requests. The data processing agreement between the Business and Samatrica (Section 6) governs Samatrica’s processing on the Business’s behalf.',
         ],
       },
       {
@@ -301,8 +302,8 @@ export const en = {
       {
         title: '6. Data protection',
         paragraphs: [
-          'For personal data of patients and other chat users, the Business is the controller and Samatrica the processor under the GDPR. A data processing agreement, including Samatrica’s sub-processors and security measures, forms part of this agreement. Samatrica hosts the Service’s data in the European Union (AWS, Frankfurt region).',
-          'Appointment requests in a healthcare context can reveal health information, which the GDPR treats as a special category of personal data. The Business confirms it is entitled to collect such data from its patients, and Samatrica processes it only to provide the Service.',
+          'For personal data of customers and other chat users, the Business is the controller and Samatrica the processor under the GDPR. A data processing agreement, including Samatrica’s sub-processors and security measures, forms part of this agreement. Samatrica hosts the Service’s data in the European Union (AWS, Frankfurt region).',
+          'Where the Business provides healthcare, appointment requests can reveal health information, which the GDPR treats as a special category of personal data. The Business confirms it is entitled to collect such data from its patients, and Samatrica processes it only to provide the Service.',
         ],
       },
       {
@@ -336,7 +337,7 @@ export const en = {
       {
         title: '1. Who this policy applies to',
         paragraphs: [
-          'Samatrica is a service for businesses (health clinics), not consumers. The statutory 14-day right of withdrawal of EU consumer law therefore does not apply; the refund rights in this policy are the ones Samatrica grants by contract.',
+          'Samatrica is a service for businesses, not consumers. The statutory 14-day right of withdrawal of EU consumer law therefore does not apply; the refund rights in this policy are the ones Samatrica grants by contract.',
         ],
       },
       {
@@ -348,7 +349,7 @@ export const en = {
       {
         title: '3. 14-day money-back guarantee on the first payment',
         paragraphs: [
-          'If Samatrica does not work out for your clinic, write to contact@samatrica.com within 14 days of your first payment and we refund that payment in full, no questions asked. The refund goes to the original payment method, normally within 10 business days.',
+          'If Samatrica does not work out for your business, write to contact@samatrica.com within 14 days of your first payment and we refund that payment in full, no questions asked. The refund goes to the original payment method, normally within 10 business days.',
         ],
       },
       {
@@ -376,7 +377,7 @@ export const en = {
       {
         title: '1. Who we are',
         paragraphs: [
-          'Samatrica is operated by Samatrica OÜ, registry code 16285192, Sepapaja tn 6, 15551 Tallinn, Estonia. It provides an AI booking assistant for health clinics. This policy explains how personal data is handled on this website and in the Samatrica chat widget installed on clinics’ websites. For any privacy question or request, write to contact@samatrica.com.',
+          'Samatrica is operated by Samatrica OÜ, registry code 16285192, Sepapaja tn 6, 15551 Tallinn, Estonia. It provides an AI booking assistant for businesses that take appointments. This policy explains how personal data is handled on this website and in the Samatrica chat widget installed on those businesses’ websites. For any privacy question or request, write to contact@samatrica.com.',
         ],
       },
       {
@@ -387,10 +388,10 @@ export const en = {
         ],
       },
       {
-        title: '3. The chat widget on a clinic’s website',
+        title: '3. The chat widget on a business’s website',
         paragraphs: [
-          'When you chat with the Samatrica assistant on a clinic’s website, the clinic is the data controller and Samatrica processes your data on its behalf. We process the conversation content and, if you request an appointment, your first and last name, email address and phone number, in order to answer you and pass your request to the clinic.',
-          'In a healthcare context, your messages and appointment requests can reveal health information. They are used only to handle your request; the clinic you are writing to is the one responsible for this data, and you can exercise your data-protection rights with the clinic or by writing to us.',
+          'When you chat with the Samatrica assistant on a business’s website, that business is the data controller and Samatrica processes your data on its behalf. We process the conversation content and, if you request a booking, your first and last name, email address and phone number, in order to answer you and pass your request to the business.',
+          'When the business is a healthcare provider, your messages and appointment requests can reveal health information. They are used only to handle your request; the business you are writing to is the one responsible for this data, and you can exercise your data-protection rights with it or by writing to us.',
         ],
       },
       {
@@ -408,25 +409,25 @@ export const en = {
       {
         title: '6. Sub-processors',
         paragraphs: [
-          'We use a small number of service providers to run the Service: Amazon Web Services (hosting, EU), our AI language-model provider (assistant replies), and our email and SMS delivery providers (verification codes and notifications). The current list is available on request and is provided to clinics with their data processing agreement.',
+          'We use a small number of service providers to run the Service: Amazon Web Services (hosting, EU), our AI language-model provider (assistant replies), and our email and SMS delivery providers (verification codes and notifications). The current list is available on request and is provided to businesses with their data processing agreement.',
         ],
       },
       {
         title: '7. Retention',
         paragraphs: [
-          'Conversations and appointment requests are kept as long as the clinic uses the Service and needs them; verification codes expire within minutes and are not reused. When a clinic leaves Samatrica, its data is deleted after a 30-day export window, except where law requires longer retention.',
+          'Conversations and booking requests are kept as long as the business uses the Service and needs them; verification codes expire within minutes and are not reused. When a business leaves Samatrica, its data is deleted after a 30-day export window, except where law requires longer retention.',
         ],
       },
       {
         title: '8. Security',
         paragraphs: [
-          'All connections are encrypted in transit (TLS). Each clinic’s data is isolated: a clinic can only see its own conversations, patients and appointments. Access by Samatrica staff is limited to what operating the Service requires.',
+          'All connections are encrypted in transit (TLS). Each business’s data is isolated: a business can only see its own conversations, customers and bookings. Access by Samatrica staff is limited to what operating the Service requires.',
         ],
       },
       {
         title: '9. Your rights',
         paragraphs: [
-          'Under the GDPR you can request access to your personal data, its correction or deletion, restriction of processing, portability, and you can object to certain processing. Write to contact@samatrica.com (or to your clinic, for data processed on its behalf); we answer within the legal time limits. You can also lodge a complaint with your data protection authority.',
+          'Under the GDPR you can request access to your personal data, its correction or deletion, restriction of processing, portability, and you can object to certain processing. Write to contact@samatrica.com (or to the business you chatted with, for data processed on its behalf); we answer within the legal time limits. You can also lodge a complaint with your data protection authority.',
         ],
       },
       {
@@ -439,7 +440,7 @@ export const en = {
   },
 
   footer: {
-    tagline: 'The AI assistant that answers your patients and takes appointment requests, 24/7.',
+    tagline: 'The AI assistant that answers your customers and takes booking requests, 24/7.',
     product: 'Product',
     company: 'Company',
     legal: 'Legal',
