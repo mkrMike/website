@@ -8,6 +8,9 @@ export const es: Dictionary = {
     clinicsTitle: 'Samatrica para clínicas: sus pacientes solicitan cita, de día y de noche',
     clinicsDescription:
       'Permita que sus pacientes soliciten cita y obtengan respuestas 24/7 en su propio idioma. Usted confirma cada solicitud; su recepción toma el control del chat cuando realmente importa.',
+    salonsTitle: 'Samatrica para salones de belleza: sus clientes solicitan cita, de día y de noche',
+    salonsDescription:
+      'Sus clientes preguntan por sus servicios y solicitan una hora con su estilista 24/7, en su propio idioma. Solo se ofrecen horas realmente libres, y usted confirma cada solicitud.',
     signupTitle: 'Empiece ahora: Samatrica',
     signupDescription: 'Cree su cuenta de Samatrica y añada el asistente con IA a su sitio web.',
     contactTitle: 'Contacto: Samatrica',
@@ -20,6 +23,7 @@ export const es: Dictionary = {
 
   nav: {
     clinics: 'Clínicas',
+    salons: 'Salones',
     contact: 'Contacto',
     login: 'Iniciar sesión',
     startTrial: 'Empiece ahora',
@@ -45,11 +49,20 @@ export const es: Dictionary = {
     status: 'En línea · responde al instante',
     clinic: {
       customer1: 'Hola, ¿puedo ver a un dermatólogo esta semana?',
-      assistant1: 'Por supuesto. El Dr. ** tiene horarios libres el jueves a las 10:30 y a las 16:00. ¿Cuál le viene mejor?',
+      assistant1: 'Por supuesto. La Dra. Lina tiene horarios libres el jueves a las 10:30 y a las 16:00. ¿Cuál le viene mejor?',
       customer2: 'El jueves a las 16:00, por favor.',
       assistant2: 'Solicitud enviada. Le he mandado un código por correo y SMS para verificarla; después, la clínica confirmará su cita.',
       booked: 'Jueves 16:00 · Dermatología · Solicitud enviada',
       confirmed: 'Confirmada por la clínica',
+    },
+    salon: {
+      customer1: 'Hola, ¿puedo reservar un tinte el viernes?',
+      assistant1: 'Por supuesto. ¿Con Anna o con Bob, o con quien esté disponible?',
+      customer2: 'Con quien sea, sobre las 11.',
+      assistant2: 'El viernes tengo 11:00, 11:15 o 11:45. ¿Cuál le viene bien?',
+      customer3: 'A las 11:00, por favor.',
+      booked: 'Tinte con Anna · Viernes 11:00–11:45 · 250 AED · Solicitud enviada',
+      confirmed: 'Confirmada por el salón',
     },
     typing: 'El asistente está escribiendo',
     placeholder: 'Escriba un mensaje…',
@@ -183,6 +196,30 @@ export const es: Dictionary = {
     ],
     note: 'Samatrica gestiona solicitudes de cita y preguntas generales. No ofrece consejo médico.',
     ctaTitle: 'Ofrezca a sus pacientes una recepción que nunca duerme',
+  },
+
+  salons: {
+    eyebrow: 'Para salones de belleza',
+    title: 'Sus clientes reservan su próxima visita, de día y de noche.',
+    subtitle:
+      'Samatrica atiende a sus clientes en su sitio web, en su idioma y a partir de su carta de servicios. Encuentra una hora realmente libre con el estilista adecuado y recoge la solicitud de reserva, mientras su equipo sigue con el cliente en el sillón.',
+    painTitle: 'Su equipo no puede contestar mientras trabaja',
+    pains: [
+      { title: 'Manos ocupadas, teléfono sonando', text: 'Sus estilistas no pueden contestar en mitad de un tinte o de un corte.' },
+      { title: 'Mensajes después del cierre', text: 'Muchos clientes buscan hora por la noche, cuando el salón está cerrado.' },
+      { title: 'Idas y venidas con los horarios', text: 'Encontrar una hora que encaje con el servicio y con el estilista adecuado lleva mensaje tras mensaje.' },
+    ],
+    benefitsTitle: 'Lo que Samatrica aporta a su salón',
+    benefits: [
+      { title: 'Su carta de servicios', text: 'Cada servicio tiene su duración, su precio o «a consultar», y una descripción con la que responde el asistente.' },
+      { title: 'Su estilista, o quien esté disponible', text: 'El cliente elige estilista o «quien esté disponible», y el salón asigna la reserva a quien tenga menos ese día.' },
+      { title: 'Solo horas realmente libres', text: 'Todo el servicio cabe en el horario del estilista, fuera de sus días libres y de los festivos del salón, sin solaparse con otra reserva, en intervalos de 15 minutos.' },
+      { title: 'Reservado desde el chat', text: 'El asistente guía al cliente del servicio al estilista, y luego al día y a la hora. Los correos nombran la reserva, y un código de reserva permite al cliente consultarla o cancelarla.' },
+      { title: 'Clientes verificados', text: 'Los clientes se verifican por correo y SMS antes de que su solicitud le llegue a usted.' },
+      { title: 'Su equipo toma el relevo', text: 'Su equipo toma la conversación en horario de apertura y puede reservar a cualquier cliente, a cualquier minuto, desde el panel.' },
+    ],
+    note: 'Cada reserva es una solicitud que su salón confirma. Samatrica no cobra pagos ni depósitos.',
+    ctaTitle: 'Deje que sus clientes reserven mientras su equipo los atiende',
   },
 
   pricing: {

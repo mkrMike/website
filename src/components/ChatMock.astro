@@ -9,18 +9,22 @@ import Icon from './Icon.astro'
 
 interface Props {
   lang: Locale
+  scenario?: 'clinic' | 'salon'
 }
 
-const { lang } = Astro.props
+const { lang, scenario = 'clinic' } = Astro.props
 const t = useTranslations(lang)
-const c = t.chat.clinic
+const c = t.chat[scenario]
 
-const messages = [
+const messages: { from: 'customer' | 'assistant'; text: string }[] = [
   { from: 'customer', text: c.customer1 },
   { from: 'assistant', text: c.assistant1 },
   { from: 'customer', text: c.customer2 },
   { from: 'assistant', text: c.assistant2 },
-] as const
+]
+if (scenario === 'salon') {
+  messages.push({ from: 'customer', text: t.chat.salon.customer3 })
+}
 ---
 
 <figure class="chat" aria-label={t.chat.title}>
@@ -40,11 +44,11 @@ const messages = [
         </li>
       ))
     }
-    <li class="status-chip sent" style="--i: 4">
+    <li class="status-chip sent" style={`--i: ${messages.length}`}>
       <Icon name="clock" size={18} />
       {c.booked}
     </li>
-    <li class="status-chip confirmed" style="--i: 5">
+    <li class="status-chip confirmed" style={`--i: ${messages.length + 1}`}>
       <Icon name="check" size={18} />
       {c.confirmed}
     </li>

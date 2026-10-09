@@ -1,34 +1,67 @@
 ---
-/** The dedicated landing page for health clinics. */
+/** A dedicated landing page for one industry: health clinics or beauty salons. */
 import Base from '../layouts/Base.astro'
-import { href, type Locale, useTranslations } from '../i18n'
+import { href, type Locale, type PagePath, useTranslations } from '../i18n'
 import ChatMock from './ChatMock.astro'
 import CtaBand from './CtaBand.astro'
 import Icon from './Icon.astro'
 
+type Industry = 'clinics' | 'salons'
+type IconName = Parameters<typeof Icon>[0]['name']
+
 interface Props {
   lang: Locale
+  industry: Industry
 }
 
-const { lang } = Astro.props
+const { lang, industry } = Astro.props
 const t = useTranslations(lang)
-const copy = t.clinics
+const copy = t[industry]
 
-const painIcons = ['moon', 'phone', 'calendar'] as const
-const benefitIcons = ['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed'] as const
+/** The screens follow each other: home → clinics → salons. */
+const screens: Record<
+  Industry,
+  {
+    icon: IconName
+    painIcons: IconName[]
+    benefitIcons: IconName[]
+    scenario: 'clinic' | 'salon'
+    prev: PagePath
+    next?: PagePath
+  }
+> = {
+  clinics: {
+    icon: 'stethoscope',
+    painIcons: ['moon', 'phone', 'calendar'],
+    benefitIcons: ['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed'],
+    scenario: 'clinic',
+    prev: '',
+    next: 'salons',
+  },
+  salons: {
+    icon: 'scissors',
+    painIcons: ['phone', 'moon', 'calendar'],
+    benefitIcons: ['layout', 'users', 'calendar', 'chat', 'shield', 'hand'],
+    scenario: 'salon',
+    prev: 'clinics',
+  },
+}
+const screen = screens[industry]
+const { painIcons, benefitIcons } = screen
+const label = (page: PagePath) => (page ? t.nav[page as Industry] : t.common.backToHome)
 ---
 
 <Base
   lang={lang}
-  page="clinics"
-  title={t.meta.clinicsTitle}
-  description={t.meta.clinicsDescription}
+  page={industry}
+  title={t.meta[`${industry}Title`]}
+  description={t.meta[`${industry}Description`]}
 >
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">
-          <Icon name="stethoscope" size={16} />
+          <Icon name={screen.icon} size={16} />
           {copy.eyebrow}
         </span>
         <h1>{copy.title}</h1>
@@ -42,7 +75,7 @@ const benefitIcons = ['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed']
         <p class="trial">{t.common.trialNote}</p>
       </div>
       <div class="visual">
-        <ChatMock lang={lang} />
+        <ChatMock lang={lang} scenario={screen.scenario} />
       </div>
     </div>
   </section>
@@ -92,10 +125,21 @@ const benefitIcons = ['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed']
 
   <CtaBand lang={lang} title={copy.ctaTitle} />
 
-  <!-- Switch back to the principal screen. -->
-  <a class="screen-arrow prev" href={href(lang)} title={t.common.backToHome} aria-label={t.common.backToHome}>
+  <a
+    class="screen-arrow prev"
+    href={href(lang, screen.prev)}
+    title={label(screen.prev)}
+    aria-label={label(screen.prev)}
+  >
     ←
   </a>
+  {
+    screen.next && (
+      <a class="screen-arrow" href={href(lang, screen.next)} title={label(screen.next)} aria-label={label(screen.next)}>
+        →
+      </a>
+    )
+  }
 </Base>
 
 <style>

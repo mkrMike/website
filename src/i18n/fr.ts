@@ -8,6 +8,9 @@ export const fr: Dictionary = {
     clinicsTitle: 'Samatrica pour les cliniques : vos patients demandent un rendez-vous, jour et nuit',
     clinicsDescription:
       'Vos patients demandent un rendez-vous et obtiennent des réponses 24h/24 dans leur langue. Vous confirmez chaque demande ; votre accueil reprend la conversation quand c’est important.',
+    salonsTitle: 'Samatrica pour les salons de beauté : vos clients demandent un rendez-vous, jour et nuit',
+    salonsDescription:
+      'Vos clients posent leurs questions sur vos prestations et demandent un créneau avec leur styliste 24h/24, dans leur langue. Seuls les créneaux vraiment libres sont proposés, et vous confirmez chaque demande.',
     signupTitle: 'Lancez-vous : Samatrica',
     signupDescription: 'Créez votre compte Samatrica et ajoutez l’assistant IA à votre site web.',
     contactTitle: 'Contact : Samatrica',
@@ -20,6 +23,7 @@ export const fr: Dictionary = {
 
   nav: {
     clinics: 'Cliniques',
+    salons: 'Salons',
     contact: 'Contact',
     login: 'Se connecter',
     startTrial: 'Lancez-vous',
@@ -45,11 +49,20 @@ export const fr: Dictionary = {
     status: 'En ligne · répond instantanément',
     clinic: {
       customer1: 'Bonjour, est-il possible de voir un dermatologue cette semaine ?',
-      assistant1: 'Bien sûr. Le Dr. ** a des créneaux libres jeudi à 10:30 et à 16:00. Lequel vous convient ?',
+      assistant1: 'Bien sûr. Dr Lina a des créneaux libres jeudi à 10:30 et à 16:00. Lequel vous convient ?',
       customer2: 'Jeudi à 16:00, s’il vous plaît.',
       assistant2: 'Demande envoyée. Je vous ai transmis un code de vérification par e-mail et par SMS ; la clinique confirmera ensuite votre rendez-vous.',
       booked: 'Jeudi 16:00 · Dermatologie · Demande envoyée',
       confirmed: 'Confirmé par la clinique',
+    },
+    salon: {
+      customer1: 'Bonjour, puis-je réserver une coloration vendredi ?',
+      assistant1: 'Bien sûr. Avec Anna ou Bob, ou la première personne disponible ?',
+      customer2: 'Peu importe, vers 11:00.',
+      assistant2: 'Vendredi, j’ai 11:00, 11:15 ou 11:45. Lequel vous convient ?',
+      customer3: '11:00, s’il vous plaît.',
+      booked: 'Coloration avec Anna · Vendredi 11:00–11:45 · 250 AED · Demande envoyée',
+      confirmed: 'Confirmé par le salon',
     },
     typing: 'L’assistant écrit',
     placeholder: 'Écrivez un message…',
@@ -183,6 +196,30 @@ export const fr: Dictionary = {
     ],
     note: 'Samatrica gère les demandes de rendez-vous et les questions générales. Il ne donne aucun conseil médical.',
     ctaTitle: 'Offrez à vos patients un accueil qui ne dort jamais',
+  },
+
+  salons: {
+    eyebrow: 'Pour les salons de beauté',
+    title: 'Vos clients réservent leur prochaine visite, jour et nuit.',
+    subtitle:
+      'Samatrica répond à vos clients sur votre site, dans leur langue et à partir de votre carte de prestations. Il trouve un créneau vraiment libre avec le bon styliste et recueille la demande de réservation, pendant que votre équipe reste auprès du client au fauteuil.',
+    painTitle: 'Votre équipe ne peut pas répondre en travaillant',
+    pains: [
+      { title: 'Les mains occupées, le téléphone sonne', text: 'Vos stylistes ne peuvent pas décrocher en pleine coloration ou en pleine coupe.' },
+      { title: 'Des messages après la fermeture', text: 'Beaucoup de clients cherchent un créneau le soir, quand le salon est fermé.' },
+      { title: 'Des allers-retours sur les horaires', text: 'Trouver un créneau qui convient à la prestation et au bon styliste demande message après message.' },
+    ],
+    benefitsTitle: 'Ce que Samatrica apporte à votre salon',
+    benefits: [
+      { title: 'Votre carte de prestations', text: 'Chaque prestation a sa durée, son prix ou « sur demande », et une description à partir de laquelle l’assistant répond.' },
+      { title: 'Leur styliste, ou le premier disponible', text: 'Le client choisit son styliste ou « le premier disponible », et le salon confie la réservation à celui qui en a le moins ce jour-là.' },
+      { title: 'Uniquement des créneaux vraiment libres', text: 'Toute la prestation tient dans les horaires du styliste, hors jours de repos et fermetures du salon, sans chevaucher une autre réservation, par pas de 15 minutes.' },
+      { title: 'Réservé depuis le chat', text: 'L’assistant guide le client de la prestation au styliste, puis au jour et à l’heure. Les e-mails nomment la réservation, et un code de réservation permet au client de la consulter ou de l’annuler.' },
+      { title: 'Clients vérifiés', text: 'Les clients se vérifient par e-mail et SMS avant que leur demande ne vous parvienne.' },
+      { title: 'Votre équipe prend le relais', text: 'Votre équipe reprend la conversation pendant les heures d’ouverture et peut réserver n’importe quel client, à la minute près, depuis le tableau de bord.' },
+    ],
+    note: 'Chaque réservation est une demande que votre salon confirme. Samatrica n’encaisse ni paiement ni acompte.',
+    ctaTitle: 'Laissez vos clients réserver pendant que votre équipe s’occupe d’eux',
   },
 
   pricing: {

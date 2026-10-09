@@ -10,6 +10,9 @@ export const en = {
     clinicsTitle: 'Samatrica for clinics: patients request appointments, day and night',
     clinicsDescription:
       'Let patients request appointments and get answers 24/7 in their own language. You confirm each request; your front desk takes over the chat when it matters.',
+    salonsTitle: 'Samatrica for beauty salons: clients request bookings, day and night',
+    salonsDescription:
+      'Clients ask about your services and request a time with their stylist 24/7, in their own language. Only really free times are offered, and you confirm each request.',
     signupTitle: 'Get started: Samatrica',
     signupDescription: 'Create your Samatrica account and add the AI assistant to your website.',
     contactTitle: 'Contact: Samatrica',
@@ -22,6 +25,7 @@ export const en = {
 
   nav: {
     clinics: 'Clinics',
+    salons: 'Salons',
     contact: 'Contact',
     login: 'Log in',
     startTrial: 'Get started',
@@ -48,11 +52,20 @@ export const en = {
     status: 'Online · replies instantly',
     clinic: {
       customer1: 'Hi, can I see a dermatologist this week?',
-      assistant1: 'Of course. Dr. ** has free slots on Thursday at 10:30 and 16:00. Which suits you?',
+      assistant1: 'Of course. Dr. Lina has free slots on Thursday at 10:30 and 16:00. Which suits you?',
       customer2: 'Thursday at 16:00, please.',
       assistant2: 'Request sent. I’ve emailed and texted you a code to verify it; the clinic will then confirm your appointment.',
       booked: 'Thursday 16:00 · Dermatology · Request sent',
       confirmed: 'Confirmed by the clinic',
+    },
+    salon: {
+      customer1: 'Hi, can I book a colour on Friday?',
+      assistant1: 'Of course. Would you like Anna or Bob, or anyone available?',
+      customer2: 'Anyone, around 11.',
+      assistant2: 'On Friday I have 11:00, 11:15 or 11:45. Which suits you?',
+      customer3: '11:00, please.',
+      booked: 'Colour with Anna · Friday 11:00–11:45 · 250 AED · Request sent',
+      confirmed: 'Confirmed by the salon',
     },
     typing: 'Assistant is typing',
     placeholder: 'Type a message…',
@@ -186,6 +199,30 @@ export const en = {
     ],
     note: 'Samatrica handles booking requests and general questions. It does not give medical advice.',
     ctaTitle: 'Give your patients a front desk that never sleeps',
+  },
+
+  salons: {
+    eyebrow: 'For beauty salons',
+    title: 'Clients book their next visit, day and night.',
+    subtitle:
+      'Samatrica answers clients on your website in their own language, from your service menu. It finds a time that is really free with the right stylist and takes the booking request, while your team stays with the client in the chair.',
+    painTitle: 'Your team can’t answer while they work',
+    pains: [
+      { title: 'Hands busy, phone ringing', text: 'Your stylists can’t pick up in the middle of a colour or a cut.' },
+      { title: 'Messages after closing', text: 'Many clients look for a time in the evening, when the salon is closed.' },
+      { title: 'Back-and-forth over times', text: 'Finding a time that fits the service and the right stylist takes message after message.' },
+    ],
+    benefitsTitle: 'What Samatrica does for your salon',
+    benefits: [
+      { title: 'Your service menu', text: 'Each service has its duration, its price or “on request”, and a description the assistant answers from.' },
+      { title: 'Their stylist, or anyone available', text: 'Clients pick a stylist or “anyone available”, and the salon gives the booking to whoever has the fewest that day.' },
+      { title: 'Only really free times', text: 'The whole service fits in the stylist’s hours, outside days off and salon holidays, without overlapping another booking, on a 15-minute grid.' },
+      { title: 'Booked from the chat', text: 'The assistant guides the client from service to stylist, day and time. Emails name the booking, and a booking code lets the client check or cancel it.' },
+      { title: 'Verified clients', text: 'Clients verify by email and SMS before their request reaches you.' },
+      { title: 'Your team steps in', text: 'Staff take over the chat during opening hours, and can book any client at any minute from the dashboard.' },
+    ],
+    note: 'Every booking is a request that your salon confirms. Samatrica does not take payments or deposits.',
+    ctaTitle: 'Let clients book while your team takes care of clients',
   },
 
   pricing: {
