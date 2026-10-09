@@ -80,7 +80,7 @@ export const es: Dictionary = {
     industriesTitle: 'Pensado para todo negocio que trabaja con reservas',
     industriesSubtitle:
       'Clínicas, salones, spas, gimnasios, talleres, consultores: allí donde cada mensaje sin respuesta es un cliente perdido.',
-    clinicCards: [
+    valueCards: [
       {
         title: 'Reservas a cualquier hora',
         text: 'Sus clientes solicitan una cita a medianoche y obtienen respuestas sobre sus servicios, sin llamar a su recepción.',

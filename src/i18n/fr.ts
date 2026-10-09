@@ -80,7 +80,7 @@ export const fr: Dictionary = {
     industriesTitle: 'Pensé pour toutes les entreprises qui prennent des réservations',
     industriesSubtitle:
       'Cliniques, salons, spas, salles de sport, garages, consultants : partout où chaque message sans réponse est un client en moins.',
-    clinicCards: [
+    valueCards: [
       {
         title: 'Des réservations à toute heure',
         text: 'Vos clients demandent un rendez-vous à minuit et obtiennent des réponses sur vos services, sans appeler votre accueil.',

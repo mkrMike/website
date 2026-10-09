@@ -11,7 +11,7 @@ const lang = Astro.params.lang as Locale
 const t = useTranslations(lang)
 const h = t.home
 
-const clinicIcons = ['moon', 'stethoscope', 'shield'] as const
+const valueIcons = ['moon', 'calendar', 'shield'] as const
 const stepIcons = ['code', 'chat', 'users'] as const
 const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] as const
 ---
@@ -37,7 +37,29 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
       </div>
 
       <div class="hero-visual">
-        <ChatMock lang={lang} />
+        <!-- Two industries, equal weight: the demo alternates (see the script below). -->
+        <div class="chat-slides" data-chat-slides>
+          <div class="chat-slide"><ChatMock lang={lang} scenario="clinic" /></div>
+          <div class="chat-slide" hidden><ChatMock lang={lang} scenario="salon" /></div>
+        </div>
+        <script is:inline>
+          // Runs before the first paint, so there is no flash: a random one first,
+          // then they take turns (a still demo with reduced motion).
+          ;(() => {
+            const box = document.querySelector('[data-chat-slides]')
+            if (!box) return
+            const slides = [...box.querySelectorAll('.chat-slide')]
+            let current = Math.floor(Math.random() * slides.length)
+            slides.forEach((slide, index) => (slide.hidden = index !== current))
+            if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
+            // Long enough for one conversation to play out (about 8 s).
+            setInterval(() => {
+              slides[current].hidden = true
+              current = (current + 1) % slides.length
+              slides[current].hidden = false
+            }, 12000)
+          })()
+        </script>
         <div class="float float-a" aria-hidden="true">
           <Icon name="moon" size={18} />
           <span>{h.features[0]!.title}</span>
@@ -61,10 +83,10 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
 
       <div class="grid grid-3">
         {
-          h.clinicCards.map((card, index) => (
+          h.valueCards.map((card, index) => (
             <article class="card industry" data-reveal style={`--reveal-delay: ${index * 0.1}s`}>
               <div class="industry-icon">
-                <Icon name={clinicIcons[index] ?? 'check'} size={28} />
+                <Icon name={valueIcons[index] ?? 'check'} size={28} />
               </div>
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -245,6 +267,12 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
     display: flex;
     justify-content: center;
     padding: 2.75rem 0;
+  }
+
+  /* The demos take turns in the same place; the chat keeps its own max width. */
+  .chat-slides {
+    width: 100%;
+    max-width: 400px;
   }
 
   .float {

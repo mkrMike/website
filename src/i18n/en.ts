@@ -83,7 +83,7 @@ export const en = {
     industriesTitle: 'Made for every business that takes bookings',
     industriesSubtitle:
       'Clinics, salons, spas, gyms, garages, consultants: wherever every missed message is a missed customer.',
-    clinicCards: [
+    valueCards: [
       {
         title: 'Bookings at any hour',
         text: 'Customers request an appointment at midnight and get answers about your services, without calling your front desk.',
