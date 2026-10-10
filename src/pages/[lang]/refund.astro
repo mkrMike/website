@@ -8,9 +8,7 @@ const lang = Astro.params.lang as Locale
 const t = useTranslations(lang)
 ---
 
-<!-- Draft until a lawyer approves the text: marked as such, and noindex. -->
-<SimplePage lang={lang} page="refund" title={t.legal.refundTitle} metaTitle={t.meta.refundTitle} noindex>
-  <p class="draft"><span>{t.legal.draft}</span>{t.legal.draftNote}</p>
+<SimplePage lang={lang} page="refund" title={t.legal.refundTitle} metaTitle={t.meta.refundTitle}>
   <p class="updated">{t.legal.updated}</p>
   {
     t.legal.refund.map((section) => (
@@ -25,26 +23,6 @@ const t = useTranslations(lang)
 </SimplePage>
 
 <style>
-  .draft {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.25rem 1.5rem;
-    border: 1px dashed var(--line);
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-  }
-
-  .draft span {
-    padding: 0.2rem 0.65rem;
-    border-radius: 999px;
-    background: #fff4d6;
-    color: #8a6100;
-    font-size: 0.8rem;
-    font-weight: 700;
-  }
-
   .updated {
     color: var(--muted);
     font-size: 0.9rem;

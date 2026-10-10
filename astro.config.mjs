@@ -12,9 +12,8 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      // Not for search engines: the internal brand page, and the legal pages
-      // while they are drafts (noindex too).
-      filter: (page) => !/\/(brand|terms|privacy|refund)\/$/.test(page),
+      // Not for search engines: the internal brand page (noindex too).
+      filter: (page) => !/\/brand\/$/.test(page),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', fr: 'fr', ar: 'ar', es: 'es', ru: 'ru', el: 'el' },

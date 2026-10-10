@@ -293,17 +293,15 @@ export const es: Dictionary = {
     termsTitle: 'Términos del servicio',
     privacyTitle: 'Política de privacidad',
     refundTitle: 'Política de reembolso',
-    draft: 'Borrador',
     placeholder: 'Esta página se publicará antes del lanzamiento. Su texto se está preparando y revisando.',
-    draftNote: 'Este borrador está en revisión jurídica y aún no es vinculante.',
-    updated: 'Borrador del 8 de octubre de 2026',
+    updated: 'Última actualización: 10 de octubre de 2026',
 
     /** Encabezados de sección y párrafos, mostrados en orden. */
     terms: [
       {
         title: '1. Quiénes somos y qué cubren estos términos',
         paragraphs: [
-          'El Servicio es prestado por Samatrica OÜ, una sociedad de responsabilidad limitada registrada en Estonia, con código de registro 16285192, número de IVA EE102401154 y domicilio social en Sepapaja tn 6, 15551 Tallinn, Estonia («Samatrica»).',
+          'El Servicio es prestado por Adenium Consultancy - F.Z.E, un establecimiento de zona franca autorizado por la autoridad de zonas francas de Ajmán (Free Zones Authority of Ajman) con la licencia n.º 32555, número de registro fiscal (TRN) 104836129700001 y domicilio social en FL.H-01582, C1 Building, Ajman Free Zone, Ajmán, Emiratos Árabes Unidos, número Makani 4442612247, que opera Samatrica («Samatrica»).',
           'Samatrica ofrece un asistente de IA que atiende a los visitantes en el sitio web de un negocio, encuentra horarios libres y recoge solicitudes de reserva, junto con un panel de control para el equipo del negocio (el «Servicio»). Estos términos constituyen un acuerdo entre Samatrica y el negocio que abre una cuenta (el «Negocio»), por ejemplo una clínica de salud, un salón o cualquier otro negocio que trabaje con reservas. No crean ningún contrato entre Samatrica y los clientes o pacientes del Negocio.',
         ],
       },
@@ -318,7 +316,7 @@ export const es: Dictionary = {
         title: '3. Responsabilidades del Negocio',
         paragraphs: [
           'El Negocio mantiene la confidencialidad de sus credenciales de acceso y responde de las acciones de sus empleados en el panel de control. La información que configura (servicios, médicos, horarios, descripciones) debe ser veraz y lícita.',
-          'Frente a sus clientes, el Negocio es el responsable del tratamiento: debe contar con una base jurídica para tratar los datos personales recogidos a través del chat, informar a los clientes de este tratamiento en sus propias políticas de privacidad y atender sus solicitudes en materia de protección de datos. El contrato de encargo de tratamiento entre el Negocio y Samatrica (sección 6) regula el tratamiento que Samatrica realiza por cuenta del Negocio.',
+          'Frente a sus clientes, el Negocio es el responsable del tratamiento: debe contar con una base jurídica para tratar los datos personales recogidos a través del chat, informar a los clientes de este tratamiento en sus propias políticas de privacidad y atender sus solicitudes en materia de protección de datos. El contrato de encargo de tratamiento entre el Negocio y Samatrica (sección 9) regula el tratamiento que Samatrica realiza por cuenta del Negocio.',
         ],
       },
       {
@@ -328,41 +326,70 @@ export const es: Dictionary = {
         ],
       },
       {
-        title: '5. Tarifas y cancelación',
+        title: '5. Respuestas generadas por IA',
         paragraphs: [
-          'Las tarifas, los periodos de facturación y los métodos de pago se indican al contratar la suscripción, y pueden actualizarse con un preaviso razonable; los cambios de precio nunca se aplican con carácter retroactivo. No hay permanencia mínima: el Negocio puede cancelar en cualquier momento, la suscripción finaliza al término del periodo de facturación ya abonado y no se cobra nada más.',
+          'Las respuestas del asistente las genera automáticamente una inteligencia artificial a partir de la información que configura el Negocio. Pueden ser incompletas o incorrectas, por lo que el Negocio debe mantener esa información exacta y actualizada, y revisar periódicamente las conversaciones en el panel. Samatrica no garantiza la exactitud de cada respuesta.',
+          'El widget informa a los visitantes de que están hablando con un asistente de IA, y el Negocio no debe ocultarlo ni dar a entender lo contrario. El Negocio sigue siendo responsable ante sus clientes de la información y los servicios que ofrece.',
         ],
       },
       {
-        title: '6. Protección de datos',
+        title: '6. Tarifas y cancelación',
         paragraphs: [
-          'Respecto de los datos personales de los clientes y demás usuarios del chat, el Negocio es el responsable del tratamiento y Samatrica el encargado del tratamiento conforme al RGPD. Un contrato de encargo de tratamiento, que incluye los subencargados de Samatrica y sus medidas de seguridad, forma parte de este acuerdo. Samatrica aloja los datos del Servicio en la Unión Europea (AWS, región de Fráncfort).',
+          'Las tarifas, los periodos de facturación y los métodos de pago se indican al contratar la suscripción, y pueden actualizarse con un preaviso de al menos 30 días por correo electrónico; los cambios de precio nunca se aplican con carácter retroactivo, y el Negocio puede cancelar antes de que entren en vigor. No hay permanencia mínima: el Negocio puede cancelar en cualquier momento, la suscripción finaliza al término del periodo de facturación ya abonado y no se cobra nada más.',
+          'Las tarifas no incluyen el impuesto sobre el valor añadido ni otros impuestos. A los Negocios establecidos en los Emiratos Árabes Unidos se les añade en la factura el IVA emiratí (actualmente del 5 %); los Negocios establecidos fuera de los Emiratos liquidan el IVA o impuesto similar que corresponda en su país, incluso mediante el mecanismo de inversión del sujeto pasivo.',
+        ],
+      },
+      {
+        title: '7. Propiedad intelectual',
+        paragraphs: [
+          'Samatrica y sus licenciantes son titulares del Servicio, incluidos su software, su diseño y su documentación. Durante la suscripción, el Negocio recibe un derecho no exclusivo e intransferible de usar el Servicio para su propia actividad. El Negocio no puede copiar, modificar, aplicar ingeniería inversa ni revender el Servicio, salvo en la medida en que la ley lo permita expresamente.',
+          'El Negocio conserva todos los derechos sobre el contenido que aporta (descripciones, servicios, imágenes, horarios) y concede a Samatrica el derecho a usar ese contenido únicamente para prestar el Servicio. Samatrica puede usar libremente las sugerencias y comentarios sobre el Servicio, sin obligación alguna frente al Negocio.',
+        ],
+      },
+      {
+        title: '8. Confidencialidad',
+        paragraphs: [
+          'Cada parte mantiene la confidencialidad de la información no pública que reciba de la otra en relación con el Servicio, la usa solo para este acuerdo y solo la revela a empleados y asesores que la necesiten y estén sujetos a confidencialidad, o cuando lo exija la ley o un tribunal. Esta obligación se mantiene durante tres años tras la finalización del acuerdo; los datos personales siguen protegidos según lo descrito en la sección 9 y en el acuerdo de tratamiento de datos.',
+        ],
+      },
+      {
+        title: '9. Protección de datos',
+        paragraphs: [
+          'Respecto de los datos personales de los clientes y demás usuarios del chat, el Negocio es el responsable del tratamiento y Samatrica el encargado del tratamiento conforme a la normativa de protección de datos aplicable: la ley emiratí de protección de datos personales (Decreto-ley federal n.º 45 de 2021) y, cuando sea aplicable, el RGPD. Un contrato de encargo de tratamiento, que incluye los subencargados de Samatrica y sus medidas de seguridad, forma parte de este acuerdo. Samatrica aloja los datos del Servicio con un proveedor de alojamiento externo situado en la Unión Europea.',
           'Cuando el Negocio presta asistencia sanitaria, las solicitudes de cita pueden revelar información sobre la salud, que el RGPD considera una categoría especial de datos personales. El Negocio confirma que está legitimado para recoger tales datos de sus pacientes, y Samatrica los trata únicamente para prestar el Servicio.',
         ],
       },
       {
-        title: '7. Disponibilidad',
+        title: '10. Disponibilidad',
         paragraphs: [
           'Samatrica presta el Servicio con la diligencia y competencia razonables, pero no garantiza una disponibilidad ininterrumpida. Pueden producirse mantenimientos planificados e interrupciones; el widget de chat está diseñado para desaparecer discretamente del sitio web del Negocio cuando el Servicio no está accesible.',
         ],
       },
       {
-        title: '8. Responsabilidad',
+        title: '11. Responsabilidad',
         paragraphs: [
           'En la medida en que la ley lo permita, la responsabilidad total de Samatrica en virtud de este acuerdo se limita a las tarifas abonadas por el Negocio en los 12 meses anteriores al hecho que origine la reclamación, y Samatrica no responde de daños indirectos como el lucro cesante. Nada en estos términos limita la responsabilidad que legalmente no pueda limitarse.',
         ],
       },
       {
-        title: '9. Terminación y datos',
+        title: '12. Terminación y datos',
         paragraphs: [
           'Cualquiera de las partes puede resolver el acuerdo con efectos al final del periodo abonado; Samatrica puede suspenderlo o resolverlo con efecto inmediato en caso de incumplimiento grave de estos términos. Tras la terminación, el Negocio puede solicitar una exportación de sus datos durante 30 días; después, Samatrica elimina los datos personales del Negocio, salvo que la ley exija una conservación más prolongada.',
         ],
       },
       {
-        title: '10. Modificaciones, ley aplicable y controversias',
+        title: '13. Disposiciones generales',
         paragraphs: [
-          'Samatrica puede actualizar estos términos con un preaviso razonable; el uso continuado tras el periodo de preaviso implica su aceptación. Estos términos se rigen por la legislación estonia, y los tribunales estonios (con el Tribunal del Condado de Harju como tribunal de primera instancia) tienen jurisdicción exclusiva.',
-          'Estos términos se ofrecen en varios idiomas para mayor comodidad; en caso de discrepancia, prevalece la versión en inglés.',
+          'Ninguna de las partes responde de retrasos o incumplimientos causados por hechos fuera de su control razonable, como catástrofes naturales, guerras, actuaciones de las autoridades o fallos graves de internet o de los proveedores de alojamiento; las obligaciones de pago ya vencidas no quedan suspendidas.',
+          'Las notificaciones previstas en este acuerdo se realizan por correo electrónico: a Samatrica en contact@samatrica.com y al Negocio en la dirección de correo electrónico de su cuenta. El Negocio no puede ceder este acuerdo sin el consentimiento por escrito de Samatrica; Samatrica puede cederlo a una sociedad vinculada o al sucesor de su actividad, informando al Negocio.',
+          'Estos términos, el acuerdo de tratamiento de datos y la política de reembolso constituyen el acuerdo íntegro entre las partes sobre el Servicio. Si alguna disposición se declara inválida, las demás siguen vigentes y la disposición inválida se sustituye por otra válida lo más próxima posible a su finalidad.',
+        ],
+      },
+      {
+        title: '14. Modificaciones, ley aplicable y controversias',
+        paragraphs: [
+          'Samatrica puede actualizar estos términos con un preaviso de al menos 30 días por correo electrónico, y el Negocio puede cancelar antes de que los cambios entren en vigor; el uso continuado tras el periodo de preaviso implica su aceptación. Los cambios exigidos por la ley o por motivos de seguridad pueden aplicarse de inmediato. Estos términos se rigen por las leyes federales de los Emiratos Árabes Unidos tal como se aplican en el emirato de Ajmán, y los tribunales de Ajmán (con el Tribunal Federal de Primera Instancia de Ajmán como tribunal de primera instancia) tienen jurisdicción exclusiva.',
+          'Estos términos se ofrecen en varios idiomas para mayor comodidad; en caso de discrepancia, prevalece la versión en árabe.',
         ],
       },
     ],
@@ -402,7 +429,7 @@ export const es: Dictionary = {
         title: '6. Cómo solicitar un reembolso',
         paragraphs: [
           'Escriba a contact@samatrica.com desde la dirección de correo electrónico de su cuenta, indicando su negocio. Confirmaremos la recepción en un plazo de 2 días hábiles y le comunicaremos cuándo se ha emitido el reembolso.',
-          'Esta política se ofrece en varios idiomas para mayor comodidad; en caso de discrepancia, prevalece la versión en inglés.',
+          'Esta política se ofrece en varios idiomas para mayor comodidad; en caso de discrepancia, prevalece la versión en árabe.',
         ],
       },
     ],
@@ -411,7 +438,7 @@ export const es: Dictionary = {
       {
         title: '1. Quiénes somos',
         paragraphs: [
-          'Samatrica es operado por Samatrica OÜ, código de registro 16285192, Sepapaja tn 6, 15551 Tallinn, Estonia. Samatrica ofrece un asistente de reservas con IA para negocios que trabajan con citas. Esta política explica cómo se tratan los datos personales en este sitio web y en el widget de chat de Samatrica instalado en los sitios web de esos negocios. Para cualquier pregunta o solicitud sobre privacidad, escriba a contact@samatrica.com.',
+          'Samatrica es operado por Adenium Consultancy - F.Z.E, licencia n.º 32555 (Free Zones Authority of Ajman), FL.H-01582, C1 Building, Ajman Free Zone, Ajmán, Emiratos Árabes Unidos. Samatrica ofrece un asistente de reservas con IA para negocios que trabajan con citas. Esta política explica cómo se tratan los datos personales en este sitio web y en el widget de chat de Samatrica instalado en los sitios web de esos negocios. Para cualquier pregunta o solicitud sobre privacidad, escriba a contact@samatrica.com.',
         ],
       },
       {
@@ -431,19 +458,19 @@ export const es: Dictionary = {
       {
         title: '4. Tratamiento mediante IA',
         paragraphs: [
-          'Las respuestas del asistente las genera un modelo de lenguaje de IA. El contenido de la conversación se envía a nuestro proveedor de IA únicamente con este fin, en virtud de un contrato de encargo de tratamiento; no se utiliza para entrenar los modelos del proveedor.',
+          'Las respuestas del asistente las genera un modelo de lenguaje de IA que Samatrica opera por sí misma, en servidores situados en la Unión Europea y alquilados a un proveedor de infraestructura externo. El contenido de la conversación se trata allí únicamente para generar las respuestas; no se comparte con ninguna empresa de IA ni se utiliza para entrenar ningún modelo.',
         ],
       },
       {
         title: '5. Dónde se almacenan los datos',
         paragraphs: [
-          'Los datos del Servicio se alojan en Amazon Web Services, en la Unión Europea (Fráncfort, Alemania). Cuando un subencargado trata datos fuera de la UE, nos amparamos en las garantías que el RGPD prevé para estas transferencias, como las cláusulas contractuales tipo de la UE.',
+          'Los datos del Servicio se alojan en un proveedor de alojamiento externo situado en la Unión Europea. Cuando un subencargado trata datos fuera de la UE, nos amparamos en las garantías que el RGPD prevé para estas transferencias, como las cláusulas contractuales tipo de la UE.',
         ],
       },
       {
         title: '6. Subencargados del tratamiento',
         paragraphs: [
-          'Utilizamos un número reducido de proveedores para operar el Servicio: Amazon Web Services (alojamiento, UE), nuestro proveedor del modelo de lenguaje de IA (respuestas del asistente) y nuestros proveedores de envío de correo electrónico y SMS (códigos de verificación y notificaciones). La lista actualizada está disponible previa solicitud y se facilita a los negocios junto con su contrato de encargo de tratamiento.',
+          'Utilizamos un número reducido de proveedores para operar el Servicio: un proveedor de alojamiento situado en la UE, un proveedor de infraestructura situado en la UE que ejecuta nuestro modelo de IA (respuestas del asistente) y nuestros proveedores de envío de correo electrónico y SMS (códigos de verificación y notificaciones). La lista actualizada está disponible previa solicitud y se facilita a los negocios junto con su contrato de encargo de tratamiento.',
         ],
       },
       {
