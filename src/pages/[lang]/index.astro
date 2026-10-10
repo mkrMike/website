@@ -39,7 +39,7 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
       <div class="hero-visual">
         <!-- Two industries, equal weight: the demo alternates (see the script below). -->
         <div class="chat-slides" data-chat-slides>
-          <div class="chat-slide"><ChatMock lang={lang} scenario="clinic" /></div>
+          <div class="chat-slide"><ChatMock lang={lang} scenario="hotel" /></div>
           <div class="chat-slide" hidden><ChatMock lang={lang} scenario="salon" /></div>
         </div>
         <script is:inline>
@@ -97,10 +97,10 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
 
       <ul class="industry-links" data-reveal>
         {
-          (['clinics', 'salons'] as const).map((page) => (
+          (['hotels', 'salons'] as const).map((page) => (
             <li>
               <a href={href(lang, page)}>
-                <Icon name={page === 'clinics' ? 'stethoscope' : 'scissors'} size={18} />
+                <Icon name={page === 'hotels' ? 'bed' : 'scissors'} size={18} />
                 {t.nav[page]}
                 <span class="arrow" aria-hidden="true">→</span>
               </a>
@@ -213,8 +213,8 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
 
   <CtaBand lang={lang} title={h.ctaTitle} text={h.ctaText} />
 
-  <!-- Switch to the clinics screen. -->
-  <a class="screen-arrow" href={href(lang, 'clinics')} title={t.nav.clinics} aria-label={t.nav.clinics}>
+  <!-- Switch to the hotels screen. -->
+  <a class="screen-arrow" href={href(lang, 'hotels')} title={t.nav.hotels} aria-label={t.nav.hotels}>
     →
   </a>
 </Base>

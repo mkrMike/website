@@ -9,10 +9,10 @@ import Icon from './Icon.astro'
 
 interface Props {
   lang: Locale
-  scenario?: 'clinic' | 'salon'
+  scenario?: 'hotel' | 'salon'
 }
 
-const { lang, scenario = 'clinic' } = Astro.props
+const { lang, scenario = 'hotel' } = Astro.props
 const t = useTranslations(lang)
 const c = t.chat[scenario]
 

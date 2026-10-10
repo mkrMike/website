@@ -7,9 +7,9 @@ export const en = {
     homeTitle: 'Samatrica: the AI assistant that takes your booking requests 24/7',
     homeDescription:
       'An AI assistant on your website chat answers customers 24/7 in their own language, finds free slots and takes booking requests that you confirm. Your team takes over when needed.',
-    clinicsTitle: 'Samatrica for clinics: patients request appointments, day and night',
-    clinicsDescription:
-      'Let patients request appointments and get answers 24/7 in their own language. You confirm each request; your front desk takes over the chat when it matters.',
+    hotelsTitle: 'Samatrica for hotels: guests request their stay, day and night',
+    hotelsDescription:
+      'Guests ask about your rooms and request a stay 24/7, in their own language. Only rooms really free for their dates are offered, and you confirm each request.',
     salonsTitle: 'Samatrica for beauty salons: clients request bookings, day and night',
     salonsDescription:
       'Clients ask about your services and request a time with their stylist 24/7, in their own language. Only really free times are offered, and you confirm each request.',
@@ -24,7 +24,7 @@ export const en = {
   },
 
   nav: {
-    clinics: 'Clinics',
+    hotels: 'Hotels',
     salons: 'Salons',
     contact: 'Contact',
     login: 'Log in',
@@ -50,14 +50,6 @@ export const en = {
   chat: {
     title: 'Samatrica assistant',
     status: 'Online · replies instantly',
-    clinic: {
-      customer1: 'Hi, can I see a dermatologist this week?',
-      assistant1: 'Of course. Dr. Lina has free slots on Thursday at 10:30 and 16:00. Which suits you?',
-      customer2: 'Thursday at 16:00, please.',
-      assistant2: 'Request sent. I’ve emailed and texted you a code to verify it; the clinic will then confirm your appointment.',
-      booked: 'Thursday 16:00 · Dermatology · Request sent',
-      confirmed: 'Confirmed by the clinic',
-    },
     salon: {
       customer1: 'Hi, can I book a colour on Friday?',
       assistant1: 'Of course. Would you like Anna or Bob, or anyone available?',
@@ -66,6 +58,14 @@ export const en = {
       customer3: '11:00, please.',
       booked: 'Colour with Anna · Friday 11:00–11:45 · 250 AED · Request sent',
       confirmed: 'Confirmed by the salon',
+    },
+    hotel: {
+      customer1: 'Hi, do you have a double room from Friday to Sunday?',
+      assistant1: 'Yes. For those 2 nights the Sea View Double is free, at 450 AED a night, 900 AED in total. Shall I request it for you?',
+      customer2: 'Yes, please.',
+      assistant2: 'Request sent. I’ve emailed you a code to verify it; the hotel will then confirm your stay.',
+      booked: 'Sea View Double · Fri–Sun · 2 nights · 900 AED · Request sent',
+      confirmed: 'Confirmed by the hotel',
     },
     typing: 'Assistant is typing',
     placeholder: 'Type a message…',
@@ -177,28 +177,28 @@ export const en = {
     ctaText: 'Get started and let Samatrica answer your next customer tonight.',
   },
 
-  clinics: {
-    eyebrow: 'For health clinics',
-    title: 'Patients request appointments, day and night.',
+  hotels: {
+    eyebrow: 'For hotels and holiday rentals',
+    title: 'Guests book their stay, day and night.',
     subtitle:
-      'Samatrica answers patients on your website, takes their requests for the right doctor and frees your front desk from the phone.',
-    painTitle: 'Your front desk can’t answer everyone',
+      'Samatrica answers guests on your website in their own language, checks which rooms are really free for their dates and takes the booking request, so your reception can focus on the guests in front of them.',
+    painTitle: 'Your reception can’t answer every message',
     pains: [
-      { title: 'Calls after hours', text: 'Most patients look for an appointment in the evening, when nobody can pick up.' },
-      { title: 'Busy phone lines', text: 'Receptionists juggle calls, walk-ins and paperwork at the same time.' },
-      { title: 'Unverified bookings', text: 'Bookings with wrong contact details leave gaps in the schedule and nobody to call.' },
+      { title: 'Questions at every hour', text: 'Guests in other time zones write at night, when nobody is at the desk.' },
+      { title: 'A busy front desk', text: 'Check-ins, check-outs and phone calls all compete for the same receptionist.' },
+      { title: 'Back-and-forth over dates', text: 'Finding which room is free for which nights takes message after message.' },
     ],
-    benefitsTitle: 'What Samatrica does for your clinic',
+    benefitsTitle: 'What Samatrica does for your hotel',
     benefits: [
-      { title: 'Requests by doctor and specialty', text: 'Each doctor or room is a resource with its own hours and slot length.' },
-      { title: 'Patients served at night', text: 'The assistant answers questions about services and takes appointment requests 24/7.' },
-      { title: 'Verified patients', text: 'Patients verify by email and SMS before their request reaches you.' },
-      { title: 'Patients kept informed', text: 'Patients are notified as soon as you confirm or cancel their booking.' },
-      { title: 'Front desk takeover', text: 'Your receptionist takes over the chat for anything sensitive.' },
-      { title: 'Closures and holidays', text: 'Close a doctor’s calendar for leave or the whole clinic for a holiday.' },
+      { title: 'Rooms booked by the night', text: 'Each room or room type has its check-in and check-out times, its shortest and longest stay, and its price per night.' },
+      { title: 'Guests served at night', text: 'The assistant answers questions about your rooms and services and takes booking requests 24/7, in the guest’s language.' },
+      { title: 'Only really free nights', text: 'Only rooms free for every night of the stay are offered, outside the dates you have closed.' },
+      { title: 'Verified guests', text: 'Guests verify their email before their request reaches you.' },
+      { title: 'Guests kept informed', text: 'Guests are notified as soon as you confirm or cancel their stay.' },
+      { title: 'Your reception steps in', text: 'Staff take over the chat when needed, and can book a stay for any guest from the dashboard.' },
     ],
-    note: 'Samatrica handles booking requests and general questions. It does not give medical advice.',
-    ctaTitle: 'Give your patients a front desk that never sleeps',
+    note: 'Every stay is a request that your hotel confirms. Samatrica does not take payments or deposits.',
+    ctaTitle: 'Give your guests a reception that never sleeps',
   },
 
   salons: {

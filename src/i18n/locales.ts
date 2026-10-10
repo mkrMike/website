@@ -28,7 +28,7 @@ export const localePaths = () => locales.map((lang) => ({ params: { lang } }))
  */
 export type PagePath =
   | ''
-  | 'clinics'
+  | 'hotels'
   | 'salons'
   | 'contact'
   | 'terms'

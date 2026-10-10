@@ -5,9 +5,9 @@ export const fr: Dictionary = {
     homeTitle: 'Samatrica : l’assistant IA qui reçoit vos demandes de réservation 24h/24',
     homeDescription:
       'Un assistant IA dans le chat de votre site répond à vos clients 24h/24 et 7j/7 dans leur langue, trouve les créneaux libres et recueille les demandes de réservation, que vous confirmez. Votre équipe prend le relais si besoin.',
-    clinicsTitle: 'Samatrica pour les cliniques : vos patients demandent un rendez-vous, jour et nuit',
-    clinicsDescription:
-      'Vos patients demandent un rendez-vous et obtiennent des réponses 24h/24 dans leur langue. Vous confirmez chaque demande ; votre accueil reprend la conversation quand c’est important.',
+    hotelsTitle: 'Samatrica pour les hôtels : vos clients demandent leur séjour, jour et nuit',
+    hotelsDescription:
+      'Vos clients posent leurs questions sur vos chambres et demandent un séjour 24 h/24, dans leur langue. Seules les chambres vraiment libres à leurs dates sont proposées, et vous confirmez chaque demande.',
     salonsTitle: 'Samatrica pour les salons de beauté : vos clients demandent un rendez-vous, jour et nuit',
     salonsDescription:
       'Vos clients posent leurs questions sur vos prestations et demandent un créneau avec leur styliste 24h/24, dans leur langue. Seuls les créneaux vraiment libres sont proposés, et vous confirmez chaque demande.',
@@ -22,7 +22,7 @@ export const fr: Dictionary = {
   },
 
   nav: {
-    clinics: 'Cliniques',
+    hotels: 'Hôtels',
     salons: 'Salons',
     contact: 'Contact',
     login: 'Se connecter',
@@ -47,14 +47,6 @@ export const fr: Dictionary = {
   chat: {
     title: 'Assistant Samatrica',
     status: 'En ligne · répond instantanément',
-    clinic: {
-      customer1: 'Bonjour, est-il possible de voir un dermatologue cette semaine ?',
-      assistant1: 'Bien sûr. Dr Lina a des créneaux libres jeudi à 10:30 et à 16:00. Lequel vous convient ?',
-      customer2: 'Jeudi à 16:00, s’il vous plaît.',
-      assistant2: 'Demande envoyée. Je vous ai transmis un code de vérification par e-mail et par SMS ; la clinique confirmera ensuite votre rendez-vous.',
-      booked: 'Jeudi 16:00 · Dermatologie · Demande envoyée',
-      confirmed: 'Confirmé par la clinique',
-    },
     salon: {
       customer1: 'Bonjour, puis-je réserver une coloration vendredi ?',
       assistant1: 'Bien sûr. Avec Anna ou Bob, ou la première personne disponible ?',
@@ -63,6 +55,14 @@ export const fr: Dictionary = {
       customer3: '11:00, s’il vous plaît.',
       booked: 'Coloration avec Anna · Vendredi 11:00–11:45 · 250 AED · Demande envoyée',
       confirmed: 'Confirmé par le salon',
+    },
+    hotel: {
+      customer1: 'Bonjour, avez-vous une chambre double du vendredi au dimanche ?',
+      assistant1: 'Oui. Pour ces 2 nuits, la Double Vue Mer est libre, à 450 AED la nuit, soit 900 AED au total. Je fais la demande pour vous ?',
+      customer2: 'Oui, s’il vous plaît.',
+      assistant2: 'Demande envoyée. Je vous ai transmis un code de vérification par e-mail ; l’hôtel confirmera ensuite votre séjour.',
+      booked: 'Double Vue Mer · Ven–Dim · 2 nuits · 900 AED · Demande envoyée',
+      confirmed: 'Confirmé par l’hôtel',
     },
     typing: 'L’assistant écrit',
     placeholder: 'Écrivez un message…',
@@ -174,28 +174,28 @@ export const fr: Dictionary = {
     ctaText: 'Lancez-vous et laissez Samatrica répondre à votre prochain client dès ce soir.',
   },
 
-  clinics: {
-    eyebrow: 'Pour les cliniques',
-    title: 'Vos patients demandent un rendez-vous, jour et nuit.',
+  hotels: {
+    eyebrow: 'Pour les hôtels et locations de vacances',
+    title: 'Vos clients réservent leur séjour, jour et nuit.',
     subtitle:
-      'Samatrica répond aux patients sur votre site, recueille leurs demandes de rendez-vous avec le bon médecin et libère votre accueil du téléphone.',
-    painTitle: 'Votre accueil ne peut pas répondre à tout le monde',
+      'Samatrica répond aux clients sur votre site dans leur langue, vérifie quelles chambres sont vraiment libres à leurs dates et prend la demande de réservation, pour que votre réception se consacre aux clients présents.',
+    painTitle: 'Votre réception ne peut pas répondre à chaque message',
     pains: [
-      { title: 'Appels hors horaires', text: 'La plupart des patients cherchent un rendez-vous le soir, quand personne ne peut décrocher.' },
-      { title: 'Lignes saturées', text: 'Vos secrétaires jonglent en même temps entre les appels, les patients sur place et l’administratif.' },
-      { title: 'Réservations non vérifiées', text: 'Une réservation avec des coordonnées erronées, c’est un trou dans le planning et personne à contacter.' },
+      { title: 'Des questions à toute heure', text: 'Les clients d’autres fuseaux horaires écrivent la nuit, quand personne n’est à la réception.' },
+      { title: 'Une réception débordée', text: 'Arrivées, départs et appels téléphoniques se disputent le même réceptionniste.' },
+      { title: 'Des allers-retours sur les dates', text: 'Savoir quelle chambre est libre pour quelles nuits demande message après message.' },
     ],
-    benefitsTitle: 'Ce que Samatrica apporte à votre clinique',
+    benefitsTitle: 'Ce que Samatrica fait pour votre hôtel',
     benefits: [
-      { title: 'Demandes par médecin et par spécialité', text: 'Chaque médecin ou salle est une ressource avec ses propres horaires et sa durée de créneau.' },
-      { title: 'Des patients servis la nuit', text: 'L’assistant répond aux questions sur vos services et recueille les demandes de rendez-vous 24h/24.' },
-      { title: 'Patients vérifiés', text: 'Les patients se vérifient par e-mail et SMS avant que leur demande ne vous parvienne.' },
-      { title: 'Des patients toujours informés', text: 'Vos patients sont avertis dès que vous confirmez ou annulez leur rendez-vous.' },
-      { title: 'Reprise par l’accueil', text: 'Votre secrétaire reprend la conversation pour tout sujet sensible.' },
-      { title: 'Fermetures et congés', text: 'Fermez l’agenda d’un médecin pendant ses congés, ou toute la clinique un jour férié.' },
+      { title: 'Des chambres réservées à la nuit', text: 'Chaque chambre ou type de chambre a ses heures d’arrivée et de départ, son séjour minimum et maximum, et son prix par nuit.' },
+      { title: 'Des clients servis la nuit', text: 'L’assistant répond aux questions sur vos chambres et vos services et prend les demandes de réservation 24 h/24, dans la langue du client.' },
+      { title: 'Seulement des nuits vraiment libres', text: 'Seules les chambres libres pour chaque nuit du séjour sont proposées, en dehors des dates que vous avez fermées.' },
+      { title: 'Des clients vérifiés', text: 'Les clients vérifient leur e-mail avant que leur demande ne vous parvienne.' },
+      { title: 'Des clients tenus informés', text: 'Les clients sont avertis dès que vous confirmez ou annulez leur séjour.' },
+      { title: 'Votre réception prend le relais', text: 'Votre équipe reprend la conversation si besoin et peut réserver un séjour pour n’importe quel client depuis le tableau de bord.' },
     ],
-    note: 'Samatrica gère les demandes de rendez-vous et les questions générales. Il ne donne aucun conseil médical.',
-    ctaTitle: 'Offrez à vos patients un accueil qui ne dort jamais',
+    note: 'Chaque séjour est une demande que votre hôtel confirme. Samatrica n’encaisse ni paiement ni acompte.',
+    ctaTitle: 'Offrez à vos clients une réception qui ne dort jamais',
   },
 
   salons: {

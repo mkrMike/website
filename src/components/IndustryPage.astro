@@ -1,12 +1,12 @@
 ---
-/** A dedicated landing page for one industry: health clinics or beauty salons. */
+/** A dedicated landing page for one industry: hotels or beauty salons. */
 import Base from '../layouts/Base.astro'
 import { href, type Locale, type PagePath, useTranslations } from '../i18n'
 import ChatMock from './ChatMock.astro'
 import CtaBand from './CtaBand.astro'
 import Icon from './Icon.astro'
 
-type Industry = 'clinics' | 'salons'
+type Industry = 'hotels' | 'salons'
 type IconName = Parameters<typeof Icon>[0]['name']
 
 interface Props {
@@ -18,23 +18,23 @@ const { lang, industry } = Astro.props
 const t = useTranslations(lang)
 const copy = t[industry]
 
-/** The screens follow each other: home → clinics → salons. */
+/** The screens follow each other: home → hotels → salons. */
 const screens: Record<
   Industry,
   {
     icon: IconName
     painIcons: IconName[]
     benefitIcons: IconName[]
-    scenario: 'clinic' | 'salon'
+    scenario: 'hotel' | 'salon'
     prev: PagePath
     next?: PagePath
   }
 > = {
-  clinics: {
-    icon: 'stethoscope',
+  hotels: {
+    icon: 'bed',
     painIcons: ['moon', 'phone', 'calendar'],
-    benefitIcons: ['stethoscope', 'moon', 'shield', 'bell', 'hand', 'closed'],
-    scenario: 'clinic',
+    benefitIcons: ['bed', 'moon', 'calendar', 'shield', 'bell', 'hand'],
+    scenario: 'hotel',
     prev: '',
     next: 'salons',
   },
@@ -43,7 +43,7 @@ const screens: Record<
     painIcons: ['phone', 'moon', 'calendar'],
     benefitIcons: ['layout', 'users', 'calendar', 'chat', 'shield', 'hand'],
     scenario: 'salon',
-    prev: 'clinics',
+    prev: 'hotels',
   },
 }
 const screen = screens[industry]

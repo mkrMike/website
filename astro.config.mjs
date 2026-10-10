@@ -9,6 +9,10 @@ const site = 'https://samatrica.com'
 export default defineConfig({
   site,
   trailingSlash: 'always',
+  // The clinics page was replaced by the hotels page: old links still land somewhere.
+  redirects: {
+    '/[lang]/clinics': '/[lang]/hotels',
+  },
   integrations: [
     react(),
     sitemap({
