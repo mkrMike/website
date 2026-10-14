@@ -107,7 +107,7 @@ export const en = {
       },
       {
         title: 'The AI answers and takes the request',
-        text: 'The assistant answers questions, finds free slots and takes the booking request. The customer verifies by email and SMS, and you confirm it.',
+        text: 'The assistant answers questions, finds free slots and takes the booking request. The customer verifies it by email, and you confirm it.',
       },
       {
         title: 'Your team takes over',
@@ -115,12 +115,35 @@ export const en = {
       },
     ],
 
+    // The dashboard's week calendar (DashboardMock), after "How it works".
+    dashboard: {
+      eyebrow: 'Your dashboard',
+      title: 'Every booking lands in your week',
+      text: 'Requests the assistant takes at night are waiting in your calendar in the morning. See the whole team’s week, or one person’s, and confirm in one click.',
+      points: [
+        'Week view for the whole team, or one person',
+        'Confirm, complete or cancel in one click',
+        'Staff accounts that see only their own agenda',
+      ],
+      mock: {
+        brand: 'Glow Salon',
+        available: 'Available',
+        today: 'Today',
+        list: 'List',
+        week: 'Week',
+        fromChat: 'New · from the chat',
+        confirmed: 'Confirmed',
+        toConfirm: 'To confirm',
+        services: { haircut: 'Haircut', colour: 'Colour', balayage: 'Balayage', manicure: 'Manicure', blowdry: 'Blow-dry' },
+      },
+    },
+
     featuresEyebrow: 'Features',
     featuresTitle: 'Everything your front desk needs',
     features: [
       { title: 'Answers 24/7', text: 'Nights, weekends and holidays: no enquiry waits until morning.' },
       { title: 'Real availability', text: 'The assistant only offers slots that fit each resource’s opening hours, closures and existing bookings.' },
-      { title: 'Verified customers', text: 'Customers verify with a code by email and SMS, so no fake requests.' },
+      { title: 'Verified customers', text: 'Customers verify with a code sent by email, so no fake requests.' },
       { title: 'Live takeover', text: 'Your team sees every conversation live and can step in with one click.' },
       { title: 'Business hours', text: 'Outside your hours, the assistant tells customers when your team is back.' },
       { title: 'One dashboard', text: 'Conversations, bookings, resources, employees and hours, all in one place.' },
@@ -218,7 +241,7 @@ export const en = {
       { title: 'Their stylist, or anyone available', text: 'Clients pick a stylist or “anyone available”, and the salon gives the booking to whoever has the fewest that day.' },
       { title: 'Only really free times', text: 'The whole service fits in the stylist’s hours, outside days off and salon holidays, without overlapping another booking, on a 15-minute grid.' },
       { title: 'Booked from the chat', text: 'The assistant guides the client from service to stylist, day and time. Emails name the booking, and a booking code lets the client check or cancel it.' },
-      { title: 'Verified clients', text: 'Clients verify by email and SMS before their request reaches you.' },
+      { title: 'Verified clients', text: 'Clients verify their email before their request reaches you.' },
       { title: 'Your team steps in', text: 'Staff take over the chat during opening hours, and can book any client at any minute from the dashboard.' },
     ],
     note: 'Every booking is a request that your salon confirms. Samatrica does not take payments or deposits.',
@@ -249,7 +272,7 @@ export const en = {
     included: 'Included in every plan',
     includedList: [
       'AI assistant 24/7',
-      'Email and SMS verification',
+      'Email verification',
       'Live takeover',
       'Business and opening hours',
       'Dashboard in 6 languages',
@@ -297,7 +320,7 @@ export const en = {
     privacyTitle: 'Privacy policy',
     refundTitle: 'Refund policy',
     placeholder: 'This page will be published before launch. Its text is being prepared and reviewed.',
-    updated: 'Last updated: 10 October 2026',
+    updated: 'Last updated: 11 October 2026',
 
     /** Section headings and paragraphs, rendered in order. */
     terms: [
@@ -338,7 +361,7 @@ export const en = {
       {
         title: '6. Fees and cancellation',
         paragraphs: [
-          'Fees, billing periods and payment methods are stated when the subscription is agreed, and may be updated with at least 30 days’ notice by email; price changes never apply retroactively, and the Business may cancel before they take effect. There is no minimum term: the Business can cancel at any time, the subscription ends at the close of the billing period already paid, and nothing further is charged.',
+          'Fees, billing periods and payment methods are stated when the subscription is agreed, and may be updated with at least 30 days’ notice by email; price changes never apply retroactively, and the Business may cancel before they take effect. There is no minimum term: the Business can cancel at any time, the subscription ends at the close of the billing period already paid, and nothing further is charged. A one-time setup fee, in the amount shown at signup, for configuring the Business’s services, prices, staff and chat widget, is charged at signup; it is not refundable once that work is done, as described in the refund policy.',
           'Fees are exclusive of value added tax and other taxes. For Businesses established in the United Arab Emirates, UAE VAT (currently 5%) is added to the invoice; Businesses established outside the UAE account for any VAT or similar tax due in their country, including under the reverse-charge mechanism.',
         ],
       },
@@ -411,15 +434,16 @@ export const en = {
         ],
       },
       {
-        title: '3. 14-day money-back guarantee on the first payment',
+        title: '3. 30-day money-back guarantee',
         paragraphs: [
-          'If Samatrica does not work out for your business, write to contact@samatrica.com within 14 days of your first payment and we refund that payment in full, no questions asked. The refund goes to the original payment method, normally within 10 business days.',
+          'If Samatrica does not work out for your business, write to contact@samatrica.com within 30 days of your first subscription payment and we refund that payment in full, no questions asked. The refund goes to the original payment method, normally within 10 business days.',
+          'The one-time setup fee, in the amount shown and charged at signup for configuring your services, prices, staff and chat widget, is not refundable, because that work has already been done. There is no free trial: this guarantee replaces it.',
         ],
       },
       {
         title: '4. Renewals',
         paragraphs: [
-          'Renewal payments (monthly or yearly) are not refundable, but you can cancel at any time: the subscription then simply ends at the close of the period already paid, and you keep access until then. We recommend monthly billing until you are sure of the service.',
+          'Subscriptions are billed monthly. Renewal payments are not refundable, but you can cancel at any time: the subscription then simply ends at the close of the month already paid, and you keep access until then.',
         ],
       },
       {
@@ -473,7 +497,7 @@ export const en = {
       {
         title: '6. Sub-processors',
         paragraphs: [
-          'We use a small number of service providers to run the Service: a hosting provider located in the EU, an infrastructure provider in the EU that runs our AI model (assistant replies), and our email and SMS delivery providers (verification codes and notifications). The current list is available on request and is provided to businesses with their data processing agreement.',
+          'We use a small number of service providers to run the Service: a hosting provider located in the EU, an infrastructure provider in the EU that runs our AI model (assistant replies), and our email delivery provider (verification codes and notifications). The current list is available on request and is provided to businesses with their data processing agreement.',
         ],
       },
       {

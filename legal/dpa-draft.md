@@ -1,6 +1,6 @@
 # Data Processing Agreement — DRAFT
 
-> **Status: draft for legal review, 10 October 2026. Not yet binding. The
+> **Status: draft for legal review, 11 October 2026. Not yet binding. The
 > bracketed items must be completed before this document is used.**
 > Provided to each business ("the Business") together with the Samatrica
 > terms of service, of which it forms part.
@@ -75,7 +75,8 @@ Business may terminate.
 
 | Sub-processor | Purpose | Location / transfer safeguard |
 | --- | --- | --- |
-| Amazon Web Services EMEA SARL | Hosting of the Service and its database; sending of verification codes and notifications by email (Amazon SES) | EU (Frankfurt) |
+| Amazon Web Services EMEA SARL | Hosting of the Service and its database | EU (Frankfurt) |
+| Sendinblue SAS (Brevo), 9-17 rue Salneuve, 75017 Paris, France, RCS Paris 498 019 298 | Sending of verification codes and booking notifications by email | EU (France) [ACCEPT BREVO'S DPA] |
 | RunPod [CONFIRM CONTRACTING ENTITY] | GPU servers on which Samatrica runs its own AI model to generate assistant replies; RunPod does not use the data and no model is trained on it | EU data centres only [CONFIRM REGION LOCK; RUNPOD DPA; US PARENT: SCCs / DPF] |
 
 Providers for SMS delivery and for billing will be added under the

@@ -1,0 +1,375 @@
+---
+/**
+ * The dashboard's week calendar of a salon: the home page's second visual.
+ * Friday 11:00 is the booking the salon chat demo makes (ChatMock): it pops
+ * in as a new request from the chat once scrolled into view.
+ * Pure HTML/CSS; weekday names come from the locale.
+ */
+import { type Locale, useTranslations } from '../i18n'
+import Icon from './Icon.astro'
+
+interface Props {
+  lang: Locale
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const m = t.home.dashboard.mock
+
+type Service = keyof typeof m.services
+
+/** [day (0 = Monday), start, minutes, service, stylist, to confirm] */
+const bookings: [number, string, number, Service, string, boolean][] = [
+  [0, '10:00', 60, 'haircut', 'Lina', false],
+  [0, '13:30', 90, 'balayage', 'Anna', false],
+  [0, '16:00', 45, 'blowdry', 'Bob', false],
+  [1, '11:00', 45, 'colour', 'Bob', false],
+  [1, '14:00', 60, 'manicure', 'Lina', false],
+  [1, '17:00', 45, 'blowdry', 'Anna', true],
+  [2, '10:30', 30, 'haircut', 'Bob', false],
+  [2, '12:00', 90, 'balayage', 'Lina', false],
+  [3, '10:00', 45, 'colour', 'Anna', false],
+  [3, '15:30', 60, 'manicure', 'Bob', true],
+  [4, '14:00', 30, 'haircut', 'Lina', false],
+  [4, '16:30', 90, 'balayage', 'Bob', false],
+  [5, '10:00', 30, 'haircut', 'Anna', false],
+  [5, '11:00', 60, 'manicure', 'Lina', false],
+  [5, '13:00', 45, 'colour', 'Bob', false],
+  [5, '15:00', 60, 'blowdry', 'Anna', false],
+]
+
+const firstHour = 10
+const lastHour = 19
+const hourHeight = 40
+const hours = Array.from({ length: lastHour - firstHour }, (_, index) => firstHour + index)
+const top = (start: string) => ((Number(start.slice(0, 2)) - firstHour) * 60 + Number(start.slice(3, 5))) * (hourHeight / 60)
+
+// 2024-01-01 was a Monday.
+const weekday = new Intl.DateTimeFormat(lang, { weekday: 'short', timeZone: 'UTC' })
+const days = Array.from({ length: 7 }, (_, index) => weekday.format(new Date(Date.UTC(2024, 0, 1 + index))))
+---
+
+<figure class="dash" aria-label={t.home.dashboard.title} data-reveal style="--reveal-delay: 0.1s">
+  <div class="dash-bar">
+    <span class="menu" aria-hidden="true"><span></span><span></span><span></span></span>
+    <strong>{m.brand}</strong>
+    <span class="available">{m.available}</span>
+  </div>
+
+  <div class="dash-toolbar">
+    <span class="pill arrow">‹</span>
+    <span class="pill">{m.today}</span>
+    <span class="pill arrow">›</span>
+    <span class="views">
+      <span class="pill">{m.list}</span>
+      <span class="pill active">{m.week}</span>
+    </span>
+  </div>
+
+  <div class="dash-grid" style={`--hour: ${hourHeight}px`}>
+    <span></span>
+    {days.map((day) => <span class="day-name">{day}</span>)}
+
+    <div class="hours">
+      {hours.map((hour) => <span>{`${hour}:00`}</span>)}
+    </div>
+    {
+      days.map((_, day) => (
+        // Sunday: closed.
+        <div class:list={['day', { closed: day === 6 }]}>
+          {bookings
+            .filter((booking) => booking[0] === day)
+            .map(([, start, minutes, service, stylist, pending]) => (
+              <span
+                class:list={['booking', { pending, short: minutes < 60 }]}
+                style={`top: ${top(start)}px; height: ${minutes * (hourHeight / 60)}px`}
+              >
+                <span>{start}</span> <span class="what">{`${m.services[service]} · ${stylist}`}</span>
+              </span>
+            ))}
+          {day === 4 && (
+            <span class="booking pending new" style={`top: ${top('11:00')}px; height: ${45 * (hourHeight / 60)}px`}>
+              <span>11:00</span> <span class="what">{`${m.services.colour} · Anna`}</span>
+              <span class="new-label">
+                <Icon name="chat" size={14} />
+                {m.fromChat}
+              </span>
+            </span>
+          )}
+        </div>
+      ))
+    }
+  </div>
+
+  <figcaption class="legend">
+    <span><span class="swatch confirmed"></span>{m.confirmed}</span>
+    <span><span class="swatch pending"></span>{m.toConfirm}</span>
+  </figcaption>
+</figure>
+
+<style>
+  .dash {
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+
+  .dash-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+  }
+
+  /* The dashboard's menu button: three bars. */
+  .menu {
+    display: grid;
+    gap: 3px;
+    padding: 6px 7px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+  }
+
+  .menu span {
+    display: block;
+    width: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--ink);
+  }
+
+  .available {
+    margin-inline-start: auto;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background: #dcfce7;
+    color: #15803d;
+    font-weight: 650;
+  }
+
+  .dash-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .pill {
+    padding: 0.15rem 0.55rem;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    color: var(--text);
+  }
+
+  :global([dir='rtl']) .arrow {
+    transform: scaleX(-1);
+  }
+
+  .views {
+    display: flex;
+    gap: 0.4rem;
+    margin-inline-start: auto;
+  }
+
+  .pill.active {
+    border-color: var(--brand);
+    background: var(--brand);
+    color: #fff;
+  }
+
+  .dash-grid {
+    display: grid;
+    grid-template-columns: 2.6rem repeat(7, minmax(0, 1fr));
+    margin: 0 1rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .day-name {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--line);
+    border-inline-start: 1px solid var(--line);
+    color: var(--ink);
+    font-weight: 650;
+    text-align: center;
+  }
+
+  .hours span {
+    display: block;
+    height: var(--hour);
+    padding-inline-end: 0.3rem;
+    color: var(--muted);
+    font-size: 0.68rem;
+    text-align: end;
+  }
+
+  .day {
+    position: relative;
+    border-inline-start: 1px solid var(--line);
+    background-image: linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 100% var(--hour);
+  }
+
+  .day.closed {
+    background-color: #eef1f5;
+  }
+
+  .booking {
+    position: absolute;
+    inset-inline: 2px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0.1rem 0.3rem;
+    overflow: hidden;
+    border: 1px solid #86efac;
+    border-inline-start-width: 3px;
+    border-radius: 5px;
+    background: #f0fdf4;
+    color: #14532d;
+    font-size: 0.66rem;
+    line-height: 1.25;
+  }
+
+  .booking > span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* Under an hour: time and service on one line. */
+  .booking.short {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .booking.pending {
+    border-color: #fcd34d;
+    background: #fffbeb;
+    color: #78350f;
+  }
+
+  /* The request from the chat demo. */
+  .booking.new {
+    z-index: 1;
+    overflow: visible;
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px rgb(249 115 22 / 0.25);
+  }
+
+  .new-label {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    inset-inline-end: -4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--coral);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 650;
+    white-space: nowrap;
+    box-shadow: var(--shadow);
+  }
+
+  .legend {
+    display: flex;
+    gap: 1.1rem;
+    padding: 0.7rem 1rem 0.9rem;
+    color: var(--muted);
+  }
+
+  .legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    border: 1px solid #86efac;
+    background: #f0fdf4;
+  }
+
+  .swatch.pending {
+    border-color: #fcd34d;
+    background: #fffbeb;
+  }
+
+  /* Once in view, the new request pops in, then glows a few times. */
+  :global(.js) .dash .new {
+    opacity: 0;
+  }
+
+  :global(.js) .dash:global(.is-visible) .new {
+    animation:
+      pop 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.9s both,
+      glow 1.6s ease-in-out 1.4s 3;
+  }
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes glow {
+    50% {
+      box-shadow: 0 0 0 6px rgb(249 115 22 / 0.15);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(.js) .dash .new,
+    :global(.js) .dash:global(.is-visible) .new {
+      opacity: 1;
+      animation: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .dash {
+      font-size: 0.72rem;
+    }
+
+    .dash-grid {
+      margin: 0 0.5rem;
+      grid-template-columns: 2rem repeat(7, minmax(0, 1fr));
+    }
+
+    /* Narrow columns: the times only. */
+    .what {
+      display: none;
+    }
+
+    .booking {
+      inset-inline: 1px;
+      padding: 0.05rem 0.15rem;
+      font-size: 0.56rem;
+    }
+
+    .booking > span {
+      text-overflow: clip;
+    }
+  }
+</style>

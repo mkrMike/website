@@ -104,7 +104,7 @@ export const es: Dictionary = {
       },
       {
         title: 'La IA responde y recoge la solicitud',
-        text: 'El asistente responde preguntas, encuentra horarios libres y recoge la solicitud de reserva. El cliente la verifica por correo y SMS, y usted la confirma.',
+        text: 'El asistente responde preguntas, encuentra horarios libres y recoge la solicitud de reserva. El cliente la verifica por correo, y usted la confirma.',
       },
       {
         title: 'Su equipo toma el control',
@@ -112,12 +112,35 @@ export const es: Dictionary = {
       },
     ],
 
+    // The dashboard's week calendar (DashboardMock), after "How it works".
+    dashboard: {
+      eyebrow: 'Su panel',
+      title: 'Cada reserva llega a su semana',
+      text: 'Las solicitudes que el asistente recibe de noche le esperan por la mañana en su calendario. Vea la semana de todo el equipo, o la de una sola persona, y confirme con un clic.',
+      points: [
+        'Vista semanal de todo el equipo o de una sola persona',
+        'Confirmar, completar o cancelar con un clic',
+        'Cuentas de empleado que solo ven su propia agenda',
+      ],
+      mock: {
+        brand: 'Glow Salon',
+        available: 'Disponible',
+        today: 'Hoy',
+        list: 'Lista',
+        week: 'Semana',
+        fromChat: 'Nueva · desde el chat',
+        confirmed: 'Confirmada',
+        toConfirm: 'Por confirmar',
+        services: { haircut: 'Corte', colour: 'Color', balayage: 'Balayage', manicure: 'Manicura', blowdry: 'Peinado' },
+      },
+    },
+
     featuresEyebrow: 'Funciones',
     featuresTitle: 'Todo lo que su recepción necesita',
     features: [
       { title: 'Atención 24/7', text: 'Noches, fines de semana y festivos: ninguna consulta espera a la mañana siguiente.' },
       { title: 'Disponibilidad real', text: 'El asistente solo ofrece horarios que encajan con los horarios de apertura, los cierres y las reservas existentes de cada recurso.' },
-      { title: 'Clientes verificados', text: 'Los clientes se verifican con un código por correo y SMS: se acabaron las solicitudes falsas.' },
+      { title: 'Clientes verificados', text: 'Los clientes se verifican con un código por correo: se acabaron las solicitudes falsas.' },
       { title: 'Intervención en directo', text: 'Su equipo ve cada conversación en tiempo real y puede intervenir con un solo clic.' },
       { title: 'Horario de atención', text: 'Fuera de su horario, el asistente indica a los clientes cuándo vuelve a estar disponible su equipo.' },
       { title: 'Un solo panel', text: 'Conversaciones, reservas, recursos, empleados y horarios, todo en un mismo lugar.' },
@@ -215,7 +238,7 @@ export const es: Dictionary = {
       { title: 'Su estilista, o quien esté disponible', text: 'El cliente elige estilista o «quien esté disponible», y el salón asigna la reserva a quien tenga menos ese día.' },
       { title: 'Solo horas realmente libres', text: 'Todo el servicio cabe en el horario del estilista, fuera de sus días libres y de los festivos del salón, sin solaparse con otra reserva, en intervalos de 15 minutos.' },
       { title: 'Reservado desde el chat', text: 'El asistente guía al cliente del servicio al estilista, y luego al día y a la hora. Los correos nombran la reserva, y un código de reserva permite al cliente consultarla o cancelarla.' },
-      { title: 'Clientes verificados', text: 'Los clientes se verifican por correo y SMS antes de que su solicitud le llegue a usted.' },
+      { title: 'Clientes verificados', text: 'Los clientes verifican su correo antes de que su solicitud le llegue a usted.' },
       { title: 'Su equipo toma el relevo', text: 'Su equipo toma la conversación en horario de apertura y puede reservar a cualquier cliente, a cualquier minuto, desde el panel.' },
     ],
     note: 'Cada reserva es una solicitud que su salón confirma. Samatrica no cobra pagos ni depósitos.',
@@ -246,7 +269,7 @@ export const es: Dictionary = {
     included: 'Incluido en todos los planes',
     includedList: [
       'Asistente con IA 24/7',
-      'Verificación por correo y SMS',
+      'Verificación por correo',
       'Intervención en directo',
       'Horario de atención y de apertura',
       'Panel en 6 idiomas',
@@ -294,7 +317,7 @@ export const es: Dictionary = {
     privacyTitle: 'Política de privacidad',
     refundTitle: 'Política de reembolso',
     placeholder: 'Esta página se publicará antes del lanzamiento. Su texto se está preparando y revisando.',
-    updated: 'Última actualización: 10 de octubre de 2026',
+    updated: 'Última actualización: 11 de octubre de 2026',
 
     /** Encabezados de sección y párrafos, mostrados en orden. */
     terms: [
@@ -335,7 +358,7 @@ export const es: Dictionary = {
       {
         title: '6. Tarifas y cancelación',
         paragraphs: [
-          'Las tarifas, los periodos de facturación y los métodos de pago se indican al contratar la suscripción, y pueden actualizarse con un preaviso de al menos 30 días por correo electrónico; los cambios de precio nunca se aplican con carácter retroactivo, y el Negocio puede cancelar antes de que entren en vigor. No hay permanencia mínima: el Negocio puede cancelar en cualquier momento, la suscripción finaliza al término del periodo de facturación ya abonado y no se cobra nada más.',
+          'Las tarifas, los periodos de facturación y los métodos de pago se indican al contratar la suscripción, y pueden actualizarse con un preaviso de al menos 30 días por correo electrónico; los cambios de precio nunca se aplican con carácter retroactivo, y el Negocio puede cancelar antes de que entren en vigor. No hay permanencia mínima: el Negocio puede cancelar en cualquier momento, la suscripción finaliza al término del periodo de facturación ya abonado y no se cobra nada más. Una tarifa única de configuración, por el importe indicado al contratar, por la puesta en marcha de los servicios, precios, personal y widget de chat del Negocio, se cobra al contratar; no es reembolsable una vez realizado ese trabajo, según lo indicado en la política de reembolso.',
           'Las tarifas no incluyen el impuesto sobre el valor añadido ni otros impuestos. A los Negocios establecidos en los Emiratos Árabes Unidos se les añade en la factura el IVA emiratí (actualmente del 5 %); los Negocios establecidos fuera de los Emiratos liquidan el IVA o impuesto similar que corresponda en su país, incluso mediante el mecanismo de inversión del sujeto pasivo.',
         ],
       },
@@ -408,15 +431,16 @@ export const es: Dictionary = {
         ],
       },
       {
-        title: '3. Garantía de devolución de 14 días sobre el primer pago',
+        title: '3. Garantía de devolución de 30 días',
         paragraphs: [
-          'Si Samatrica no convence a su negocio, escriba a contact@samatrica.com dentro de los 14 días siguientes a su primer pago y le reembolsaremos ese pago íntegramente, sin preguntas. El reembolso se abona al medio de pago original, normalmente en un plazo de 10 días hábiles.',
+          'Si Samatrica no funciona para su negocio, escriba a contact@samatrica.com en los 30 días siguientes a su primer pago de suscripción y le reembolsaremos ese pago íntegramente, sin preguntas. El reembolso se realiza al medio de pago original, normalmente en un plazo de 10 días hábiles.',
+          'La tarifa única de configuración, por el importe indicado y cobrada al contratar por la puesta en marcha de sus servicios, precios, personal y widget de chat, no es reembolsable, porque ese trabajo ya se ha realizado. No hay prueba gratuita: esta garantía la sustituye.',
         ],
       },
       {
         title: '4. Renovaciones',
         paragraphs: [
-          'Los pagos de renovación (mensuales o anuales) no son reembolsables, pero puede cancelar en cualquier momento: la suscripción simplemente finaliza al término del periodo ya abonado, y conserva el acceso hasta entonces. Recomendamos la facturación mensual hasta que esté seguro del servicio.',
+          'La suscripción se factura mensualmente. Los pagos de renovación no son reembolsables, pero puede cancelar en cualquier momento: la suscripción termina simplemente al final del mes ya pagado y conserva el acceso hasta entonces.',
         ],
       },
       {
@@ -470,7 +494,7 @@ export const es: Dictionary = {
       {
         title: '6. Subencargados del tratamiento',
         paragraphs: [
-          'Utilizamos un número reducido de proveedores para operar el Servicio: un proveedor de alojamiento situado en la UE, un proveedor de infraestructura situado en la UE que ejecuta nuestro modelo de IA (respuestas del asistente) y nuestros proveedores de envío de correo electrónico y SMS (códigos de verificación y notificaciones). La lista actualizada está disponible previa solicitud y se facilita a los negocios junto con su contrato de encargo de tratamiento.',
+          'Utilizamos un número reducido de proveedores para operar el Servicio: un proveedor de alojamiento situado en la UE, un proveedor de infraestructura situado en la UE que ejecuta nuestro modelo de IA (respuestas del asistente) y nuestro proveedor de envío de correo electrónico (códigos de verificación y notificaciones). La lista actualizada está disponible previa solicitud y se facilita a los negocios junto con su contrato de encargo de tratamiento.',
         ],
       },
       {

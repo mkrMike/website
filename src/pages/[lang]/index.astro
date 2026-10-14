@@ -1,6 +1,7 @@
 ---
 import ChatMock from '../../components/ChatMock.astro'
 import CtaBand from '../../components/CtaBand.astro'
+import DashboardMock from '../../components/DashboardMock.astro'
 import Icon from '../../components/Icon.astro'
 import Base from '../../layouts/Base.astro'
 import { href, type Locale, localePaths, useTranslations } from '../../i18n'
@@ -132,6 +133,28 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
           ))
         }
       </ol>
+    </div>
+  </section>
+
+  <!-- Dashboard: where the requests land -->
+  <section class="section" id="dashboard">
+    <div class="container dashboard">
+      <div data-reveal>
+        <span class="eyebrow"><Icon name="layout" size={16} />{h.dashboard.eyebrow}</span>
+        <h2>{h.dashboard.title}</h2>
+        <p class="dashboard-text">{h.dashboard.text}</p>
+        <ul class="checks">
+          {
+            h.dashboard.points.map((point) => (
+              <li>
+                <Icon name="check" size={18} />
+                {point}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <DashboardMock lang={lang} />
     </div>
   </section>
 
@@ -420,6 +443,47 @@ const featureIcons = ['moon', 'calendar', 'shield', 'chat', 'clock', 'layout'] a
     line-height: 1;
     color: transparent;
     -webkit-text-stroke: 1.5px rgb(15 118 110 / 0.35);
+  }
+
+  /* Dashboard */
+
+  .dashboard {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    .dashboard {
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+  }
+
+  .dashboard-text {
+    font-size: 1.12rem;
+    color: var(--muted);
+  }
+
+  .checks {
+    display: grid;
+    gap: 0.7rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .checks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .checks :global(svg) {
+    flex: none;
+    margin-top: 0.15rem;
+    color: var(--teal);
   }
 
   /* Features */

@@ -104,7 +104,7 @@ export const fr: Dictionary = {
       },
       {
         title: 'L’IA répond et recueille la demande',
-        text: 'L’assistant répond aux questions, trouve les créneaux libres et recueille la demande de réservation. Le client la vérifie par e-mail et par SMS, puis vous la confirmez.',
+        text: 'L’assistant répond aux questions, trouve les créneaux libres et recueille la demande de réservation. Le client la vérifie par e-mail, puis vous la confirmez.',
       },
       {
         title: 'Votre équipe prend le relais',
@@ -112,12 +112,35 @@ export const fr: Dictionary = {
       },
     ],
 
+    // The dashboard's week calendar (DashboardMock), after "How it works".
+    dashboard: {
+      eyebrow: 'Votre tableau de bord',
+      title: 'Chaque réservation arrive dans votre semaine',
+      text: 'Les demandes prises la nuit par l’assistant vous attendent le matin dans votre calendrier. Voyez la semaine de toute l’équipe, ou celle d’une seule personne, et confirmez en un clic.',
+      points: [
+        'Vue semaine de toute l’équipe, ou d’une seule personne',
+        'Confirmer, terminer ou annuler en un clic',
+        'Des comptes employés qui ne voient que leur propre agenda',
+      ],
+      mock: {
+        brand: 'Glow Salon',
+        available: 'Disponible',
+        today: 'Aujourd’hui',
+        list: 'Liste',
+        week: 'Semaine',
+        fromChat: 'Nouveau · depuis le chat',
+        confirmed: 'Confirmée',
+        toConfirm: 'À confirmer',
+        services: { haircut: 'Coupe', colour: 'Couleur', balayage: 'Balayage', manicure: 'Manucure', blowdry: 'Brushing' },
+      },
+    },
+
     featuresEyebrow: 'Fonctionnalités',
     featuresTitle: 'Tout ce dont votre accueil a besoin',
     features: [
       { title: 'Disponible 24h/24', text: 'Nuits, week-ends et jours fériés : aucune demande n’attend le lendemain matin.' },
       { title: 'Disponibilités réelles', text: 'L’assistant ne propose que des créneaux compatibles avec les horaires, les fermetures et les réservations existantes de chaque ressource.' },
-      { title: 'Clients vérifiés', text: 'Les clients se vérifient avec un code reçu par e-mail et SMS : fini les fausses demandes.' },
+      { title: 'Clients vérifiés', text: 'Les clients se vérifient avec un code reçu par e-mail : fini les fausses demandes.' },
       { title: 'Reprise en direct', text: 'Votre équipe suit chaque conversation en temps réel et peut intervenir en un clic.' },
       { title: 'Heures de service', text: 'En dehors de vos heures, l’assistant indique aux clients quand votre équipe sera de retour.' },
       { title: 'Un seul tableau de bord', text: 'Conversations, réservations, ressources, collaborateurs et horaires, réunis au même endroit.' },
@@ -215,7 +238,7 @@ export const fr: Dictionary = {
       { title: 'Leur styliste, ou le premier disponible', text: 'Le client choisit son styliste ou « le premier disponible », et le salon confie la réservation à celui qui en a le moins ce jour-là.' },
       { title: 'Uniquement des créneaux vraiment libres', text: 'Toute la prestation tient dans les horaires du styliste, hors jours de repos et fermetures du salon, sans chevaucher une autre réservation, par pas de 15 minutes.' },
       { title: 'Réservé depuis le chat', text: 'L’assistant guide le client de la prestation au styliste, puis au jour et à l’heure. Les e-mails nomment la réservation, et un code de réservation permet au client de la consulter ou de l’annuler.' },
-      { title: 'Clients vérifiés', text: 'Les clients se vérifient par e-mail et SMS avant que leur demande ne vous parvienne.' },
+      { title: 'Clients vérifiés', text: 'Les clients vérifient leur e-mail avant que leur demande ne vous parvienne.' },
       { title: 'Votre équipe prend le relais', text: 'Votre équipe reprend la conversation pendant les heures d’ouverture et peut réserver n’importe quel client, à la minute près, depuis le tableau de bord.' },
     ],
     note: 'Chaque réservation est une demande que votre salon confirme. Samatrica n’encaisse ni paiement ni acompte.',
@@ -246,7 +269,7 @@ export const fr: Dictionary = {
     included: 'Inclus dans toutes les formules',
     includedList: [
       'Assistant IA 24h/24',
-      'Vérification par e-mail et SMS',
+      'Vérification par e-mail',
       'Reprise en direct',
       'Heures de service et horaires d’ouverture',
       'Tableau de bord en 6 langues',
@@ -293,7 +316,7 @@ export const fr: Dictionary = {
     privacyTitle: 'Politique de confidentialité',
     refundTitle: 'Politique de remboursement',
     placeholder: 'Cette page sera publiée avant le lancement. Son contenu est en cours de rédaction et de relecture.',
-    updated: 'Dernière mise à jour : 10 octobre 2026',
+    updated: 'Dernière mise à jour : 11 octobre 2026',
 
     /** Section headings and paragraphs, rendered in order. */
     terms: [
@@ -334,7 +357,7 @@ export const fr: Dictionary = {
       {
         title: '6. Redevances et résiliation',
         paragraphs: [
-          'Les redevances, périodes de facturation et moyens de paiement sont précisés lors de la souscription et peuvent être modifiés moyennant un préavis d’au moins 30 jours par e-mail ; les changements de prix ne s’appliquent jamais rétroactivement, et l’Entreprise peut résilier avant leur entrée en vigueur. Aucune durée minimale d’engagement n’est exigée : l’Entreprise peut résilier à tout moment, l’abonnement prend fin au terme de la période de facturation déjà payée, et plus rien n’est prélevé.',
+          'Les redevances, périodes de facturation et moyens de paiement sont précisés lors de la souscription et peuvent être modifiés moyennant un préavis d’au moins 30 jours par e-mail ; les changements de prix ne s’appliquent jamais rétroactivement, et l’Entreprise peut résilier avant leur entrée en vigueur. Aucune durée minimale d’engagement n’est exigée : l’Entreprise peut résilier à tout moment, l’abonnement prend fin au terme de la période de facturation déjà payée, et plus rien n’est prélevé. Des frais de mise en place uniques, du montant indiqué à l’inscription, pour la configuration des prestations, des prix, du personnel et du widget de chat de l’Entreprise, sont facturés à l’inscription ; ils ne sont pas remboursables une fois ce travail effectué, comme le précise la politique de remboursement.',
           'Les redevances s’entendent hors taxe sur la valeur ajoutée et autres taxes. Pour les Entreprises établies aux Émirats arabes unis, la TVA émiratie (actuellement 5 %) est ajoutée à la facture ; les Entreprises établies hors des Émirats acquittent toute TVA ou taxe similaire due dans leur pays, y compris selon le mécanisme d’autoliquidation.',
         ],
       },
@@ -407,15 +430,16 @@ export const fr: Dictionary = {
         ],
       },
       {
-        title: '3. Garantie « satisfait ou remboursé » de 14 jours sur le premier paiement',
+        title: '3. Garantie satisfait ou remboursé de 30 jours',
         paragraphs: [
-          'Si Samatrica ne convient pas à votre entreprise, écrivez à contact@samatrica.com dans les 14 jours suivant votre premier paiement et nous vous rembourserons ce paiement intégralement, sans justification à fournir. Le remboursement est effectué sur le moyen de paiement d’origine, en principe sous 10 jours ouvrés.',
+          'Si Samatrica ne convient pas à votre entreprise, écrivez à contact@samatrica.com dans les 30 jours suivant votre premier paiement d’abonnement et nous vous remboursons ce paiement intégralement, sans poser de questions. Le remboursement est effectué sur le moyen de paiement d’origine, généralement sous 10 jours ouvrés.',
+          'Les frais de mise en place uniques, du montant indiqué et facturés à l’inscription pour la configuration de vos prestations, de vos prix, de votre personnel et du widget de chat, ne sont pas remboursables, car ce travail a déjà été effectué. Il n’y a pas d’essai gratuit : cette garantie le remplace.',
         ],
       },
       {
         title: '4. Renouvellements',
         paragraphs: [
-          'Les paiements de renouvellement (mensuels ou annuels) ne sont pas remboursables, mais vous pouvez résilier à tout moment : l’abonnement prend alors simplement fin au terme de la période déjà payée, et vous conservez l’accès jusqu’à cette date. Nous recommandons la facturation mensuelle tant que vous n’êtes pas certain du service.',
+          'L’abonnement est facturé mensuellement. Les paiements de renouvellement ne sont pas remboursables, mais vous pouvez résilier à tout moment : l’abonnement prend alors simplement fin au terme du mois déjà payé, et vous conservez l’accès jusque-là.',
         ],
       },
       {
@@ -469,7 +493,7 @@ export const fr: Dictionary = {
       {
         title: '6. Sous-traitants ultérieurs',
         paragraphs: [
-          'Nous faisons appel à un petit nombre de prestataires pour exploiter le Service : un hébergeur situé dans l’UE, un fournisseur d’infrastructure situé dans l’UE qui fait fonctionner notre modèle d’IA (réponses de l’assistant) et nos prestataires d’envoi d’e-mails et de SMS (codes de vérification et notifications). La liste à jour est disponible sur demande et est remise aux entreprises avec leur accord de traitement des données.',
+          'Nous faisons appel à un petit nombre de prestataires pour exploiter le Service : un hébergeur situé dans l’UE, un fournisseur d’infrastructure situé dans l’UE qui fait fonctionner notre modèle d’IA (réponses de l’assistant) et notre prestataire d’envoi d’e-mails (codes de vérification et notifications). La liste à jour est disponible sur demande et est remise aux entreprises avec leur accord de traitement des données.',
         ],
       },
       {
