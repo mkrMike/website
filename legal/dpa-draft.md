@@ -1,6 +1,6 @@
 # Data Processing Agreement — DRAFT
 
-> **Status: draft for legal review, 11 October 2026. Not yet binding. The
+> **Status: draft for legal review, 25 October 2026. Not yet binding. The
 > bracketed items must be completed before this document is used.**
 > Provided to each business ("the Business") together with the Samatrica
 > terms of service, of which it forms part.
@@ -8,19 +8,19 @@
 ## 1. Parties and roles
 
 This Data Processing Agreement ("DPA") is between the Business (the
-**controller**) and Adenium Consultancy - F.Z.E, a free zone
-establishment licensed by the Free Zones Authority of Ajman under licence
-no. 32555, TRN 104836129700001, registered address FL.H-01582, C1
-Building, Ajman Free Zone, Ajman, United Arab Emirates, which operates
-Samatrica ("Samatrica", the **processor**), for the personal data Samatrica
+**controller**) and Samatrica OÜ, a private limited company registered in
+the Estonian Commercial Register under registry code 16285192, LEI
+984500DBA4ZE2HM61434, VAT number EE102401154, registered address
+Sepapaja tn 6, Lasnamäe linnaosa, 15551 Tallinn, Harju maakond, Estonia
+("Samatrica", the **processor**), for the personal data Samatrica
 processes on the Business's behalf when providing the Samatrica service
 (AI chat assistant, appointment requests and dashboard — "the Service").
 
-In this DPA, "data protection law" means the UAE Federal Decree-Law No. 45
-of 2021 on the Protection of Personal Data and, where it applies to the
-Business, the EU General Data Protection Regulation ("GDPR"). References to
-GDPR articles describe the corresponding obligation under whichever data
-protection law applies.
+In this DPA, "data protection law" means the EU General Data Protection
+Regulation ("GDPR"), the Estonian Personal Data Protection Act
+(isikuandmete kaitse seadus) and the national law implementing the GDPR
+in the Business's country. This DPA is intended to meet the requirements
+of GDPR art. 28(3).
 
 ## 2. Subject matter, duration, nature and purpose
 
@@ -58,8 +58,9 @@ violate data protection law.
 Persons authorised by Samatrica to process the data are bound by
 confidentiality. Technical and organisational measures include: hosting
 in the European Union with a third-party hosting provider (Section 6);
-the AI model run by Samatrica itself on servers in the European Union,
-without sharing conversations with any AI company; encryption in transit
+assistant replies generated through Amazon Bedrock in AWS regions in the
+European Union, without conversations being shared with the model's
+developer or used for training; encryption in transit
 (TLS); per-business data isolation enforced in the backend; verified
 contact details (email codes) before an appointment request reaches the
 Business; access to production limited to the persons operating the
@@ -75,9 +76,8 @@ Business may terminate.
 
 | Sub-processor | Purpose | Location / transfer safeguard |
 | --- | --- | --- |
-| Amazon Web Services EMEA SARL | Hosting of the Service and its database | EU (Frankfurt) |
+| Amazon Web Services EMEA SARL | Hosting of the Service and its database; generation of assistant replies through Amazon Bedrock (Anthropic Claude model); AWS does not share prompts or replies with the model developer and does not use them for training | EU: hosting in Frankfurt (eu-central-1); AI requests sent from Frankfurt through the Bedrock EU inference profile, processed only in AWS regions in the EU |
 | Sendinblue SAS (Brevo), 9-17 rue Salneuve, 75017 Paris, France, RCS Paris 498 019 298 | Sending of verification codes and booking notifications by email | EU (France) [ACCEPT BREVO'S DPA] |
-| RunPod [CONFIRM CONTRACTING ENTITY] | GPU servers on which Samatrica runs its own AI model to generate assistant replies; RunPod does not use the data and no model is trained on it | EU data centres only [CONFIRM REGION LOCK; RUNPOD DPA; US PARENT: SCCs / DPF] |
 
 Providers for SMS delivery and for billing will be added under the
 procedure above before those features are used.
@@ -102,7 +102,26 @@ information data protection law requires (GDPR art. 33(3)) as it becomes
 available, so the Business can meet its own notification duties towards
 the competent authority and the persons concerned.
 
-## 9. Deletion and return
+## 9. Retention, deletion and return
+
+By entering into this DPA, the Business instructs Samatrica to keep and
+then automatically delete personal data processed in the Service as
+follows:
+
+| Data | Retention |
+| --- | --- |
+| Chat conversations (messages of the customer, the assistant and the Business's employees) | 90 days after the last message in the conversation |
+| Contact details never verified (contact form not completed) | 30 days |
+| Verification codes | until they expire (minutes); never reused |
+| Customer records and bookings | 24 months after the customer's last appointment |
+| Technical logs | 30 days |
+| Backups | overwritten on a rotation of [35] days |
+
+Instead of deletion, Samatrica may irreversibly anonymise data (for
+example keeping only the date and service of a past booking, without any
+data identifying the customer). The Business may request other periods
+in writing; once the Service offers a retention setting, the value the
+Business chooses there is its instruction.
 
 On termination of the Service, the Business may export its data for
 30 days; Samatrica then deletes all personal data processed on the
@@ -120,15 +139,18 @@ other businesses' data, and at the Business's cost.
 ## 11. Location of the data and transfers
 
 The Service's data is stored and processed in the European Union by the
-sub-processors in Section 6. Samatrica's personnel operate the Service
-from the United Arab Emirates. Where the GDPR applies to the Business,
-this access is a transfer outside the EU, and the parties sign the EU
-standard contractual clauses (module 2, controller to processor) before
-any processing begins.
+sub-processors in Section 6, including the generation of assistant
+replies. Samatrica does not transfer personal data
+outside the European Economic Area except where the safeguards of GDPR
+chapter V are in place (an adequacy decision, or the EU standard
+contractual clauses with any supplementary measures needed). [CONFIRM
+WHETHER ANY PERSONNEL ACCESS PRODUCTION FROM OUTSIDE THE EEA, E.G. THE
+UAE; IF SO, DOCUMENT THE SAFEGUARD HERE.]
 
 ## 12. Law
 
-This DPA is governed by the federal laws of the United Arab Emirates as
-applied in the Emirate of Ajman, like the terms of service. In case of
+This DPA is governed by the laws of the Republic of Estonia, like the
+terms of service, and Harju County Court (Harju Maakohus) in Tallinn has
+exclusive jurisdiction. In case of
 conflict between this DPA and the terms, this DPA prevails for data
 protection matters.

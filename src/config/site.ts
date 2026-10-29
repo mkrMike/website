@@ -5,9 +5,9 @@ export const site = {
   dashboardUrl: 'https://dashboard.samatrica.com/',
   contactEmail: 'contact@samatrica.com',
   /** The legal entity, shown in the footer and legal pages (language-neutral). */
-  legalName: 'Adenium Consultancy - F.Z.E',
+  legalName: 'Samatrica OÜ',
   legalLine:
-    'Adenium Consultancy - F.Z.E · FL.H-01582, C1 Building, Ajman Free Zone, Ajman, UAE · Licence 32555 · TRN 104836129700001',
+    'Samatrica OÜ · Sepapaja tn 6, 15551 Tallinn, Estonia · Registry code 16285192 · VAT EE102401154 · LEI 984500DBA4ZE2HM61434',
   /** Digits only, international format: the floating WhatsApp button. */
   whatsappPhone: '971543795855',
 }

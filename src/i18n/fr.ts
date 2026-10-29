@@ -316,14 +316,14 @@ export const fr: Dictionary = {
     privacyTitle: 'Politique de confidentialité',
     refundTitle: 'Politique de remboursement',
     placeholder: 'Cette page sera publiée avant le lancement. Son contenu est en cours de rédaction et de relecture.',
-    updated: 'Dernière mise à jour : 11 octobre 2026',
+    updated: 'Dernière mise à jour : 25 octobre 2026',
 
     /** Section headings and paragraphs, rendered in order. */
     terms: [
       {
         title: '1. Qui nous sommes et objet des présentes conditions',
         paragraphs: [
-          'Le Service est fourni par Adenium Consultancy - F.Z.E, établissement de zone franche agréé par l’autorité des zones franches d’Ajman (Free Zones Authority of Ajman) sous la licence n° 32555, numéro d’enregistrement fiscal (TRN) 104836129700001, dont le siège est situé FL.H-01582, C1 Building, Ajman Free Zone, Ajman, Émirats arabes unis, numéro Makani 4442612247, qui exploite Samatrica (« Samatrica »).',
+          'Le Service est fourni par Samatrica OÜ, société à responsabilité limitée immatriculée au registre du commerce estonien sous le numéro 16285192, LEI 984500DBA4ZE2HM61434, numéro de TVA EE102401154, dont le siège est situé Sepapaja tn 6, Lasnamäe linnaosa, 15551 Tallinn, Harju maakond, Estonie (« Samatrica »).',
           'Samatrica fournit un assistant IA qui répond aux visiteurs sur le site web d’une entreprise, identifie les créneaux disponibles et recueille les demandes de réservation, ainsi qu’un tableau de bord destiné à l’équipe de l’entreprise (le « Service »). Les présentes conditions constituent un contrat entre Samatrica et l’entreprise qui ouvre un compte (l’« Entreprise »), par exemple une clinique de santé, un salon ou toute autre entreprise qui prend des réservations. Elles ne créent aucun contrat entre Samatrica et les clients ou patients de l’Entreprise.',
         ],
       },
@@ -337,8 +337,11 @@ export const fr: Dictionary = {
       {
         title: '3. Obligations de l’Entreprise',
         paragraphs: [
-          'L’Entreprise préserve la confidentialité de ses identifiants de connexion et répond des actions de ses salariés dans le tableau de bord. Les informations qu’elle configure (prestations, praticiens, horaires, descriptions) doivent être exactes et licites.',
-          'À l’égard de ses clients, l’Entreprise est le responsable du traitement : elle doit disposer d’une base légale pour traiter les données personnelles collectées via le chat, informer les clients de ce traitement dans ses propres politiques de confidentialité et répondre à leurs demandes d’exercice de droits. L’accord de traitement des données conclu entre l’Entreprise et Samatrica (article 9) régit les traitements effectués par Samatrica pour le compte de l’Entreprise.',
+          'L’Entreprise préserve la confidentialité de ses identifiants de connexion, répond des actions de ses salariés dans le tableau de bord et informe Samatrica sans délai à l’adresse contact@samatrica.com si elle soupçonne qu’un compte a été compromis. Les informations qu’elle configure (prestations, personnel, prix, horaires, descriptions) doivent être exactes et licites, et ne doivent comporter ni données personnelles de clients ni aucune donnée sensible dont le Service n’a pas besoin.',
+          'L’Entreprise traite avec diligence les demandes de réservation qu’elle reçoit par l’intermédiaire du Service, en les confirmant ou en les refusant dans le tableau de bord, et respecte envers ses clients les prix, prestations et conditions qu’elle a configurés. Tout différend avec un client concernant une réservation, un prix ou une prestation est réglé entre l’Entreprise et ce client.',
+          'L’Entreprise respecte toutes les lois applicables à sa propre activité, notamment les règles relatives à la protection des consommateurs, à l’affichage des prix et aux autorisations propres à son secteur, et n’utilise pas le Service pour prendre des réservations pour des mineurs en violation de la loi.',
+          'À l’égard de ses clients, l’Entreprise est le responsable du traitement : elle doit disposer d’une base légale pour traiter les données personnelles collectées via le chat, informer les clients de ce traitement dans une politique de confidentialité publiée sur son site web, vers laquelle le widget de chat peut renvoyer, et répondre à leurs demandes en matière de protection des données. Les coordonnées collectées via le chat ne peuvent être utilisées que pour traiter la demande et la réservation du client ; l’Entreprise ne peut les utiliser à des fins de prospection commerciale que si le client y a consenti séparément lorsque la loi l’exige.',
+          'L’Entreprise coopère avec Samatrica en matière de protection des données : elle transmet sans délai toute demande, réclamation ou requête émanant d’une personne ou d’une autorité qui concerne le traitement effectué par Samatrica, et informe Samatrica de toute enquête impliquant le widget de chat. L’accord de traitement des données conclu entre l’Entreprise et Samatrica (article 9) régit les traitements effectués par Samatrica pour le compte de l’Entreprise.',
         ],
       },
       {
@@ -350,15 +353,16 @@ export const fr: Dictionary = {
       {
         title: '5. Réponses générées par l’IA',
         paragraphs: [
-          'Les réponses de l’assistant sont générées automatiquement par une intelligence artificielle à partir des informations configurées par l’Entreprise. Elles peuvent être incomplètes ou erronées : l’Entreprise doit donc maintenir ces informations exactes et à jour, et vérifier régulièrement les conversations dans le tableau de bord. Samatrica ne garantit pas l’exactitude de chaque réponse.',
-          'Le widget informe les visiteurs qu’ils échangent avec un assistant IA, et l’Entreprise ne doit ni le masquer ni laisser entendre le contraire. L’Entreprise reste responsable envers ses clients des informations et des services qu’elle propose.',
+          'Les réponses de l’assistant sont générées automatiquement par une intelligence artificielle à partir des informations configurées par l’Entreprise. Par nature, les systèmes d’IA peuvent produire des réponses incomplètes, inexactes, obsolètes ou inappropriées, mal comprendre une demande ou ne pas l’enregistrer. Samatrica ne garantit pas l’exactitude, l’exhaustivité ou l’adéquation d’une quelconque réponse, et les réponses n’engagent pas Samatrica. L’Entreprise doit maintenir les informations qu’elle configure exactes et à jour, vérifier régulièrement les conversations et les demandes de réservation dans le tableau de bord, et demeure seule responsable envers ses clients des informations, des prix, des réservations et des services qu’elle propose.',
+          'Le widget informe les visiteurs qu’ils échangent avec un assistant IA, comme l’exige le règlement européen sur l’intelligence artificielle, et l’Entreprise ne doit ni le masquer ni laisser entendre le contraire. Samatrica n’est pas responsable des décisions prises, ni des réservations effectuées, manquées ou enregistrées en double, sur la base d’une réponse de l’IA, ni d’aucune réclamation des clients de l’Entreprise qui en découlerait.',
         ],
       },
       {
         title: '6. Redevances et résiliation',
         paragraphs: [
           'Les redevances, périodes de facturation et moyens de paiement sont précisés lors de la souscription et peuvent être modifiés moyennant un préavis d’au moins 30 jours par e-mail ; les changements de prix ne s’appliquent jamais rétroactivement, et l’Entreprise peut résilier avant leur entrée en vigueur. Aucune durée minimale d’engagement n’est exigée : l’Entreprise peut résilier à tout moment, l’abonnement prend fin au terme de la période de facturation déjà payée, et plus rien n’est prélevé. Des frais de mise en place uniques, du montant indiqué à l’inscription, pour la configuration des prestations, des prix, du personnel et du widget de chat de l’Entreprise, sont facturés à l’inscription ; ils ne sont pas remboursables une fois ce travail effectué, comme le précise la politique de remboursement.',
-          'Les redevances s’entendent hors taxe sur la valeur ajoutée et autres taxes. Pour les Entreprises établies aux Émirats arabes unis, la TVA émiratie (actuellement 5 %) est ajoutée à la facture ; les Entreprises établies hors des Émirats acquittent toute TVA ou taxe similaire due dans leur pays, y compris selon le mécanisme d’autoliquidation.',
+          'Les factures sont payables à leur date d’échéance. En cas de retard de paiement, Samatrica peut appliquer des intérêts de retard au taux prévu par la loi estonienne pour les transactions commerciales et, si le paiement reste dû 7 jours après un rappel par e-mail, suspendre l’accès au Service jusqu’à réception du paiement ; les redevances restent dues pendant la suspension.',
+          'Les redevances s’entendent hors taxe sur la valeur ajoutée et autres taxes. Pour les Entreprises établies en Estonie, la TVA estonienne au taux applicable est ajoutée à la facture. Les Entreprises établies dans un autre État membre de l’UE qui fournissent un numéro de TVA valide sont facturées hors TVA selon le mécanisme d’autoliquidation et acquittent la TVA dans leur propre pays ; les Entreprises établies hors de l’UE acquittent toute TVA ou taxe similaire due dans leur pays.',
         ],
       },
       {
@@ -377,20 +381,25 @@ export const fr: Dictionary = {
       {
         title: '9. Protection des données',
         paragraphs: [
-          'Pour les données personnelles des clients et des autres utilisateurs du chat, l’Entreprise est le responsable du traitement et Samatrica le sous-traitant au sens de la loi applicable en matière de protection des données : la loi émiratie sur la protection des données personnelles (décret-loi fédéral n° 45 de 2021) et, lorsqu’il s’applique, le RGPD. Un accord de traitement des données, incluant les sous-traitants ultérieurs de Samatrica et ses mesures de sécurité, fait partie intégrante du présent contrat. Samatrica héberge les données du Service auprès d’un hébergeur tiers situé dans l’Union européenne.',
+          'Pour les données personnelles des clients et des autres utilisateurs du chat, l’Entreprise est le responsable du traitement et Samatrica le sous-traitant au sens du règlement général de l’UE sur la protection des données (RGPD) et de la loi estonienne sur la protection des données personnelles. Un accord de traitement des données, incluant les sous-traitants ultérieurs de Samatrica et ses mesures de sécurité, fait partie intégrante du présent contrat. Samatrica héberge les données du Service auprès d’un hébergeur tiers situé dans l’Union européenne.',
           'Lorsque l’Entreprise fournit des soins de santé, les demandes de rendez-vous peuvent révéler des informations relatives à la santé, que le RGPD qualifie de catégorie particulière de données personnelles. L’Entreprise confirme être en droit de collecter de telles données auprès de ses patients, et Samatrica ne les traite que pour fournir le Service.',
         ],
       },
       {
         title: '10. Disponibilité',
         paragraphs: [
-          'Samatrica fournit le Service avec le soin et la diligence raisonnables, sans toutefois garantir une disponibilité ininterrompue. Des maintenances planifiées et des interruptions peuvent survenir ; le widget de chat est conçu pour s’effacer discrètement du site de l’Entreprise lorsque le Service est injoignable.',
+          'Le Service est fourni « en l’état » et « selon disponibilité ». Samatrica ne garantit pas qu’il sera ininterrompu, exempt d’erreurs ou de bogues, qu’il répondra aux besoins spécifiques de l’Entreprise, ni qu’il fonctionnera avec tout site web, navigateur ou appareil. Des maintenances planifiées, des mises à jour, des interruptions et des erreurs peuvent survenir, y compris du fait des fournisseurs d’hébergement, d’infrastructure d’IA, de messagerie électronique ou d’accès à internet ; le widget de chat est conçu pour s’effacer discrètement du site de l’Entreprise lorsque le Service est injoignable. L’indisponibilité n’ouvre droit à aucun remboursement ni à aucune réduction des redevances, sauf dans les conditions prévues par la politique de remboursement.',
+          'Samatrica développe le Service en continu et peut à tout moment, sans préavis, ajouter, modifier, suspendre ou supprimer des fonctionnalités, l’interface utilisateur, des intégrations ainsi que les logiciels et modèles d’IA sous-jacents, à condition que la fonction essentielle du Service (un assistant IA recevant des demandes de réservation, avec un tableau de bord) soit maintenue. Lorsqu’une modification supprime une fonctionnalité sur laquelle l’Entreprise s’appuie de manière substantielle, l’Entreprise peut résilier avec effet immédiat et obtenir le remboursement, au prorata, des redevances payées d’avance pour la période restante.',
+          'Il incombe à l’Entreprise de conserver ses propres enregistrements des réservations et des coordonnées de clients dont elle a besoin ; elle peut les exporter depuis le tableau de bord à tout moment.',
         ],
       },
       {
         title: '11. Responsabilité',
         paragraphs: [
-          'Dans la mesure permise par la loi, la responsabilité totale de Samatrica au titre du présent contrat est limitée aux redevances versées par l’Entreprise au cours des 12 mois précédant le fait générateur de la réclamation, et Samatrica n’est pas responsable des dommages indirects tels que le manque à gagner. Aucune stipulation des présentes ne limite une responsabilité qui ne peut être limitée en vertu de la loi.',
+          'Dans toute la mesure permise par la loi, Samatrica n’est pas responsable des dommages indirects ou consécutifs, ni des pertes de bénéfices, de chiffre d’affaires, de réservations, de clients, de réputation, d’opportunités commerciales ou de données, y compris les pertes causées par des bogues, des erreurs, l’indisponibilité du Service ou des réponses de l’IA, que ce soit sur un fondement contractuel, délictuel ou autre.',
+          'La responsabilité totale de Samatrica découlant du présent contrat ou en lien avec celui-ci, toutes réclamations confondues, est limitée aux redevances effectivement versées par l’Entreprise au cours des 3 mois précédant le fait générateur de la réclamation. Toute réclamation doit être notifiée par écrit dans un délai de 6 mois à compter du jour où l’Entreprise en a eu connaissance.',
+          'Ces limitations ne s’appliquent pas à la responsabilité pour manquement intentionnel ou faute lourde, pour décès ou dommages corporels, ni à toute autre responsabilité qui ne peut être limitée ou exclue en vertu du droit applicable.',
+          'L’Entreprise garantit et indemnise Samatrica, ses dirigeants et ses salariés contre toutes réclamations, pertes, amendes et frais (y compris des honoraires d’avocat raisonnables) résultant d’une violation par l’Entreprise des présentes conditions ou de la législation sur la protection des données, des informations qu’elle configure, des services qu’elle fournit à ses clients, ainsi que des réclamations de ses clients relatives aux réservations ou aux réponses de l’assistant.',
         ],
       },
       {
@@ -410,8 +419,8 @@ export const fr: Dictionary = {
       {
         title: '14. Modifications, droit applicable et litiges',
         paragraphs: [
-          'Samatrica peut modifier les présentes conditions moyennant un préavis d’au moins 30 jours par e-mail, et l’Entreprise peut résilier avant l’entrée en vigueur des modifications ; la poursuite de l’utilisation après l’expiration du préavis vaut acceptation. Les modifications imposées par la loi ou par des raisons de sécurité peuvent s’appliquer immédiatement. Les présentes conditions sont régies par les lois fédérales des Émirats arabes unis telles qu’appliquées dans l’émirat d’Ajman, et les tribunaux d’Ajman (le tribunal fédéral de première instance d’Ajman en première instance) ont compétence exclusive.',
-          'Les présentes conditions sont proposées en plusieurs langues à titre de commodité ; en cas de divergence, la version arabe prévaut.',
+          'Samatrica peut modifier les présentes conditions à tout moment. Les modifications qui ne réduisent pas les droits de l’Entreprise, telles que des clarifications, de nouvelles fonctionnalités ou des corrections rédactionnelles, ainsi que les modifications imposées par la loi, par une juridiction ou une autorité, ou par des raisons de sécurité, prennent effet dès leur publication sur le site web. Les autres modifications sont notifiées par e-mail ou dans le tableau de bord au moins 15 jours avant leur entrée en vigueur ; si l’Entreprise ne les accepte pas, elle peut résilier avant cette date, et la poursuite de l’utilisation au-delà vaut acceptation. Les présentes conditions sont régies par le droit de la République d’Estonie, à l’exclusion de la Convention des Nations unies sur les contrats de vente internationale de marchandises, et le tribunal de comté de Harju (Harju Maakohus) à Tallinn a compétence exclusive.',
+          'Les présentes conditions sont proposées en plusieurs langues à titre de commodité ; en cas de divergence, la version anglaise prévaut.',
         ],
       },
     ],
@@ -452,7 +461,7 @@ export const fr: Dictionary = {
         title: '6. Comment demander un remboursement',
         paragraphs: [
           'Écrivez à contact@samatrica.com depuis l’adresse e-mail de votre compte, en indiquant le nom de votre établissement. Nous accusons réception sous 2 jours ouvrés et vous informons de la date d’émission du remboursement.',
-          'La présente politique est proposée en plusieurs langues à titre de commodité ; en cas de divergence, la version arabe prévaut.',
+          'La présente politique est proposée en plusieurs langues à titre de commodité ; en cas de divergence, la version anglaise prévaut.',
         ],
       },
     ],
@@ -461,7 +470,7 @@ export const fr: Dictionary = {
       {
         title: '1. Qui nous sommes',
         paragraphs: [
-          'Samatrica est exploité par Adenium Consultancy - F.Z.E, licence n° 32555 (Free Zones Authority of Ajman), FL.H-01582, C1 Building, Ajman Free Zone, Ajman, Émirats arabes unis. Samatrica fournit un assistant IA de prise de rendez-vous destiné aux entreprises qui prennent des rendez-vous. La présente politique explique comment les données personnelles sont traitées sur ce site web et dans le widget de chat Samatrica installé sur les sites de ces entreprises. Pour toute question ou demande relative à vos données, écrivez à contact@samatrica.com.',
+          'Samatrica est exploité par Samatrica OÜ, numéro d’immatriculation 16285192, Sepapaja tn 6, 15551 Tallinn, Estonie, responsable du traitement pour les traitements décrits à la section 2. Samatrica fournit un assistant IA de prise de rendez-vous destiné aux entreprises qui prennent des rendez-vous. La présente politique explique comment les données personnelles sont traitées sur ce site web et dans le widget de chat Samatrica installé sur les sites de ces entreprises. Pour toute question ou demande relative à vos données, écrivez à contact@samatrica.com.',
         ],
       },
       {
@@ -481,25 +490,25 @@ export const fr: Dictionary = {
       {
         title: '4. Traitement par IA',
         paragraphs: [
-          'Les réponses de l’assistant sont générées par un modèle de langage IA que Samatrica exploite elle-même, sur des serveurs situés dans l’Union européenne et loués auprès d’un fournisseur d’infrastructure tiers. Le contenu des conversations n’y est traité que pour générer les réponses ; il n’est communiqué à aucune société d’IA et n’est utilisé pour entraîner aucun modèle.',
+          'Les réponses de l’assistant sont générées par un modèle de langage IA fourni par notre hébergeur cloud et traitées dans ses centres de données dans l’Union européenne. Le contenu des conversations n’est utilisé que pour générer la réponse ; il n’est pas communiqué au développeur du modèle et n’est utilisé pour entraîner aucun modèle.',
         ],
       },
       {
         title: '5. Lieu de stockage des données',
         paragraphs: [
-          'Les données du Service sont hébergées par un hébergeur tiers situé dans l’Union européenne. Lorsqu’un sous-traitant ultérieur traite des données hors de l’UE, nous nous appuyons sur les garanties prévues par le RGPD pour de tels transferts, telles que les clauses contractuelles types de l’UE.',
+          'Les données du Service sont stockées par un hébergeur tiers dans l’Union européenne ; les réponses de l’assistant sont générées dans les centres de données de cet hébergeur dans l’Union européenne (article 4). Lorsqu’un sous-traitant ultérieur traite des données hors de l’UE, nous nous appuyons sur les garanties prévues par le RGPD pour de tels transferts, telles qu’une décision d’adéquation ou les clauses contractuelles types de l’UE.',
         ],
       },
       {
         title: '6. Sous-traitants ultérieurs',
         paragraphs: [
-          'Nous faisons appel à un petit nombre de prestataires pour exploiter le Service : un hébergeur situé dans l’UE, un fournisseur d’infrastructure situé dans l’UE qui fait fonctionner notre modèle d’IA (réponses de l’assistant) et notre prestataire d’envoi d’e-mails (codes de vérification et notifications). La liste à jour est disponible sur demande et est remise aux entreprises avec leur accord de traitement des données.',
+          'Nous faisons appel à un petit nombre de prestataires pour exploiter le Service : notre hébergeur cloud (données stockées dans l’UE, réponses de l’assistant générées dans l’Union européenne) et notre prestataire d’envoi d’e-mails (codes de vérification et notifications). La liste à jour est disponible sur demande et est remise aux entreprises avec leur accord de traitement des données.',
         ],
       },
       {
         title: '7. Durées de conservation',
         paragraphs: [
-          'Les conversations et demandes de réservation sont conservées tant que l’entreprise utilise le Service et en a besoin ; les codes de vérification expirent en quelques minutes et ne sont pas réutilisés. Lorsqu’une entreprise quitte Samatrica, ses données sont supprimées à l’issue d’un délai d’export de 30 jours, sauf lorsque la loi impose une conservation plus longue.',
+          'Sauf si l’entreprise a choisi d’autres durées, les données sont supprimées ou anonymisées de manière irréversible automatiquement : les conversations 90 jours après le dernier message ; les coordonnées jamais vérifiées après 30 jours ; votre fiche client et vos réservations 24 mois après votre dernier rendez-vous ; les journaux techniques après 30 jours. Les codes de vérification expirent en quelques minutes et ne sont pas réutilisés, et les sauvegardes sont écrasées selon une rotation régulière. Lorsqu’une entreprise quitte Samatrica, ses données sont supprimées à l’issue d’un délai d’export de 30 jours, sauf lorsque la loi impose une conservation plus longue.',
         ],
       },
       {
@@ -511,7 +520,7 @@ export const fr: Dictionary = {
       {
         title: '9. Vos droits',
         paragraphs: [
-          'En vertu du RGPD, vous pouvez demander l’accès à vos données personnelles, leur rectification ou leur effacement, la limitation du traitement, leur portabilité, et vous opposer à certains traitements. Écrivez à contact@samatrica.com (ou à l’entreprise avec laquelle vous avez échangé, pour les données traitées pour son compte) ; nous répondons dans les délais légaux. Vous pouvez également introduire une réclamation auprès de votre autorité de protection des données.',
+          'En vertu du RGPD, vous pouvez demander l’accès à vos données personnelles, leur rectification ou leur effacement, la limitation du traitement, leur portabilité, et vous opposer à certains traitements. Écrivez à contact@samatrica.com (ou à l’entreprise avec laquelle vous avez échangé, pour les données traitées pour son compte) ; nous répondons dans les délais légaux. Vous pouvez également introduire une réclamation auprès de l’autorité de protection des données de votre pays, ou auprès de l’autorité de contrôle chef de file de Samatrica, l’Inspection estonienne de la protection des données (Andmekaitse Inspektsioon, www.aki.ee).',
         ],
       },
       {
